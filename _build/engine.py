@@ -475,7 +475,7 @@ class Dash:
             c += f'<div class="g g12">{act_card}{tbl_card}</div>'
         elif variant == 2:
             big = k_html[0].replace('class="card kpi"', 'class="card kpi" style="justify-content:space-between"')
-            c += f'<div class="g g21"><div class="card"><h2>{esc(ch["title"])}<small>Last 12 months</small></h2><div class="kpi" style="margin-bottom:10px"><span class="v" style="font-size:34px">{k_html[0].split(chr(34) + "v" + chr(34) + ">")[1].split("<")[0]}</span><span class="l">{esc(s["kpis"][0][0])}</span></div>{line_chart([a, b], labels, names=ch["names"])}</div>'
+            c += f'<div class="g g21"><div class="card"><h2>{esc(s["kpis"][0][0])}<small>{esc(ch["title"])}, last 12 months</small></h2><div class="kpi" style="margin-bottom:10px"><span class="v" style="font-size:34px">{k_html[0].split(chr(34) + "v" + chr(34) + ">")[1].split("<")[0]}</span></div>{line_chart([a, b], labels, names=ch["names"])}</div>'
             c += f'<div class="g" style="align-content:start">{"".join(k_html[1:])}</div></div>'
             c += tbl_card
             c += f'<div class="g g2">{mix_card}{act_card}</div>'

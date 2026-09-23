@@ -38,6 +38,17 @@ COMING = ["CRM", "Sales pipeline", "Email marketing", "Social media management",
           "Habit tracker", "Real estate agency", "Property management", "Loan lending", "Procurement"]
 
 
+# Categories from COMING that already have a dashboard
+DONE = {"CRM", "Sales pipeline", "Email marketing", "Social media management", "SEO rank tracker", "Ad campaigns", "Affiliate program",
+        "Influencer marketing", "Customer support helpdesk", "Live chat",
+        "HR and employees", "Recruitment", "Project management", "Kanban tasks", "Time tracking", "Inventory and warehouse",
+        "Logistics and fleet", "Supply chain", "Manufacturing", "Construction"}
+
+
+def coming():
+    return [c for c in COMING if c not in DONE]
+
+
 def items():
     out = []
     for p in PREMIUM:
@@ -98,7 +109,7 @@ def build():
 <p class="lead">Complete admin dashboards you can use for free. Each one has 30 or more pages, light and dark themes, charts, tables, forms and login pages. Open the live demo, then download the folder you like.</p>
 <p class="small">{n} of 100 are ready. New ones are added in batches. MIT license, free for business use.</p>
 <ul class="grid" id="dashboards">{cards}</ul>
-<section id="soon"><h2>Coming next</h2><p>Dashboards planned for the next batches:</p><ul class="soon">{"".join(f"<li>{esc(c)}</li>" for c in COMING[:100 - n])}</ul></section></main>
+<section id="soon"><h2>Coming next</h2><p>Dashboards planned for the next batches:</p><ul class="soon">{"".join(f"<li>{esc(c)}</li>" for c in coming()[:100 - n])}</ul></section></main>
 <footer><div class="wrap">Made by <a href="https://mmseo.app/">MM Rahman Bappi</a>. Free under the MIT license. <a href="{REPO}">Source on GitHub</a></div></footer></body></html>
 """
     open(os.path.join(ROOT, "index.html"), "w").write(page)
@@ -135,7 +146,7 @@ Free, complete admin dashboard templates in HTML, CSS and JavaScript. Each dashb
 
 ## Coming next
 
-{", ".join(COMING[:100 - n])}.
+{", ".join(coming()[:100 - n])}.
 
 ## License
 
