@@ -114,20 +114,55 @@ def build():
     soon_html = (f'<section id="soon"><h2>Coming next</h2><p>Dashboards planned for the next batches:</p><ul class="soon">'
                  + "".join(f"<li>{esc(c)}</li>" for c in soon) + "</ul></section>") if soon else ""
     soon_nav = '<a href="#soon">Coming next</a>' if soon else ""
+    import mmtheme as T
+    def group(i):
+        k = i["num"]
+        return ("Featured" if k <= 5 else "Finance" if k <= 15 else "Marketing and sales" if k <= 25 else "Operations" if k <= 35 else
+                "Tech" if k <= 45 else "Education" if k <= 55 else "Health and hospitality" if k <= 65 else "Travel and media" if k <= 75 else
+                "Public and nonprofit" if k <= 85 else "More business")
+    groups = []
+    for i in its:
+        if group(i) not in groups: groups.append(group(i))
+    FAQ = [("Are these dashboards free for business use?", "Yes. Every dashboard uses the MIT license, so you can use it in personal, client and commercial projects."),
+           ("Do they need a framework or a build step?", "No. Each dashboard is plain HTML, CSS and JavaScript. Open a page in a browser and it works."),
+           ("How many pages does each dashboard have?", "Most have 34 pages: an overview, lists, details, forms, a calendar, reports, settings, login and more."),
+           ("Do they connect to real data?", "No. They use sample data so you can see every page. Replace the sample data with your own API when you build your app.")]
+    schema["@graph"].append(T.faq_schema(SITE, FAQ))
+    picks = [x for x in its if x["slug"] in ("signal", "matchday", "stratus", "respawn", "lendly", "sunfield")][:6]
+    picks += [x for x in its if x not in picks][:6 - len(picks)]
+    cycle = [f'{i["brand"]}: {i["category"]}' for i in its[5:40:5]]
+    pages = sum(i["pages"] for i in its)
+    cards = "".join(T.card(f'{SITE}/{i["slug"]}/', f'{SITE}/{i["slug"]}/thumb.webp', f'{i["brand"]} {i["category"].lower()} dashboard template preview',
+                           i["category"], f'{i["pages"]} pages', i["brand"], i["tagline"],
+                           [("Live demo", f'{SITE}/{i["slug"]}/'), ("Get the code", f'{REPO}/tree/main/{i["slug"]}')], group(i)) for i in its)
+    nav = [("Dashboards", "#dashboards"), ("How to use", "#how"), ("FAQ", "#faq")]
     page = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{SITE}/">
-<meta name="robots" content="index, follow, max-image-preview:large"><meta name="theme-color" content="#4f46e5">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{SITE}/"><meta property="og:image" content="{SITE}/signal/screenshot.png"><meta name="twitter:card" content="summary_large_image">
-<style>{CSS}</style><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script></head>
-<body><header><div class="wrap"><a class="brand" href="{SITE}/">100 Free Admin Dashboards</a><nav><a href="#dashboards">Dashboards</a>{soon_nav}<a href="{REPO}">GitHub</a></nav></div></header>
-<main class="wrap"><h1>Free admin dashboard templates</h1>
-<p class="lead">Complete admin dashboards you can use for free. Each one has 30 or more pages, light and dark themes, charts, tables, forms and login pages. Open the live demo, then download the folder you like.</p>
-<p class="small">{"All 100 dashboards are ready." if n >= 100 else f"{n} of 100 are ready. New ones are added in batches."} MIT license, free for business use.</p>
-<ul class="grid" id="dashboards">{cards}</ul>
-{soon_html}</main>
-<footer><div class="wrap">Made by <a href="https://mmseo.app/">MM Rahman Bappi</a>. Free under the MIT license. <a href="{REPO}">Source on GitHub</a></div></footer></body></html>
+{T.FONTS}{T.favicon("AD")}<style>{T.CSS}</style><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script></head>
+<body>{T.header(SITE, "AD", "100 Free Admin Dashboards", nav, REPO)}
+<main id="main">
+{T.hero("Admin dashboard templates", "Admin dashboards ready to use", "Complete dashboards for real businesses, each with 30 or more pages: charts, tables, forms, calendars, settings and login. Light and dark themes included.",
+        ("Browse dashboards", "#dashboards"), REPO, [f'{SITE}/{x["slug"]}/thumb.webp' for x in picks], "AD", "Dashboards in the set", cycle,
+        "Free dashboards<br>with live demos", str(n), f"{pages:,} pages in total", "Pick. Download. Launch.",
+        ("All 100 dashboards are ready." if n >= 100 else f"{n} of 100 are ready.") + " MIT license, free for business use.")}
+{T.facts([(str(n), "dashboards"), (f"{pages:,}", "pages"), ("2", "themes each, light and dark"), ("MIT", "license")])}
+<section class="band alt" id="dashboards"><div class="wrap"><div class="sh"><div><p class="eyebrow">Dashboards</p><h2>Find a dashboard for your business</h2>
+<p>Open the live demo to click through every page, then download the folder you like.</p></div></div>
+<div style="margin-bottom:1.6rem">{T.chips(groups, "Filter by industry")}</div>
+<ul class="mtcards">{cards}</ul>{soon_html}</div></section>
+<section class="band" id="how"><div class="wrap"><div class="sh"><div><p class="eyebrow">How to use</p><h2>Three steps, no setup</h2></div></div>
+<ol class="steps"><li><h3>Pick</h3><p>Open a live demo and click through the pages to find the one that fits your product.</p></li>
+<li><h3>Download</h3><p>Download the dashboard folder from GitHub. Every page, style and script is inside.</p></li>
+<li><h3>Launch</h3><p>Change the name, colors and sample data, then connect your API and publish.</p></li></ol></div></section>
+{T.faq(FAQ)}
+</main>
+{T.footer(REPO)}
+{T.script(cycle)}
+</body></html>
 """
     open(os.path.join(ROOT, "index.html"), "w").write(page)
 
