@@ -12,6 +12,12 @@ from build import all_specs  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://mmrahmanbappi.github.io/100-free-admin-dashboards"
 REPO = "https://github.com/mmrahmanbappi/100-free-admin-dashboards"
+
+def group(i):
+    k = i["num"]
+    return ("Featured" if k <= 5 else "Finance" if k <= 15 else "Marketing and sales" if k <= 25 else "Operations" if k <= 35 else
+            "Tech" if k <= 45 else "Education" if k <= 55 else "Health and hospitality" if k <= 65 else "Travel and media" if k <= 75 else
+            "Public and nonprofit" if k <= 85 else "More business")
 TODAY = date.today().isoformat()
 esc = lambda s: html.escape(str(s), quote=True)
 
@@ -115,11 +121,6 @@ def build():
                  + "".join(f"<li>{esc(c)}</li>" for c in soon) + "</ul></section>") if soon else ""
     soon_nav = '<a href="#soon">Coming next</a>' if soon else ""
     import mmtheme as T
-    def group(i):
-        k = i["num"]
-        return ("Featured" if k <= 5 else "Finance" if k <= 15 else "Marketing and sales" if k <= 25 else "Operations" if k <= 35 else
-                "Tech" if k <= 45 else "Education" if k <= 55 else "Health and hospitality" if k <= 65 else "Travel and media" if k <= 75 else
-                "Public and nonprofit" if k <= 85 else "More business")
     groups = []
     for i in its:
         if group(i) not in groups: groups.append(group(i))
@@ -132,7 +133,7 @@ def build():
     picks += [x for x in its if x not in picks][:6 - len(picks)]
     cycle = [f'{i["brand"]}: {i["category"]}' for i in its[5:40:5]]
     pages = sum(i["pages"] for i in its)
-    cards = "".join(T.card(f'{SITE}/{i["slug"]}/', f'{SITE}/{i["slug"]}/thumb.webp', f'{i["brand"]} {i["category"].lower()} dashboard template preview',
+    cards = "".join(T.card(f'{SITE}/templates/{i["slug"]}/', f'{SITE}/{i["slug"]}/thumb.webp', f'{i["brand"]} {i["category"].lower()} dashboard template preview',
                            i["category"], f'{i["pages"]} pages', i["brand"], i["tagline"],
                            [("Live demo", f'{SITE}/{i["slug"]}/'), ("Get the code", f'{REPO}/tree/main/{i["slug"]}')], group(i)) for i in its)
     nav = [("Dashboards", "#dashboards"), ("How to use", "#how"), ("FAQ", "#faq")]
@@ -203,7 +204,11 @@ Free, complete admin dashboard templates in HTML, CSS and JavaScript. Each dashb
 Made by [MM Rahman Bappi](https://mmseo.app/).
 """
     open(os.path.join(ROOT, "README.md"), "w").write(readme)
-    open(os.path.join(ROOT, "sitemap.xml"), "w").write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>{SITE}/</loc><lastmod>{TODAY}</lastmod></url>\n</urlset>\n')
+    sm_urls = [(SITE + "/", "og.jpg")] + [(f"{SITE}/templates/{i['slug']}/", f"{SITE}/{i['slug']}/screenshot.png") for i in its]
+    open(os.path.join(ROOT, "sitemap.xml"), "w").write(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
+        + "".join(f"  <url>\n    <loc>{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <image:image><image:loc>{img if img.startswith('http') else SITE + '/' + img}</image:loc></image:image>\n  </url>\n" for u, img in sm_urls)
+        + "</urlset>\n")
     open(os.path.join(ROOT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
     open(os.path.join(ROOT, ".nojekyll"), "w").write("")
     print("gallery built with", n, "dashboards")
