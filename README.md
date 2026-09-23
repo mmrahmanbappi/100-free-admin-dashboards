@@ -4,7 +4,7 @@ Free, complete admin dashboard templates in HTML, CSS and JavaScript. Each dashb
 
 **[See all live demos](https://mmrahmanbappi.github.io/100-free-admin-dashboards/)**
 
-75 of 100 are ready. New dashboards are added in batches of ten.
+85 of 100 are ready. New dashboards are added in batches of ten.
 
 ## Why use these dashboards
 
@@ -100,10 +100,20 @@ Free, complete admin dashboard templates in HTML, CSS and JavaScript. Each dashb
 | [![Reelhouse](reelhouse/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/reelhouse/) | **73. Reelhouse**<br>Video Creator Studio<br><br>Videos, views, income and ideas for a video creator.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/reelhouse/) / [Code](reelhouse/) |
 | [![Encore](encore/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/encore/) | **74. Encore**<br>Music Artist<br><br>Streams, fans, tours and releases for an independent musician.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/encore/) / [Code](encore/) |
 | [![Aperture](aperture/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/aperture/) | **75. Aperture**<br>Photography Studio<br><br>Shoots, clients, galleries and invoices for a photography studio.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/aperture/) / [Code](aperture/) |
+| [![Letterbox](letterbox/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/letterbox/) | **76. Letterbox**<br>Newsletter<br><br>Issues, subscribers, growth and paid plans for an independent newsletter.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/letterbox/) / [Code](letterbox/) |
+| [![Brightwork](brightwork/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/brightwork/) | **77. Brightwork**<br>Digital Agency<br><br>Clients, projects, retainers and team time for a digital agency.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/brightwork/) / [Code](brightwork/) |
+| [![Kindred](kindred/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/kindred/) | **78. Kindred**<br>Nonprofit Donations<br><br>Donors, gifts, campaigns and volunteers for a charity.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/kindred/) / [Code](kindred/) |
+| [![Gather](gather/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/gather/) | **79. Gather**<br>Church and Community<br><br>Members, groups, events and giving for a church community.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/gather/) / [Code](gather/) |
+| [![Civic](civic/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/civic/) | **80. Civic**<br>City Services<br><br>Service requests, permits, crews and budgets for a city council.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/civic/) / [Code](civic/) |
+| [![Ballot](ballot/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/ballot/) | **81. Ballot**<br>Election Results<br><br>Live results, turnout and counting progress for a local election.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/ballot/) / [Code](ballot/) |
+| [![Clearsky](clearsky/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/clearsky/) | **82. Clearsky**<br>Air Quality<br><br>Sensors, pollution levels and alerts for city air quality.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/clearsky/) / [Code](clearsky/) |
+| [![Sunfield](sunfield/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/sunfield/) | **83. Sunfield**<br>Solar and Energy<br><br>Solar output, batteries, grid use and savings for an energy co-op.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/sunfield/) / [Code](sunfield/) |
+| [![Homebase](homebase/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/homebase/) | **84. Homebase**<br>Smart Home<br><br>Lights, heating, cameras and energy use for a smart home.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/homebase/) / [Code](homebase/) |
+| [![Acreage](acreage/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/acreage/) | **85. Acreage**<br>Farm and Agriculture<br><br>Fields, crops, livestock and machinery for a mixed farm.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/acreage/) / [Code](acreage/) |
 
 ## Coming next
 
-Surveys and NPS, Events and ticketing, Facility management, Field service, Newsletter, Digital agency, Nonprofit donations, Church and community, City services, Election results, Air quality, Solar and energy, Smart home, Farm and agriculture, Sports team, Esports, Car dealership, Parking and EV charging, Weather station, Habit tracker, Real estate agency, Property management, Loan lending, Procurement.
+Surveys and NPS, Events and ticketing, Facility management, Field service, Sports team, Esports, Car dealership, Parking and EV charging, Weather station, Habit tracker, Real estate agency, Property management, Loan lending, Procurement.
 
 ## License
 
