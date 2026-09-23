@@ -4,7 +4,7 @@ Free, complete admin dashboard templates in HTML, CSS and JavaScript. Each dashb
 
 **[See all live demos](https://mmrahmanbappi.github.io/100-free-admin-dashboards/)**
 
-55 of 100 are ready. New dashboards are added in batches of ten.
+65 of 100 are ready. New dashboards are added in batches of ten.
 
 ## Why use these dashboards
 
@@ -80,10 +80,20 @@ Free, complete admin dashboard templates in HTML, CSS and JavaScript. Each dashb
 | [![Stacks](stacks/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/stacks/) | **53. Stacks**<br>Library<br><br>Books, members, loans and events for a public library.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/stacks/) / [Code](stacks/) |
 | [![Quizzly](quizzly/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/quizzly/) | **54. Quizzly**<br>Exams and Quizzes<br><br>Build exams, run quizzes and see results for every class.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/quizzly/) / [Code](quizzly/) |
 | [![Brightsmile](brightsmile/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/brightsmile/) | **55. Brightsmile**<br>Dental Clinic<br><br>Appointments, patients, treatments and billing for a dental practice.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/brightsmile/) / [Code](brightsmile/) |
+| [![Dispensa](dispensa/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/dispensa/) | **56. Dispensa**<br>Pharmacy<br><br>Prescriptions, stock and patients for a community pharmacy.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/dispensa/) / [Code](dispensa/) |
+| [![Liftoff](liftoff/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/liftoff/) | **57. Liftoff**<br>Gym and Fitness<br><br>Members, classes, trainers and check-ins for a busy gym.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/liftoff/) / [Code](liftoff/) |
+| [![Wellnote](wellnote/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/wellnote/) | **58. Wellnote**<br>Personal Health<br><br>Sleep, steps, heart rate and habits in one friendly health log.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/wellnote/) / [Code](wellnote/) |
+| [![Pawpoint](pawpoint/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/pawpoint/) | **59. Pawpoint**<br>Veterinary Clinic<br><br>Pets, owners, appointments and treatments for a vet clinic.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/pawpoint/) / [Code](pawpoint/) |
+| [![Haven](haven/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/haven/) | **60. Haven**<br>Therapy Practice<br><br>Clients, sessions, notes and billing for a small therapy practice.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/haven/) / [Code](haven/) |
+| [![Assay](assay/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/assay/) | **61. Assay**<br>Diagnostic Lab<br><br>Samples, tests, results and machines for a diagnostic lab.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/assay/) / [Code](assay/) |
+| [![Sprout](sprout/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/sprout/) | **62. Sprout**<br>Nutrition Coach<br><br>Clients, meal plans, check-ins and progress for a nutrition coach.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/sprout/) / [Code](sprout/) |
+| [![Lodgewise](lodgewise/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/lodgewise/) | **63. Lodgewise**<br>Hotel<br><br>Rooms, bookings, guests and housekeeping for a boutique hotel.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/lodgewise/) / [Code](lodgewise/) |
+| [![Tabletop](tabletop/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/tabletop/) | **64. Tabletop**<br>Restaurant POS<br><br>Orders, tables, menu and staff for a busy restaurant.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/tabletop/) / [Code](tabletop/) |
+| [![Dashcart](dashcart/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/dashcart/) | **65. Dashcart**<br>Food Delivery<br><br>Orders, riders, restaurants and delivery times for a delivery service.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/dashcart/) / [Code](dashcart/) |
 
 ## Coming next
 
-Surveys and NPS, Events and ticketing, Facility management, Field service, Pharmacy, Gym and fitness, Personal health, Veterinary clinic, Therapy practice, Diagnostic lab, Nutrition coach, Hotel, Restaurant POS, Food delivery, Travel agency, Airline operations, Car rental, Salon booking, Coworking space, Blog CMS, Podcast analytics, Video creator studio, Music artist, Photography studio, Newsletter, Digital agency, Nonprofit donations, Church and community, City services, Election results, Air quality, Solar and energy, Smart home, Farm and agriculture, Sports team, Esports, Car dealership, Parking and EV charging, Weather station, Habit tracker, Real estate agency, Property management, Loan lending, Procurement.
+Surveys and NPS, Events and ticketing, Facility management, Field service, Travel agency, Airline operations, Car rental, Salon booking, Coworking space, Blog CMS, Podcast analytics, Video creator studio, Music artist, Photography studio, Newsletter, Digital agency, Nonprofit donations, Church and community, City services, Election results, Air quality, Solar and energy, Smart home, Farm and agriculture, Sports team, Esports, Car dealership, Parking and EV charging, Weather station, Habit tracker, Real estate agency, Property management, Loan lending, Procurement.
 
 ## License
 

@@ -444,7 +444,7 @@ class Dash:
         s, d = self.s, self.d
         k_html = []
         for label, kind, base, ic in s["kpis"]:
-            ser = d.series(14, base, 0.08, 0.01)
+            ser = [min(max(x, base * 0.85), base * 1.2) for x in d.series(14, base, 0.04, 0.005)]
             up = d.r.random() > 0.25
             delta = d.r.uniform(1.2, 18.5)
             val = ser[-1]
