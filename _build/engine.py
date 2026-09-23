@@ -439,6 +439,11 @@ class Dash:
         open(os.path.join(outdir, "assets", "js", "app.js"), "w").write(JS.strip() + "\n")
         for f, h in self.out.items():
             open(os.path.join(outdir, f), "w", encoding="utf-8").write(h)
+        # remove pages left over from older builds (for example after a rename)
+        for f in os.listdir(outdir):
+            if f.endswith(".html") and f not in self.out:
+                os.remove(os.path.join(outdir, f))
+                print("  removed old page:", os.path.basename(outdir) + "/" + f)
         self.readme(outdir)
         return len(self.out)
 

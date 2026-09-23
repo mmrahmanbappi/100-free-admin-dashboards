@@ -342,7 +342,7 @@ function renderRows(data){
               <button class="dd-item" onclick="changeStatus(${a.id}, 'published')"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>${a.status==='published'?'Unpublish':'Publish'}</button>
               <button class="dd-item" onclick="changeStatus(${a.id}, 'archived')"><svg viewBox="0 0 24 24"><path d="M21 8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>Archive</button>
               <div class="dd-divider"></div>
-              <button class="dd-item danger" onclick="openDelModal(${a.id},\'${a.title.replace(/'/g,\\'\\')}\')"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg>Delete Permanently</button>
+              <button class="dd-item danger" onclick="openDelModal(${a.id},${JSON.stringify(a.title).replace(/"/g,'&quot;')})"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg>Delete Permanently</button>
             </div>
           </div>
         </div>

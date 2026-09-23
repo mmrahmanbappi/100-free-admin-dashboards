@@ -165,7 +165,7 @@
 function addFeature(){
   var list=document.getElementById('featureList');
   var div=document.createElement('div');div.style.display='flex';div.style.gap='8px';
-  div.innerHTML='<input class="form-input" placeholder="New feature..." style="flex:1"><button class="btn btn-icon btn-xs" onclick="this.closest('div').remove()"><svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:currentColor;stroke-width:2;fill:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>';
+  div.innerHTML='<input class="form-input" placeholder="New feature..." style="flex:1"><button class="btn btn-icon btn-xs" onclick="this.parentElement.remove()"><svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:currentColor;stroke-width:2;fill:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>';
   list.appendChild(div);div.querySelector('input').focus();
 }
 </script>

@@ -104,14 +104,6 @@
 </div>
 <div class="overlay" id="pal" style="display:none" onclick="if(event.target===this)LEX.closePalette()"><div class="cmdpal"><div class="cmd-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input class="cmd-input" id="cmd-inp" placeholder="Search cases, clients, actions…"><span class="cmd-key">ESC</span></div><div class="cmd-results"><div class="cmd-grp">Actions</div><div class="cmd-item sel"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="cmd-item-txt">New Case</span><span class="cmd-item-meta">⌘N</span></div><div class="cmd-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="cmd-item-txt">Log Time</span><span class="cmd-item-meta">⌘T</span></div></div><div class="cmd-foot"><span><span class="cmd-key">ESC</span> close</span></div></div></div><div id="mob-bd" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:39" onclick="LEX.toggleMobile()"></div>
 <script src="assets/js/lex.js"></script>
-<script>
-const allTabs=document.querySelectorAll('#caseTabs .tab');
-allTabs.forEach(t=>t.addEventListener('click',()=>{
-  allTabs.forEach(x=>x.classList.remove('active'));
-  t.classList.add('active');
-}));
-function showTab(id){allTabs.forEach(t=>{if(t.dataset.tab===id)t.click()});}
-</script>
 
 <script>
 // Case detail tab switching

@@ -54,7 +54,8 @@ DONE = {"CRM", "Sales pipeline", "Email marketing", "Social media management", "
         "Newsletter", "Digital agency", "Nonprofit donations", "Church and community", "City services", "Election results",
         "Air quality", "Solar and energy", "Smart home", "Farm and agriculture",
         "Sports team", "Esports", "Car dealership", "Parking and EV charging", "Weather station", "Habit tracker",
-        "Real estate agency", "Property management", "Loan lending", "Procurement"}
+        "Real estate agency", "Property management", "Loan lending", "Procurement",
+        "Surveys and NPS", "Events and ticketing", "Facility management", "Field service"}
 
 
 def coming():
@@ -92,7 +93,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
 def build():
     its = items()
     n = len(its)
-    title = f"Free Admin Dashboard Templates: {n} HTML Dashboards"
+    title = f"{n} Free Admin Dashboard Templates in HTML" if n >= 100 else f"Free Admin Dashboard Templates: {n} HTML Dashboards"
     desc = f"{n} free multi-page admin dashboard templates in HTML, CSS and JavaScript. Light and dark themes, live demos, no build step, MIT license."
     cards = "".join(
         f'<li class="card"><a href="{SITE}/{i["slug"]}/"><img src="{SITE}/{i["slug"]}/thumb.webp" alt="{esc(i["brand"])} {esc(i["category"].lower())} dashboard template preview" width="720" height="450" loading="lazy"></a>'
@@ -109,6 +110,10 @@ def build():
              "url": f"{SITE}/{i['slug']}/", "image": f"{SITE}/{i['slug']}/screenshot.png", "description": i["tagline"],
              "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": True, "author": {"@id": SITE + "/#author"}}}
             for k, i in enumerate(its)]}]}
+    soon = coming()[:100 - n] if n < 100 else []
+    soon_html = (f'<section id="soon"><h2>Coming next</h2><p>Dashboards planned for the next batches:</p><ul class="soon">'
+                 + "".join(f"<li>{esc(c)}</li>" for c in soon) + "</ul></section>") if soon else ""
+    soon_nav = '<a href="#soon">Coming next</a>' if soon else ""
     page = f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{SITE}/">
@@ -116,12 +121,12 @@ def build():
 <meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{SITE}/"><meta property="og:image" content="{SITE}/signal/screenshot.png"><meta name="twitter:card" content="summary_large_image">
 <style>{CSS}</style><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script></head>
-<body><header><div class="wrap"><a class="brand" href="{SITE}/">100 Free Admin Dashboards</a><nav><a href="#dashboards">Dashboards</a><a href="#soon">Coming next</a><a href="{REPO}">GitHub</a></nav></div></header>
+<body><header><div class="wrap"><a class="brand" href="{SITE}/">100 Free Admin Dashboards</a><nav><a href="#dashboards">Dashboards</a>{soon_nav}<a href="{REPO}">GitHub</a></nav></div></header>
 <main class="wrap"><h1>Free admin dashboard templates</h1>
 <p class="lead">Complete admin dashboards you can use for free. Each one has 30 or more pages, light and dark themes, charts, tables, forms and login pages. Open the live demo, then download the folder you like.</p>
-<p class="small">{n} of 100 are ready. New ones are added in batches. MIT license, free for business use.</p>
+<p class="small">{"All 100 dashboards are ready." if n >= 100 else f"{n} of 100 are ready. New ones are added in batches."} MIT license, free for business use.</p>
 <ul class="grid" id="dashboards">{cards}</ul>
-<section id="soon"><h2>Coming next</h2><p>Dashboards planned for the next batches:</p><ul class="soon">{"".join(f"<li>{esc(c)}</li>" for c in coming()[:100 - n])}</ul></section></main>
+{soon_html}</main>
 <footer><div class="wrap">Made by <a href="https://mmseo.app/">MM Rahman Bappi</a>. Free under the MIT license. <a href="{REPO}">Source on GitHub</a></div></footer></body></html>
 """
     open(os.path.join(ROOT, "index.html"), "w").write(page)
@@ -133,7 +138,7 @@ Free, complete admin dashboard templates in HTML, CSS and JavaScript. Each dashb
 
 **[See all live demos]({SITE}/)**
 
-{n} of 100 are ready. New dashboards are added in batches of ten.
+{"All 100 dashboards are ready." if n >= 100 else f"{n} of 100 are ready. New dashboards are added in batches of ten."}
 
 ## Why use these dashboards
 
@@ -156,11 +161,7 @@ Free, complete admin dashboard templates in HTML, CSS and JavaScript. Each dashb
 |---|---|
 {rows}
 
-## Coming next
-
-{", ".join(coming()[:100 - n])}.
-
-## License
+{("## Coming next" + chr(10) + chr(10) + ", ".join(coming()[:100 - n]) + "." + chr(10) + chr(10)) if n < 100 else ""}## License
 
 [MIT](LICENSE). Some dashboards include third-party fonts and libraries with their own open licenses, listed in their folders.
 

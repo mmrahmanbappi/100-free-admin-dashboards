@@ -840,3 +840,32 @@ a:focus:not(:focus-visible){ outline:none }
 }
 .field-check:hover{ background:var(--surface-2) }
 .field-check input[type="checkbox"]{ flex-shrink:0 }
+
+/* Stack wide chart rows on small screens (placed last so it wins over the rule above) */
+@media(max-width:900px){
+  .chart-row-wide{ grid-template-columns:1fr }
+}
+
+/* Small screens: keep wide tables and tab rows inside the screen.
+   Tables scroll sideways inside their card instead of stretching the page. */
+@media(max-width:900px){
+  .card, .card-body, .card-header{ min-width:0; max-width:100% }
+  .tbl, .cohort-table{ display:block; max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch }
+  .tabs{ overflow-x:auto; max-width:100% }
+  .card-header{ flex-wrap:wrap; gap:8px }
+}
+
+/* Phones: stack card grids and let rows wrap. Desktop layout is unchanged. */
+@media(max-width:640px){
+  .main *, main *{ min-width:0 }
+  svg, .av, .btn{ flex-shrink:0 }
+  [class*="grid"], [style*="grid-template-columns"]{ grid-template-columns:1fr !important }
+  [style*="display:flex"], [style*="display: flex"], .page-header, .card-body, .toolbar{ flex-wrap:wrap }
+  .tbl, .cohort-table{ width:100% }
+}
+@media(max-width:900px){
+  .chart-row{ grid-template-columns:1fr }
+}
+@media(max-width:640px){
+  [style*="monospace"], code, pre{ overflow-wrap:anywhere }
+}

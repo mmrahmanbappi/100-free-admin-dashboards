@@ -225,7 +225,7 @@ B6.append(dict(
     ],
     specials=[
         dict(title="Coaching calendar", type="calendar", icon="calendar", desc="Calls and workshops.", items=["First call", "Follow-up", "Group workshop", "Plan review", "Admin time"]),
-        dict(title="Client journey", type="kanban", icon="kanban", desc="Clients from enquiry to finished.", items=["Enquiry", "First call", "Plan sent", "Coaching", "Finished"], cards=["More energy", "Sports nutrition", "Healthy weight", "Better digestion"]),
+        dict(title="Client progress", type="kanban", icon="kanban", desc="Clients from enquiry to finished.", items=["Enquiry", "First call", "Plan sent", "Coaching", "Finished"], cards=["More energy", "Sports nutrition", "Healthy weight", "Better digestion"]),
         dict(title="Progress report", type="report", icon="chart", desc="How clients are doing.", items=["Check-in rate", "Plan followed", "Energy score", "Renewals"], rows=["More energy", "Better digestion", "Sports", "Healthy weight", "Other"]),
         dict(title="Recipe library", type="gallery", icon="book", desc="Your favourite recipes.", items=["Lentil curry", "Overnight oats", "Salmon traybake", "Chickpea salad", "Veggie stir fry", "Berry smoothie"]),
         dict(title="Weekly plan", type="document", icon="file", desc="A printable meal plan layout.", doc="Weekly meal plan", num="Week 38, Maya", items=["Breakfasts", "Lunches", "Dinners", "Snacks", "Shopping list extras"], note="Swap any meal for one from your recipe list. Prices are a rough shopping estimate."),

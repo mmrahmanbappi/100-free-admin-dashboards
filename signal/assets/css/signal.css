@@ -631,3 +631,27 @@ body.is-collapsed .collapse{position:absolute;inset-inline-end:-11px;top:15px;wi
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
     transition-duration:.001ms!important}
 }
+
+/* Small screens: keep every page inside the screen width.
+   Layout grids stack, header rows wrap, and wide widgets (calendars,
+   heatmaps, tables) scroll sideways inside their own card. */
+@media(max-width:900px){
+  .card{ min-width:0; max-width:100% }
+  .page-body > [style*="display:grid"]{ grid-template-columns:1fr !important }
+  .tbl-wrap{ overflow-x:auto; max-width:100% }
+}
+@media(max-width:640px){
+  .page-header, .page-top, .page-top > div, .breadcrumb{ flex-wrap:wrap; gap:8px }
+  .card{ overflow-x:auto }
+  .page-body [style*="display:flex"]:not([style*="column"]){ flex-wrap:wrap }
+  .main-wrapper *, .main *{ min-width:0 }
+  svg, .btn, .icon-btn, .av{ flex-shrink:0 }
+  [style*="monospace"], code, pre, .cid{ overflow-wrap:anywhere }
+}
+@media(max-width:640px){
+  .main-wrapper [style*="display: flex"]:not([style*="column"]),
+  .main-wrapper [style*="display:flex"]:not([style*="column"]),
+  .main [style*="display: flex"]:not([style*="column"]),
+  .main [style*="display:flex"]:not([style*="column"]),
+  .card-header{ flex-wrap:wrap }
+}

@@ -31,7 +31,7 @@ Part of [100 Free Admin Dashboards](https://github.com/mmrahmanbappi/100-free-ad
 - `sessions-detail.html`: Session details
 - `sessions-form.html`: New session
 - `coaching-calendar.html`: Coaching calendar
-- `client-journey.html`: Client journey
+- `client-progress.html`: Client progress
 - `progress-report.html`: Progress report
 - `recipe-library.html`: Recipe library
 - `weekly-plan.html`: Weekly plan

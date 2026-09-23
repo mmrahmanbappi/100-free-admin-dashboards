@@ -4,7 +4,7 @@ Free, complete admin dashboard templates in HTML, CSS and JavaScript. Each dashb
 
 **[See all live demos](https://mmrahmanbappi.github.io/100-free-admin-dashboards/)**
 
-95 of 100 are ready. New dashboards are added in batches of ten.
+All 100 dashboards are ready.
 
 ## Why use these dashboards
 
@@ -120,10 +120,11 @@ Free, complete admin dashboard templates in HTML, CSS and JavaScript. Each dashb
 | [![Rentwise](rentwise/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/rentwise/) | **93. Rentwise**<br>Property Management<br><br>Properties, tenants, rent and repairs for a letting agency.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/rentwise/) / [Code](rentwise/) |
 | [![Lendly](lendly/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/lendly/) | **94. Lendly**<br>Loan Lending<br><br>Applications, loans, repayments and risk for a small lender.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/lendly/) / [Code](lendly/) |
 | [![Procura](procura/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/procura/) | **95. Procura**<br>Procurement<br><br>Requests, purchase orders, suppliers and spend for a purchasing team.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/procura/) / [Code](procura/) |
-
-## Coming next
-
-Surveys and NPS, Events and ticketing, Facility management, Field service.
+| [![Verdict](verdict/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/verdict/) | **96. Verdict**<br>Surveys and NPS<br><br>Surveys, responses and customer loyalty scores in one place.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/verdict/) / [Code](verdict/) |
+| [![Gatepass](gatepass/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/gatepass/) | **97. Gatepass**<br>Events and Ticketing<br><br>Events, tickets, check-ins and payouts for a live events company.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/gatepass/) / [Code](gatepass/) |
+| [![Buildcare](buildcare/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/buildcare/) | **98. Buildcare**<br>Facility Management<br><br>Buildings, work orders, assets and energy for a facilities team.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/buildcare/) / [Code](buildcare/) |
+| [![Fieldhand](fieldhand/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/fieldhand/) | **99. Fieldhand**<br>Field Service<br><br>Jobs, technicians, routes and invoices for a home services company.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/fieldhand/) / [Code](fieldhand/) |
+| [![Wrench](wrench/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/wrench/) | **100. Wrench**<br>Auto Repair Workshop<br><br>Bookings, repairs, parts and invoices for a car repair workshop.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/wrench/) / [Code](wrench/) |
 
 ## License
 

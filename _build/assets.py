@@ -205,7 +205,7 @@ details{border-bottom:1px solid var(--line);padding:12px 0}summary{cursor:pointe
 @media (max-width:1100px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:860px){.app{grid-template-columns:1fr}.sb{position:fixed;inset:0 auto 0 0;width:270px;z-index:20;transform:translateX(-100%);transition:transform .2s}
 body.nav-open .sb{transform:none;box-shadow:0 0 0 100vmax rgba(0,0,0,.35)}.burger{display:grid}.g2,.g21,.g12,.form{grid-template-columns:1fr}.split{grid-template-columns:1fr}.split .pv{display:none}.auth{grid-template-columns:1fr}.auth .art{display:none}.ct{padding:18px}.tb{padding:10px 16px}.tb .search{display:none}}
-@media (max-width:560px){.g4,.g3{grid-template-columns:1fr}}
+@media (max-width:560px){.g4,.g3{grid-template-columns:1fr}.doc{padding:20px;overflow-x:auto}.doc .tot{width:100%}.doc table{min-width:420px}.ph .row{flex-wrap:wrap}}
 @media print{.sb,.tb{display:none}.app{display:block}.card,.doc{box-shadow:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 """
