@@ -52,7 +52,9 @@ DONE = {"CRM", "Sales pipeline", "Email marketing", "Social media management", "
         "Travel agency", "Airline operations", "Car rental", "Salon booking", "Coworking space", "Blog CMS", "Podcast analytics",
         "Video creator studio", "Music artist", "Photography studio",
         "Newsletter", "Digital agency", "Nonprofit donations", "Church and community", "City services", "Election results",
-        "Air quality", "Solar and energy", "Smart home", "Farm and agriculture"}
+        "Air quality", "Solar and energy", "Smart home", "Farm and agriculture",
+        "Sports team", "Esports", "Car dealership", "Parking and EV charging", "Weather station", "Habit tracker",
+        "Real estate agency", "Property management", "Loan lending", "Procurement"}
 
 
 def coming():
