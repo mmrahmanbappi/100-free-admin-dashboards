@@ -119,6 +119,10 @@ class Data:
             opts = arg.split("|")
             weights = [max(1, len(opts) - k) * (3 if k == 0 else 1) for k in range(len(opts))]
             return r.choices(opts, weights=weights)[0], None
+        if kind == "ratio":
+            lo, hi = rng(arg, (1, 8))
+            v = r.uniform(lo, hi)
+            return f"{v:.1f}x", v
         if kind == "city":
             return r.choice(CITIES), None
         if kind == "phone":
@@ -382,7 +386,7 @@ class Dash:
             return f'<td><span class="who"><span class="av">{initials(txt)}</span>{esc(txt)}</span></td>'
         if kind == "status":
             return f'<td><span class="pill p-{tone(txt)}">{esc(txt)}</span></td>'
-        if kind in ("money", "int", "pct", "rating"):
+        if kind in ("money", "int", "pct", "rating", "ratio"):
             return f'<td class="num" data-v="{num:.2f}">{esc(txt)}</td>'
         if kind == "date":
             return f'<td data-v="{num}">{esc(txt)}</td>'
@@ -393,7 +397,7 @@ class Dash:
     def table(self, ent, rows, tid=None, check=False, limit=None):
         heads = []
         for label, ftype in ent["fields"]:
-            num = ftype.split(":")[0] in ("money", "int", "pct", "rating")
+            num = ftype.split(":")[0] in ("money", "int", "pct", "rating", "ratio")
             heads.append(f'<th data-sort{" class=num" if num else ""}>{esc(label)}</th>')
         chk_h = '<th><input type="checkbox" data-all aria-label="Select all"></th>' if check else ""
         body = []
@@ -445,7 +449,7 @@ class Dash:
             if kind == "pct":
                 ser = [min(x, base * 1.06, 99.4) for x in ser]
                 val = ser[-1]
-            v = d.fmt_money(val) if kind == "money" else (f"{val:.1f}%" if kind == "pct" else f"{val:,.0f}")
+            v = d.fmt_money(val) if kind == "money" else (f"{val:.1f}%" if kind == "pct" else (f"{val:.1f}x" if kind == "ratio" else f"{val:,.0f}"))
             k_html.append(f'<div class="card kpi"><span class="l">{icon(ic)}{esc(label)}</span><span class="v">{v}</span>'
                           f'<span class="d {"up" if up else "down"}">{"+" if up else "-"}{delta:.1f}% vs last month</span>{spark(ser, up)}</div>')
         ch = s["chart"]
@@ -532,7 +536,7 @@ class Dash:
                 inp = f'<select id="{fid}">' + "".join(f"<option>{esc(o)}</option>" for o in arg.split("|")) + "</select>"
             elif kind == "date":
                 inp = f'<input id="{fid}" type="date">'
-            elif kind in ("money", "int", "pct", "rating"):
+            elif kind in ("money", "int", "pct", "rating", "ratio"):
                 inp = f'<input id="{fid}" type="number" step="any" placeholder="0">'
             elif kind == "email":
                 inp = f'<input id="{fid}" type="email" placeholder="name@company.com">'
