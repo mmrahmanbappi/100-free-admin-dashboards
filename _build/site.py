@@ -44,7 +44,9 @@ DONE = {"CRM", "Sales pipeline", "Email marketing", "Social media management", "
         "HR and employees", "Recruitment", "Project management", "Kanban tasks", "Time tracking", "Inventory and warehouse",
         "Logistics and fleet", "Supply chain", "Manufacturing", "Construction",
         "Server monitoring", "Cloud cost", "API analytics", "Cyber security", "IT helpdesk", "CI/CD pipelines", "Database admin",
-        "AI chatbot analytics", "AI usage and cost", "Mobile app analytics"}
+        "AI chatbot analytics", "AI usage and cost", "Mobile app analytics",
+        "Web hosting panel", "Domains and DNS", "School management", "Online courses", "University admissions", "Student portal",
+        "Tutor marketplace", "Library", "Exams and quizzes", "Dental clinic"}
 
 
 def coming():

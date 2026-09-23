@@ -374,6 +374,8 @@ class Dash:
         return f'<div class="ph"><div>{c}<h1>{esc(title)}</h1><p>{esc(sub)}</p></div><div class="row">{actions}</div></div>'
 
     def add(self, file, title, html_):
+        if file in self.out:
+            raise ValueError(f"{self.s['slug']}: two pages would both be saved as {file}")
         self.pages.append((file, title))
         self.out[file] = html_
 
@@ -464,7 +466,9 @@ class Dash:
         e0 = s["entities"][0]
         acts = "".join(f'<li><span class="av">{initials(p)}</span><div class="grow"><b>{esc(p)}</b><span>{esc(a_)}</span></div><span class="mono" style="color:var(--muted);font-size:12px">{d.r.randint(2, 59)}m</span></li>'
                        for p, a_ in [(d.person(), x) for x in s["activity"][:5]])
-        greet = f"Good morning, {s.get('user', 'Alex Morgan').split()[0]}"
+        words = s.get("user", "Alex Morgan").split()
+        who = f"{words[0]} {words[-1]}" if words[0].rstrip(".").lower() in ("dr", "mr", "mrs", "ms", "prof") else words[0]
+        greet = f"Good morning, {who}"
         c = self.ph(greet, s["tagline"], f'<select aria-label="Date range"><option>Last 30 days</option><option>Last 90 days</option><option>This year</option></select><a class="btn pri" href="{e0["slug"]}-form.html">{icon("plus")}New {esc(e0["singular"].lower())}</a>')
         chart_card = f'<div class="card"><h2>{esc(ch["title"])}<small>Last 12 months</small></h2>{line_chart([a, b], labels, names=ch["names"])}</div>'
         mix_card = f'<div class="card"><h2>{esc(s["mix"]["title"])}</h2>{donut(parts)}</div>'
