@@ -143,7 +143,7 @@ def build():
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{SITE}/"><meta property="og:site_name" content="100 Free Admin Dashboards"><meta property="og:image" content="{SITE}/og.jpg"><meta property="og:image:alt" content="{esc(title)}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><link rel="image_src" href="{SITE}/signal/screenshot.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(desc)}"><meta name="twitter:image" content="{SITE}/og.jpg">
-{T.FONTS}{T.favicon("AD")}<style>{T.CSS}</style><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script></head>
+{T.FONTS}{T.favicon("AD")}{T.GA}<style>{T.CSS}</style><script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script></head>
 <body>{T.header(SITE, "AD", "100 Free Admin Dashboards", nav, REPO)}
 <main id="main">
 {T.hero("Admin dashboard templates", "Admin dashboards ready to use", "Complete dashboards for real businesses, each with 30 or more pages: charts, tables, forms, calendars, settings and login. Light and dark themes included.",

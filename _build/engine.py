@@ -333,6 +333,15 @@ class Dash:
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?{fams}&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/app.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8QGLFQD12"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D8QGLFQD12');
+</script>
 </head>
 <body data-app="{s['slug']}" class="{body_cls}">
 """

@@ -98,6 +98,17 @@ ARROW = ('<span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" width="1
          'stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>')
 
 
+GA = """<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8QGLFQD12"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D8QGLFQD12');
+</script>"""
+
+
 def favicon(mark):
     return ("<link rel=\"icon\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23171518'/%3E"
             f"%3Ctext x='32' y='41' font-family='Arial' font-weight='800' font-size='{24 if len(mark) <= 2 else 18}' fill='%23eeeeea' text-anchor='middle'%3E{mark}%3C/text%3E%3C/svg%3E\">")

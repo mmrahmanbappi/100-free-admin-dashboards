@@ -158,7 +158,7 @@ def build_one(info):
 <meta property="og:image" content="{SITE}/templates/{slug}/og.jpg"><meta property="og:image:alt" content="{esc(title)}">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><link rel="image_src" href="{shot}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(desc)}"><meta name="twitter:image" content="{SITE}/templates/{slug}/og.jpg">
-{T.FONTS}{T.favicon("AD")}<style>{T.CSS}</style><script type="application/ld+json">{schema_str}</script></head>
+{T.FONTS}{T.favicon("AD")}{T.GA}<style>{T.CSS}</style><script type="application/ld+json">{schema_str}</script></head>
 <body>{T.header(SITE, "AD", "100 Free Admin Dashboards", [("Dashboards", f"{SITE}/#dashboards"), ("How to use", f"{SITE}/#how"), ("FAQ", f"{SITE}/#faq")], REPO)}
 <main id="main">
 {body}
