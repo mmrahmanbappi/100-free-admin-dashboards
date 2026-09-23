@@ -475,7 +475,10 @@ class Dash:
             c += f'<div class="g g12">{act_card}{tbl_card}</div>'
         elif variant == 2:
             big = k_html[0].replace('class="card kpi"', 'class="card kpi" style="justify-content:space-between"')
-            c += f'<div class="g g21"><div class="card"><h2>{esc(s["kpis"][0][0])}<small>{esc(ch["title"])}, last 12 months</small></h2><div class="kpi" style="margin-bottom:10px"><span class="v" style="font-size:34px">{k_html[0].split(chr(34) + "v" + chr(34) + ">")[1].split("<")[0]}</span></div>{line_chart([a, b], labels, names=ch["names"])}</div>'
+            money_words = r"cost|revenue|value|spend|premium|income|volume|pay|deposit|sales|budget|portfolio|forecast"
+            kind = ch.get("kind") or ("money" if re.search(money_words, ch["title"] + " " + " ".join(ch["names"]), re.I) else "int")
+            hero = d.fmt_money(a[-1]) if kind == "money" else f"{a[-1]:,.0f}"
+            c += f'<div class="g g21"><div class="card"><h2>{esc(ch["title"])}<small>Last 12 months</small></h2><div class="kpi" style="margin-bottom:10px"><span class="v" style="font-size:34px">{hero}</span><span class="l">{esc(ch["names"][0])}, this month</span></div>{line_chart([a, b], labels, names=ch["names"])}</div>'
             c += f'<div class="g" style="align-content:start">{"".join(k_html[1:])}</div></div>'
             c += tbl_card
             c += f'<div class="g g2">{mix_card}{act_card}</div>'
