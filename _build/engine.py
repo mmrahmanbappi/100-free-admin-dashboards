@@ -449,7 +449,10 @@ class Dash:
             if kind == "pct":
                 ser = [min(x, base * 1.06, 99.4) for x in ser]
                 val = ser[-1]
-            v = d.fmt_money(val) if kind == "money" else (f"{val:.1f}%" if kind == "pct" else (f"{val:.1f}x" if kind == "ratio" else f"{val:,.0f}"))
+            if kind == "rating":
+                ser = [min(x, 4.9) for x in ser]
+                val = ser[-1]
+            v = d.fmt_money(val) if kind == "money" else (f"{val:.1f}%" if kind == "pct" else (f"{val:.1f}x" if kind == "ratio" else (f"{val:.1f} / 5" if kind == "rating" else f"{val:,.0f}")))
             k_html.append(f'<div class="card kpi"><span class="l">{icon(ic)}{esc(label)}</span><span class="v">{v}</span>'
                           f'<span class="d {"up" if up else "down"}">{"+" if up else "-"}{delta:.1f}% vs last month</span>{spark(ser, up)}</div>')
         ch = s["chart"]

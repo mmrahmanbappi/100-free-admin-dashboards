@@ -42,7 +42,9 @@ COMING = ["CRM", "Sales pipeline", "Email marketing", "Social media management",
 DONE = {"CRM", "Sales pipeline", "Email marketing", "Social media management", "SEO rank tracker", "Ad campaigns", "Affiliate program",
         "Influencer marketing", "Customer support helpdesk", "Live chat",
         "HR and employees", "Recruitment", "Project management", "Kanban tasks", "Time tracking", "Inventory and warehouse",
-        "Logistics and fleet", "Supply chain", "Manufacturing", "Construction"}
+        "Logistics and fleet", "Supply chain", "Manufacturing", "Construction",
+        "Server monitoring", "Cloud cost", "API analytics", "Cyber security", "IT helpdesk", "CI/CD pipelines", "Database admin",
+        "AI chatbot analytics", "AI usage and cost", "Mobile app analytics"}
 
 
 def coming():
