@@ -4,7 +4,7 @@ Free, complete admin dashboard templates in HTML, CSS and JavaScript. Each dashb
 
 **[See all live demos](https://mmrahmanbappi.github.io/100-free-admin-dashboards/)**
 
-65 of 100 are ready. New dashboards are added in batches of ten.
+75 of 100 are ready. New dashboards are added in batches of ten.
 
 ## Why use these dashboards
 
@@ -90,10 +90,20 @@ Free, complete admin dashboard templates in HTML, CSS and JavaScript. Each dashb
 | [![Lodgewise](lodgewise/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/lodgewise/) | **63. Lodgewise**<br>Hotel<br><br>Rooms, bookings, guests and housekeeping for a boutique hotel.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/lodgewise/) / [Code](lodgewise/) |
 | [![Tabletop](tabletop/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/tabletop/) | **64. Tabletop**<br>Restaurant POS<br><br>Orders, tables, menu and staff for a busy restaurant.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/tabletop/) / [Code](tabletop/) |
 | [![Dashcart](dashcart/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/dashcart/) | **65. Dashcart**<br>Food Delivery<br><br>Orders, riders, restaurants and delivery times for a delivery service.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/dashcart/) / [Code](dashcart/) |
+| [![Wayfare](wayfare/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/wayfare/) | **66. Wayfare**<br>Travel Agency<br><br>Trips, bookings, travellers and suppliers for a travel agency.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/wayfare/) / [Code](wayfare/) |
+| [![Skyline](skyline/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/skyline/) | **67. Skyline**<br>Airline Operations<br><br>Flights, fleet, crew and delays for a regional airline.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/skyline/) / [Code](skyline/) |
+| [![Keyride](keyride/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/keyride/) | **68. Keyride**<br>Car Rental<br><br>Cars, bookings, branches and returns for a car rental company.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/keyride/) / [Code](keyride/) |
+| [![Glowbook](glowbook/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/glowbook/) | **69. Glowbook**<br>Salon Booking<br><br>Appointments, clients, stylists and products for a hair and beauty salon.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/glowbook/) / [Code](glowbook/) |
+| [![Deskhub](deskhub/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/deskhub/) | **70. Deskhub**<br>Coworking Space<br><br>Members, desks, rooms and billing for a coworking space.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/deskhub/) / [Code](deskhub/) |
+| [![Inkwell](inkwell/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/inkwell/) | **71. Inkwell**<br>Blog CMS<br><br>Posts, authors, comments and traffic for a blog or online magazine.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/inkwell/) / [Code](inkwell/) |
+| [![Airwave](airwave/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/airwave/) | **72. Airwave**<br>Podcast Analytics<br><br>Downloads, listeners, episodes and sponsors for a podcast.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/airwave/) / [Code](airwave/) |
+| [![Reelhouse](reelhouse/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/reelhouse/) | **73. Reelhouse**<br>Video Creator Studio<br><br>Videos, views, income and ideas for a video creator.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/reelhouse/) / [Code](reelhouse/) |
+| [![Encore](encore/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/encore/) | **74. Encore**<br>Music Artist<br><br>Streams, fans, tours and releases for an independent musician.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/encore/) / [Code](encore/) |
+| [![Aperture](aperture/thumb.webp)](https://mmrahmanbappi.github.io/100-free-admin-dashboards/aperture/) | **75. Aperture**<br>Photography Studio<br><br>Shoots, clients, galleries and invoices for a photography studio.<br><br>34 pages / [Live demo](https://mmrahmanbappi.github.io/100-free-admin-dashboards/aperture/) / [Code](aperture/) |
 
 ## Coming next
 
-Surveys and NPS, Events and ticketing, Facility management, Field service, Travel agency, Airline operations, Car rental, Salon booking, Coworking space, Blog CMS, Podcast analytics, Video creator studio, Music artist, Photography studio, Newsletter, Digital agency, Nonprofit donations, Church and community, City services, Election results, Air quality, Solar and energy, Smart home, Farm and agriculture, Sports team, Esports, Car dealership, Parking and EV charging, Weather station, Habit tracker, Real estate agency, Property management, Loan lending, Procurement.
+Surveys and NPS, Events and ticketing, Facility management, Field service, Newsletter, Digital agency, Nonprofit donations, Church and community, City services, Election results, Air quality, Solar and energy, Smart home, Farm and agriculture, Sports team, Esports, Car dealership, Parking and EV charging, Weather station, Habit tracker, Real estate agency, Property management, Loan lending, Procurement.
 
 ## License
 

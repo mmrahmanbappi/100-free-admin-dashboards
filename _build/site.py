@@ -48,7 +48,9 @@ DONE = {"CRM", "Sales pipeline", "Email marketing", "Social media management", "
         "Web hosting panel", "Domains and DNS", "School management", "Online courses", "University admissions", "Student portal",
         "Tutor marketplace", "Library", "Exams and quizzes", "Dental clinic",
         "Pharmacy", "Gym and fitness", "Personal health", "Veterinary clinic", "Therapy practice", "Diagnostic lab",
-        "Nutrition coach", "Hotel", "Restaurant POS", "Food delivery"}
+        "Nutrition coach", "Hotel", "Restaurant POS", "Food delivery",
+        "Travel agency", "Airline operations", "Car rental", "Salon booking", "Coworking space", "Blog CMS", "Podcast analytics",
+        "Video creator studio", "Music artist", "Photography studio"}
 
 
 def coming():

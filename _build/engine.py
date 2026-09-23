@@ -272,6 +272,8 @@ def theme_css(t):
         extra += "[data-theme=dark]{--sb-bg:var(--d-surface);--sb-active:var(--accent);--sb-active-text:var(--on-accent)}"
     if layout == "tint":
         extra += "[data-theme=dark]{--sb-bg:var(--d-surface)}"
+    if t.get("d_accent"):
+        extra += f"[data-theme=dark]{{--accent:{t['d_accent']};--on-accent:{t.get('d_on_accent', '#111')};--c1:{t['d_accent']}}}"
     return f":root{{{root};{sb};{cards}}}\n{extra}\n" + CSS.strip() + "\n"
 
 
