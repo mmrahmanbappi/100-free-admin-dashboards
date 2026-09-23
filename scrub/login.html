@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scrub: Sign in | Clinical Dashboard</title>
+<meta name="description" content="Use your clinical account for Meridian Health.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2316715C'/%3E%3Cpath d='M13.5 7h5v6.5H25v5h-6.5V25h-5v-6.5H7v-5h6.5z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/scrub.css">
+<script>try{var t=localStorage.getItem('scrub.theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<div class="auth">
+  <div class="auth-form">
+    <div class="auth-inner">
+      <div style="display:flex;align-items:center;gap:11px;margin-block-end:30px">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg></span><span class="brand-name">Meridian Health</span>
+      </div>
+      <h1 style="margin-block-end:8px">Sign in</h1>
+      <p style="font-size:13.5px;color:var(--ink-3);margin-block-end:26px">Use your clinical account for Meridian Health.</p>
+      <div class="field"><label class="field-label" for="em">Email</label>
+        <input class="input" id="em" type="email" value="e.reyes@meridian.health" autocomplete="username"></div>
+      <div class="field"><label class="field-label" for="pw">Password</label>
+        <input class="input" id="pw" type="password" value="password" autocomplete="current-password"></div>
+      <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-2);margin-block-end:22px">
+        <input class="cbx" type="checkbox" checked> Keep me signed in on this device</label>
+      <button class="btn btn--primary" style="width:100%;height:44px" onclick="location.href='index.html'">Sign in</button>
+      <button class="btn btn--ghost" style="width:100%;height:44px;margin-block-start:10px"
+        onclick="location.href='index.html'">Continue with single sign-on</button>
+      <p style="font-size:13px;margin-block-start:22px;text-align:center">
+        <a href="forgot-password.html" style="color:var(--accent);font-weight:600">Forgot your password</a></p>
+    </div>
+  </div>
+  <div class="auth-side">
+    <p style="font-size:13.5px;color:var(--ink-3);max-width:32ch;line-height:1.6">Meridian Health, Ward 4, today.</p>
+    <div class="auth-stat"><div class="kpi-lab">Patients in clinic</div><div class="kpi-val">38</div></div>
+    <div class="auth-stat"><div class="kpi-lab">Bed occupancy</div><div class="kpi-val">75%</div></div>
+    <div class="auth-stat"><div class="kpi-lab">Median wait</div><div class="kpi-val">12 min</div></div>
+  </div>
+</div>
+</body>
+</html>

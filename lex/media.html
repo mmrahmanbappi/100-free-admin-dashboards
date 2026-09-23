@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lex: Media Library | Hartwell &amp; Mercer LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/lex.css">
+<style>
+.upload-zone{border:2px dashed var(--surface-3);border-radius:var(--r-lg);padding:40px 20px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;background:var(--surface)}
+.upload-zone:hover,.upload-zone.drag{border-color:var(--brand);background:var(--brand-lt)}
+.upload-zone svg{width:40px;height:40px;stroke:var(--t3);stroke-width:1.5;fill:none;margin-bottom:12px}
+.upload-zone:hover svg,.upload-zone.drag svg{stroke:var(--brand)}
+.upload-title{font-size:14px;font-weight:600;color:var(--t1);margin-bottom:4px}
+.upload-sub{font-size:12.5px;color:var(--t3)}
+.upload-btn-text{color:var(--brand);font-weight:600;cursor:pointer}
+
+.media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.media-card{background:var(--surface);border:1px solid var(--surface-3);border-radius:var(--r-lg);overflow:hidden;cursor:pointer;transition:box-shadow .15s,border-color .15s;position:relative}
+.media-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.15);border-color:var(--brand)}
+.media-card.selected{border-color:var(--brand);box-shadow:0 0 0 2px var(--brand)}
+.media-thumb{width:100%;aspect-ratio:1;object-fit:cover;display:flex;align-items:center;justify-content:center;background:var(--surface-2)}
+.media-thumb svg{width:36px;height:36px;stroke:var(--t3);stroke-width:1.5;fill:none}
+.media-thumb img{width:100%;height:100%;object-fit:cover}
+.media-info{padding:10px 12px}
+.media-name{font-size:12px;font-weight:600;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px}
+.media-meta{font-size:11px;color:var(--t3)}
+.media-cb{position:absolute;top:8px;left:8px;width:18px;height:18px;border-radius:4px;border:2px solid rgba(255,255,255,0.6);background:rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .15s,background .15s}
+.media-card:hover .media-cb,.media-card.selected .media-cb{opacity:1}
+.media-card.selected .media-cb{background:var(--brand);border-color:var(--brand)}
+.media-cb svg{width:11px;height:11px;stroke:#fff;stroke-width:3;fill:none;display:none}
+.media-card.selected .media-cb svg{display:block}
+.media-type-badge{position:absolute;top:8px;right:8px;font-size:9px;font-weight:800;padding:2px 6px;border-radius:4px;letter-spacing:.4px}
+
+/* DETAIL PANEL */
+.detail-panel{position:fixed;top:0;right:-360px;bottom:0;width:340px;background:var(--surface);border-left:1px solid var(--surface-3);z-index:35;transition:right .25s cubic-bezier(.4,0,.2,1);box-shadow:var(--modal-shadow);overflow-y:auto;display:flex;flex-direction:column}
+.detail-panel.open{right:0}
+.detail-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--surface-3);flex-shrink:0}
+.detail-title{font-size:14px;font-weight:700}
+.detail-close{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;color:var(--t2)}
+.detail-close:hover{background:var(--surface-2)}
+.detail-close svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none}
+.detail-preview{width:100%;aspect-ratio:16/10;background:var(--surface-2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.detail-preview img{width:100%;height:100%;object-fit:contain;padding:12px}
+.detail-preview svg{width:48px;height:48px;stroke:var(--t3);stroke-width:1.5;fill:none}
+.detail-body{padding:20px;flex:1}
+.detail-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--t3);margin-bottom:6px}
+.detail-val{font-size:13px;color:var(--t1);margin-bottom:14px}
+.copy-url{display:flex;gap:6px;margin-bottom:14px}
+.copy-url input{flex:1;background:var(--surface-2);border:1px solid var(--surface-3);border-radius:6px;padding:7px 10px;font-size:11.5px;font-family:'JetBrains Mono',monospace;color:var(--t2);outline:none}
+.copy-url button{padding:7px 12px;border-radius:6px;background:var(--brand);color:#fff;border:none;cursor:pointer;font-size:12px;font-weight:600;white-space:nowrap}
+.detail-foot{padding:16px 20px;border-top:1px solid var(--surface-3);display:flex;gap:8px;flex-shrink:0}
+
+/* UPLOAD PROGRESS */
+.upload-progress{background:var(--surface-2);border-radius:4px;overflow:hidden;height:4px;margin-top:10px}
+.upload-progress-fill{height:100%;background:var(--brand);border-radius:4px;transition:width .3s}
+
+/* LIST VIEW */
+.media-list-row{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--surface-3);cursor:pointer;transition:background .12s}
+.media-list-row:hover{background:var(--surface-2)}
+.media-list-row.selected{background:var(--brand-lt)}
+.media-list-thumb{width:40px;height:40px;border-radius:6px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.media-list-thumb img{width:100%;height:100%;object-fit:cover}
+.media-list-thumb svg{width:18px;height:18px;stroke:var(--t3);stroke-width:2;fill:none}
+</style>
+</head>
+<body>
+<aside class="sidebar" id="sb">
+  <div class="sidebar-logo"><div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 7l9 5 9-5-9-5zM3 17l9 5 9-5M3 12l9 5 9-5"/></svg></div><div class="logo-text"><div class="logo-name">Le<em>x</em></div><div class="logo-firm">Hartwell &amp; Mercer LLP</div></div><button class="collapse-btn" onclick="LEX.toggleSidebar()" title="Toggle sidebar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg></button></div>
+  <nav class="sidebar-nav">
+    <div class="nav-group"><span class="nav-label">Overview</span>
+    <a href="index.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zm11 0h7v7h-7zM3 14h7v7H3zm11 0h7v7h-7z"/></svg><span class="nav-text">Dashboard</span></a>
+    </div>
+    <div class="nav-group"><span class="nav-label">Practice</span>
+    <a href="cases.html" class="nav-item active"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2zM16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><span class="nav-text">Cases</span><span class="nav-badge">5</span></a>
+    <a href="clients.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span class="nav-text">Clients</span></a>
+    <a href="calendar.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18a2 2 0 012 2v14a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2zM16 2v4M8 2v4M2 10h20"/></svg><span class="nav-text">Calendar</span></a>
+    <a href="tasks.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span class="nav-text">Tasks</span><span class="nav-badge">3</span></a>
+    <a href="time-tracking.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4 2"/></svg><span class="nav-text">Time Tracking</span></a>
+    </div>
+    <div class="nav-group"><span class="nav-label">Finance</span>
+    <a href="invoices.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg><span class="nav-text">Invoices</span></a>
+    <a href="payments.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18a2 2 0 012 2v8a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2zM2 10h20"/></svg><span class="nav-text">Payments</span></a>
+    <a href="expenses.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 3h6v4H9zM9 14h6M9 18h4"/></svg><span class="nav-text">Expenses</span></a>
+    </div>
+    <div class="nav-group"><span class="nav-label">Documents</span>
+    <a href="documents.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg><span class="nav-text">Documents</span></a>
+    <a href="document-templates.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M8 13h8M8 17h5"/></svg><span class="nav-text">Templates</span></a><a href="media.html" class="nav-item active"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16zM3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg><span class="nav-text">Media Library</span></a>
+    </div>
+    <div class="nav-group"><span class="nav-label">Team</span>
+    <a href="team.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span class="nav-text">Attorneys &amp; Staff</span></a>
+    <a href="departments.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2zM9 22V12h6v10"/></svg><span class="nav-text">Departments</span></a>
+    </div>
+    <div class="nav-group"><span class="nav-label">Content</span>
+    <a href="articles.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg><span class="nav-text">Articles</span></a>
+    <a href="categories.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82zM7 7h.01"/></svg><span class="nav-text">Categories</span></a>
+    </div>
+    <div class="nav-group"><span class="nav-label">Insights</span>
+    <a href="analytics.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg><span class="nav-text">Analytics</span></a>
+    <a href="firm-insights.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span class="nav-text">Firm Insights</span><span class="nav-pro">PRO</span></a>
+    </div>
+    <div class="nav-group"><span class="nav-label">Admin</span>
+    <a href="settings.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg><span class="nav-text">Settings</span></a>
+    </div>
+  </nav>
+  <div class="sidebar-footer"><div class="user-block"><div class="av av-eh" style="width:32px;height:32px;font-size:11px">EH</div><div class="user-info"><div class="user-name">Eleanor Hartwell</div><div class="user-role">Managing Partner</div></div><svg class="user-chev" viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--sidebar-text);stroke-width:2;fill:none;flex-shrink:0"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></div></div>
+</aside>
+<div class="main-wrapper" id="mw" style="transition:margin-right .25s">
+<header class="page-header">
+  <button class="icon-btn" id="mob-menu" onclick="LEX.toggleMobile()" style="display:none" aria-label="Menu"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <nav class="breadcrumb"><a href="index.html" style="color:var(--t3)">Dashboard</a><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--t3);stroke-width:2;fill:none"><polyline points="9 18 15 12 9 6"/></svg><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--t3);stroke-width:2;fill:none"><polyline points="9 18 15 12 9 6"/></svg><span class="bc-current">Media Library</span></nav>
+  <div class="search-bar"><svg class="search-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input class="search-input" readonly placeholder="Search cases, clients, documents..." onclick="LEX.openPalette()"><span class="kbd">⌘K</span></div>
+  <div class="header-actions">
+    <button class="icon-btn" onclick="LEX.toggleTheme()" aria-label="Toggle theme"><svg id="themeIcon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    <div style="position:relative"><button class="icon-btn" id="notif-btn" onclick="LEX.toggleNotif()"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><span class="notif-dot"></span></button>
+    <div class="notif-panel" id="notif-panel" style="display:none"><div class="notif-head"><span class="notif-title">Notifications</span><button class="notif-clear" onclick="LEX.clearNotif()">Mark all read</button></div><div class="notif-item unread"><div class="notif-ico" style="background:var(--err-lt)"><svg viewBox="0 0 24 24" style="stroke:var(--err)"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="notif-body"><div class="notif-txt">Hearing <strong>Callahan v. Donovan</strong> in 3 days</div><div class="notif-t">2 hours ago</div></div><div class="notif-udot"></div></div><div class="notif-foot"><a href="#">View all</a></div></div></div>
+    <div class="h-divider"></div>
+    <div class="profile-wrap">
+      <button class="profile-btn av av-eh" id="profile-btn" onclick="LEX.toggleProfile()" style="font-size:11px;font-weight:700;color:#fff" aria-label="Profile menu">EH</button>
+      <div class="profile-panel" id="profile-panel">
+        <div class="profile-panel-head">
+          <div class="av av-eh" style="width:38px;height:38px;font-size:13px;flex-shrink:0">EH</div>
+          <div>
+            <div class="profile-panel-name">Eleanor Hartwell</div>
+            <div class="profile-panel-role">Managing Partner</div>
+            <div class="profile-panel-email">ehartwell@hartwell-mercer.com</div>
+          </div>
+        </div>
+        <div class="profile-menu">
+          <a href="attorney-profile.html" class="profile-menu-item"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile</a>
+          <a href="settings.html" class="profile-menu-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>Settings</a>
+          <button class="profile-menu-item" onclick="LEX.toggleTheme()"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>Toggle Theme</button>
+          <div class="profile-menu-divider"></div>
+          <a href="login.html" class="profile-menu-item danger"><svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Log Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="page-body">
+
+<div class="page-top">
+  <div class="page-top-left">
+    <h1 class="page-title">Media Library</h1>
+    <p class="page-sub" id="mediaCount">48 files &middot; 124 MB used</p>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center">
+    <button class="btn btn-ghost btn-sm" id="viewToggle" onclick="toggleView()"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Grid</button>
+    <label class="btn btn-primary" style="cursor:pointer"><svg viewBox="0 0 24 24"><polyline points="21 15 21 19 3 19 3 15"/><polyline points="17 9 12 4 7 9"/><line x1="12" y1="4" x2="12" y2="15"/></svg>Upload Files<input type="file" multiple accept="image/*,.pdf,.docx,.xlsx" style="display:none" onchange="handleUpload(this.files)"></label>
+  </div>
+</div>
+
+<!-- BULK BAR -->
+<div class="bulk-bar" id="bulkBar" style="display:none;align-items:center;gap:12px;padding:10px 20px;background:var(--brand);border-radius:8px;margin-bottom:16px">
+  <span style="font-size:13px;font-weight:700;color:#fff" id="selCount">0 selected</span>
+  <button style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:6px;font-size:12.5px;font-weight:600;cursor:pointer;background:rgba(255,255,255,.15);color:#fff;border:none;font-family:inherit" onclick="bulkDelete()"><svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>Delete Selected</button>
+  <button style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:6px;font-size:12.5px;font-weight:600;cursor:pointer;background:rgba(255,255,255,.1);color:#fff;border:none;font-family:inherit" onclick="clearSel()"><svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Deselect All</button>
+</div>
+
+<div style="display:flex;gap:16px;align-items:flex-start">
+<!-- MAIN CONTENT -->
+<div style="flex:1;min-width:0">
+  <!-- Upload zone -->
+  <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()"
+    ondragover="event.preventDefault();this.classList.add('drag')"
+    ondragleave="this.classList.remove('drag')"
+    ondrop="event.preventDefault();this.classList.remove('drag');handleUpload(event.dataTransfer.files)">
+    <svg viewBox="0 0 24 24"><polyline points="21 15 21 19 3 19 3 15"/><polyline points="17 9 12 4 7 9"/><line x1="12" y1="4" x2="12" y2="15"/></svg>
+    <div class="upload-title">Drop files here or <span class="upload-btn-text">browse</span></div>
+    <div class="upload-sub">Supports JPG, PNG, GIF, SVG, PDF, DOCX, XLSX &middot; Max 10MB per file</div>
+    <input type="file" id="fileInput" multiple accept="image/*,.pdf,.docx,.xlsx" style="display:none" onchange="handleUpload(this.files)">
+    <div id="uploadList" style="margin-top:12px"></div>
+  </div>
+
+  <!-- Filters -->
+  <div style="display:flex;align-items:center;gap:10px;margin:16px 0;flex-wrap:wrap">
+    <div style="position:relative;flex:1;min-width:180px;max-width:280px">
+      <svg viewBox="0 0 24 24" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--t3);stroke-width:2;fill:none"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="form-input" placeholder="Search files..." style="padding-left:32px;font-size:13px" oninput="searchMedia(this.value)">
+    </div>
+    <div style="display:flex;gap:4px">
+      <button class="filter-tab active" style="padding:6px 14px;border-radius:var(--r-full);font-size:12.5px;font-weight:500;cursor:pointer;border:none;background:var(--brand);color:#fff;font-family:inherit" onclick="filterType(this,'all')">All</button>
+      <button class="filter-tab" style="padding:6px 14px;border-radius:var(--r-full);font-size:12.5px;font-weight:500;cursor:pointer;border:none;background:var(--surface-2);color:var(--t2);font-family:inherit;transition:background .15s" onclick="filterType(this,'image')">Images</button>
+      <button class="filter-tab" style="padding:6px 14px;border-radius:var(--r-full);font-size:12.5px;font-weight:500;cursor:pointer;border:none;background:var(--surface-2);color:var(--t2);font-family:inherit;transition:background .15s" onclick="filterType(this,'pdf')">PDFs</button>
+      <button class="filter-tab" style="padding:6px 14px;border-radius:var(--r-full);font-size:12.5px;font-weight:500;cursor:pointer;border:none;background:var(--surface-2);color:var(--t2);font-family:inherit;transition:background .15s" onclick="filterType(this,'doc')">Docs</button>
+    </div>
+    <div style="margin-left:auto;font-size:12.5px;color:var(--t3)" id="filterCount">Showing 48 files</div>
+  </div>
+
+  <!-- Grid -->
+  <div class="media-grid" id="mediaGrid"></div>
+</div>
+</div>
+
+</main>
+</div>
+
+<!-- DETAIL PANEL -->
+<div class="detail-panel" id="detailPanel">
+  <div class="detail-head">
+    <span class="detail-title" id="detailTitle">File Details</span>
+    <button class="detail-close" onclick="closeDetail()"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="detail-preview" id="detailPreview"></div>
+  <div class="detail-body">
+    <div class="detail-label">File Name</div>
+    <div class="detail-val" id="dName"></div>
+    <div class="detail-label">Alt Text</div>
+    <div style="margin-bottom:14px"><input class="form-input" id="dAlt" placeholder="Describe this image for accessibility..." style="font-size:13px"></div>
+    <div class="detail-label">File URL</div>
+    <div class="copy-url"><input id="dUrl" readonly value="/media/filename.jpg"><button onclick="copyUrl()">Copy URL</button></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div><div class="detail-label">Type</div><div class="detail-val" id="dType"></div></div>
+      <div><div class="detail-label">Size</div><div class="detail-val" id="dSize"></div></div>
+      <div><div class="detail-label">Dimensions</div><div class="detail-val" id="dDims"></div></div>
+      <div><div class="detail-label">Uploaded</div><div class="detail-val" id="dDate"></div></div>
+    </div>
+    <div class="detail-label">Used in</div>
+    <div id="dUsed" style="font-size:13px;color:var(--t2)"></div>
+  </div>
+  <div class="detail-foot">
+    <button class="btn btn-ghost" style="flex:1;justify-content:center" onclick="copyUrl()"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy URL</button>
+    <button class="btn btn-danger" style="flex:1;justify-content:center" onclick="deleteFile(activeFile)"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>Delete</button>
+  </div>
+</div>
+
+<div class="overlay" id="pal" style="display:none" onclick="if(event.target===this)LEX.closePalette()">
+  <div class="cmdpal"><div class="cmd-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input class="cmd-input" id="cmd-inp" placeholder="Search cases, clients, actions…"><span class="cmd-key">ESC</span></div>
+  <div class="cmd-results"><div class="cmd-grp">Quick Actions</div><div class="cmd-item sel"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="cmd-item-txt">New Case</span><span class="cmd-item-meta">⌘N</span></div><div class="cmd-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="cmd-item-txt">Log Time</span><span class="cmd-item-meta">⌘T</span></div><div class="cmd-item"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span class="cmd-item-txt">New Invoice</span><span class="cmd-item-meta">⌘I</span></div></div>
+  <div class="cmd-foot"><span><span class="cmd-key">↑↓</span> navigate</span><span><span class="cmd-key">↵</span> select</span><span><span class="cmd-key">ESC</span> close</span></div></div>
+</div>
+<div id="mob-bd" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:39" onclick="LEX.toggleMobile()"></div>
+
+<script src="assets/js/lex.js"></script>
+<script>
+const MEDIA_FILES = [
+  {id:1,name:"merger-agreement-hero.jpg",type:"image",size:"2.4 MB",dims:"1920x1080",date:"Mar 27",thumb:"",color:"#1B4ED8",usedIn:"Vantage v. Meridian article"},
+  {id:2,name:"hartwell-office-exterior.jpg",type:"image",size:"3.1 MB",dims:"2560x1440",date:"Mar 25",thumb:"",color:"#059669",usedIn:"About Us page"},
+  {id:3,name:"employment-law-guide.jpg",type:"image",size:"1.8 MB",dims:"1280x720",date:"Mar 22",thumb:"",color:"#7C3AED",usedIn:"Employment Law article"},
+  {id:4,name:"estate-planning-docs.jpg",type:"image",size:"890 KB",dims:"1024x768",date:"Mar 20",thumb:"",color:"#D97706",usedIn:"Estate Planning article"},
+  {id:5,name:"due-diligence-checklist.pdf",type:"pdf",size:"1.2 MB",dims:"-",date:"Mar 18",thumb:"",color:"#DC2626",usedIn:"M&A Due Diligence article"},
+  {id:6,name:"engagement-letter-template.docx",type:"doc",size:"340 KB",dims:"-",date:"Mar 15",thumb:"",color:"#1B4ED8",usedIn:"Document Templates"},
+  {id:7,name:"court-hearing-photo.jpg",type:"image",size:"2.2 MB",dims:"1920x1280",date:"Mar 14",thumb:"",color:"#0EA5E9",usedIn:"Callahan case"},
+  {id:8,name:"legal-books-background.jpg",type:"image",size:"4.1 MB",dims:"3840x2160",date:"Mar 12",thumb:"",color:"#A07830",usedIn:"Homepage hero"},
+  {id:9,name:"financial-statements-q1.xlsx",type:"doc",size:"520 KB",dims:"-",date:"Mar 10",thumb:"",color:"#059669",usedIn:"Finance dashboard"},
+  {id:10,name:"team-photo-2026.jpg",type:"image",size:"5.6 MB",dims:"3000x2000",date:"Mar 8",thumb:"",color:"#DB2777",usedIn:"Team page"},
+  {id:11,name:"contract-signing.jpg",type:"image",size:"1.5 MB",dims:"1600x900",date:"Mar 5",thumb:"",color:"#6D28D9",usedIn:"Homepage"},
+  {id:12,name:"invoice-template.pdf",type:"pdf",size:"280 KB",dims:"-",date:"Mar 1",thumb:"",color:"#DC2626",usedIn:"Billing"},
+];
+
+let selectedFiles = new Set();
+let activeFile = null;
+let currentView = 'grid';
+let currentFilter = 'all';
+
+function typeIcon(t){
+  if(t==='pdf') return '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg>';
+  if(t==='doc') return '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="10" y1="9" x2="14" y2="9"/></svg>';
+  return '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
+}
+
+function typeBadge(t){
+  const colors={image:"#059669",pdf:"#DC2626",doc:"#1B4ED8"};
+  const labels={image:"IMG",pdf:"PDF",doc:"DOC"};
+  return `<span class="media-type-badge" style="background:${colors[t]}33;color:${colors[t]}">${labels[t]}</span>`;
+}
+
+function renderGrid(files){
+  const grid = document.getElementById('mediaGrid');
+  document.getElementById('filterCount').textContent = `Showing ${files.length} files`;
+  grid.innerHTML = files.map(f=>`
+    <div class="media-card ${selectedFiles.has(f.id)?'selected':''}" id="mc-${f.id}" onclick="selectFile(${f.id},event)">
+      <div class="media-thumb" style="background:${f.color}18;position:relative">
+        <div style="color:${f.color}">${typeIcon(f.type)}</div>
+        ${typeBadge(f.type)}
+      </div>
+      <div class="media-cb" onclick="toggleSelect(${f.id},event)">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="media-info">
+        <div class="media-name" title="${f.name}">${f.name}</div>
+        <div class="media-meta">${f.size} &middot; ${f.date}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function getFiltered(){
+  return MEDIA_FILES.filter(f=>currentFilter==='all'||f.type===currentFilter);
+}
+
+function renderAll(){ renderGrid(getFiltered()); }
+
+function selectFile(id,e){
+  if(e&&e.target.closest('.media-cb'))return;
+  activeFile=id;
+  document.querySelectorAll('.media-card').forEach(c=>c.style.outline='');
+  const card=document.getElementById('mc-'+id);
+  if(card)card.style.outline='2px solid var(--brand)';
+  const f=MEDIA_FILES.find(x=>x.id===id);
+  if(f)openDetail(f);
+}
+
+function toggleSelect(id,e){
+  if(e)e.stopPropagation();
+  const card=document.getElementById('mc-'+id);
+  if(selectedFiles.has(id)){ selectedFiles.delete(id); if(card)card.classList.remove('selected'); }
+  else{ selectedFiles.add(id); if(card)card.classList.add('selected'); }
+  updateBulkBar();
+}
+
+function updateBulkBar(){
+  const bar=document.getElementById('bulkBar');
+  bar.style.display=selectedFiles.size?'flex':'none';
+  const el=document.getElementById('selCount');
+  if(el)el.textContent=selectedFiles.size+' selected';
+}
+
+function clearSel(){
+  selectedFiles.clear();
+  document.querySelectorAll('.media-card').forEach(c=>c.classList.remove('selected'));
+  updateBulkBar();
+}
+
+function openDetail(f){
+  document.getElementById('detailPanel').classList.add('open');
+  document.getElementById('mw').style.marginRight='340px';
+  document.getElementById('detailTitle').textContent=f.name;
+  document.getElementById('dName').textContent=f.name;
+  document.getElementById('dType').textContent=f.type.toUpperCase();
+  document.getElementById('dSize').textContent=f.size;
+  document.getElementById('dDims').textContent=f.dims;
+  document.getElementById('dDate').textContent=f.date;
+  document.getElementById('dUsed').innerHTML=f.usedIn?`<a href="#" style="color:var(--brand)">${f.usedIn}</a>`:'<span style="color:var(--t3)">Not used</span>';
+  document.getElementById('dUrl').value='/media/'+f.name;
+  const prev=document.getElementById('detailPreview');
+  prev.innerHTML=`<div style="color:${f.color};transform:scale(1.4)">${typeIcon(f.type)}</div>`;
+}
+
+function closeDetail(){
+  document.getElementById('detailPanel').classList.remove('open');
+  document.getElementById('mw').style.marginRight='';
+  activeFile=null;
+  document.querySelectorAll('.media-card').forEach(c=>c.style.outline='');
+}
+
+function copyUrl(){
+  const input=document.getElementById('dUrl');
+  if(input){ input.select(); document.execCommand('copy'); }
+  const btn=event.target;
+  const orig=btn.textContent;
+  btn.textContent='Copied!';
+  setTimeout(()=>btn.textContent=orig,1500);
+}
+
+function deleteFile(id){
+  if(id===null)return;
+  const idx=MEDIA_FILES.findIndex(f=>f.id===id);
+  if(idx>-1)MEDIA_FILES.splice(idx,1);
+  closeDetail();
+  renderAll();
+}
+
+function bulkDelete(){
+  for(let i=MEDIA_FILES.length-1;i>=0;i--){
+    if(selectedFiles.has(MEDIA_FILES[i].id))MEDIA_FILES.splice(i,1);
+  }
+  selectedFiles.clear();
+  updateBulkBar();
+  closeDetail();
+  renderAll();
+}
+
+function searchMedia(q){
+  renderGrid(getFiltered().filter(f=>f.name.toLowerCase().includes(q.toLowerCase())));
+}
+
+function filterType(el,type){
+  currentFilter=type;
+  document.querySelectorAll('.filter-tab').forEach(t=>{
+    t.style.background=t===el?'var(--brand)':'var(--surface-2)';
+    t.style.color=t===el?'#fff':'var(--t2)';
+  });
+  renderAll();
+}
+
+function toggleView(){
+  currentView=currentView==='grid'?'list':'grid';
+  const btn=document.getElementById('viewToggle');
+  btn.innerHTML=currentView==='grid'
+    ?'<svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Grid'
+    :'<svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> List';
+}
+
+function handleUpload(fileList){
+  const list=document.getElementById('uploadList');
+  Array.from(fileList).forEach(file=>{
+    const row=document.createElement('div');
+    row.style.cssText='display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--surface-2);border-radius:8px;margin-top:8px;font-size:13px;color:var(--t1)';
+    row.innerHTML=`<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--brand);stroke-width:2;fill:none;flex-shrink:0"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg><span style="flex:1">${file.name}</span><span style="font-size:11px;color:var(--t3)">${(file.size/1024/1024).toFixed(1)}MB</span><div style="width:60px;background:var(--surface-3);border-radius:4px;overflow:hidden;height:4px"><div style="width:0%;height:100%;background:var(--brand);border-radius:4px;transition:width 1.5s" onload="this.style.width='100%'"></div></div>`;
+    list.appendChild(row);
+    // Animate progress bar
+    setTimeout(()=>{row.querySelector('div[style*="width:0%"]').style.width='100%';},50);
+    // Add to list after "upload"
+    setTimeout(()=>{
+      const newFile={id:Date.now()+Math.random(),name:file.name,type:file.type.startsWith('image')?'image':file.type.includes('pdf')?'pdf':'doc',size:(file.size/1024/1024).toFixed(1)+' MB',dims:file.type.startsWith('image')?'Loading...':'-',date:'Just now',thumb:'',color:'#1B4ED8',usedIn:''};
+      MEDIA_FILES.unshift(newFile);
+      renderAll();
+    },1800);
+  });
+}
+
+renderAll();
+</script>
+
+<!-- Mobile bottom navigation -->
+<nav class="mobile-nav">
+  <a href="index.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dash
+  </a>
+  <a href="cases.html" class="mob-nav-item" data-badge>
+    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><div class="mob-nav-dot"></div>Cases
+  </a>
+  <a href="calendar.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Calendar
+  </a>
+  <a href="tasks.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Tasks
+  </a>
+  <a href="invoices.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>Finance
+  </a>
+</nav>
+<!-- Mobile sidebar backdrop -->
+<div id="mob-bd" onclick="LEX.toggleMobile()"></div>
+
+</body>
+</html>

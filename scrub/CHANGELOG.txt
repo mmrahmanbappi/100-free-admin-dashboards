@@ -1,0 +1,23 @@
+SCRUB - Healthcare & Clinical Dashboard Template
+Changelog
+
+Version 1.0.0
+-------------
+Initial release.
+
+- 32 clinical pages plus 4 authentication pages
+- Light and dark themes, both complete, switchable and persisted
+- Self-hosted webfonts and a local copy of Chart.js, works with no internet
+- Vitals strip with reference ranges and automatic normal, raised and low states
+- Observation charts with a target band and a dashed escalation threshold
+- Acuity bars, allergy flags and MRNs on every patient row
+- All demo data in a single object, assets/js/scrub-data.js
+- Declarative rendering: KPI rows, vitals, charts, tables, bar lists, bed board,
+  cohort grid, care timeline and activity feeds are built from data attributes
+- Working filter chips, table search, column sorting, bulk select, tabs,
+  modals, drawers, popovers, toasts and a command palette
+- Responsive from 1760px down to 390px, with a mobile bottom navigation
+- RTL ready through CSS logical properties
+- Accessible focus handling, focus traps, aria-sort, reduced motion support
+- Reserved status colour: green stable, amber monitor, red critical, and red
+  is never used for a button, an accent or decoration

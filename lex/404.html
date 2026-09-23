@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lex: 404 Not Found | Hartwell &amp; Mercer LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/lex.css">
+<style>
+.error-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--canvas);padding:20px;position:relative;overflow:hidden}
+.error-wrap::before{content:'';position:absolute;width:800px;height:800px;background:radial-gradient(circle,rgba(27,78,216,0.07) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+</style>
+<style>
+@media(max-width:640px){
+  [style*="font-size:120px"]{font-size:80px!important}
+  [style*="font-size:32px"]{font-size:24px!important}
+  [style*="max-width:480px"]{padding:0 16px!important}
+  .btn{width:100%;justify-content:center}
+  [style*="display:flex;gap:12px"]{flex-direction:column!important}
+}
+</style>
+</head>
+<body>
+<div class="error-wrap">
+  <div style="text-align:center;position:relative;z-index:1;max-width:480px">
+    <div style="font-family:'Playfair Display',serif;font-size:120px;line-height:1;color:var(--surface-3);font-weight:400;letter-spacing:-4px;margin-bottom:0;user-select:none">404</div>
+    <div style="font-family:'Playfair Display',serif;font-size:28px;color:var(--t1);margin-bottom:8px">Page not found</div>
+    <p style="font-size:14px;color:var(--t2);margin-bottom:28px;line-height:1.7">The page you were looking for doesn't exist or may have been moved. Check the URL or navigate back to the dashboard.</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="index.html" class="btn btn-primary">Go to Dashboard</a>
+      <button class="btn btn-ghost" onclick="history.back()">← Go Back</button>
+    </div>
+    <div style="margin-top:40px;font-size:12px;color:var(--t3)">Lex | Hartwell &amp; Mercer LLP &nbsp;·&nbsp; <a href="mailto:support@hartwell-mercer.com" style="color:var(--brand)">Report an issue</a></div>
+  </div>
+</div>
+<script src="assets/js/lex.js"></script>
+</body>
+</html>

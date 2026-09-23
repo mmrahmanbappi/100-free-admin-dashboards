@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scrub: Monitoring | Clinical Dashboard</title>
+<meta name="description" content="Continuous observations and open escalations.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2316715C'/%3E%3Cpath d='M13.5 7h5v6.5H25v5h-6.5V25h-5v-6.5H7v-5h6.5z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/scrub.css">
+<script>try{var t=localStorage.getItem('scrub.theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<aside class="nav">
+  <div class="brand">
+    <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg></span>
+    <span class="brand-txt"><span class="brand-name">Meridian</span><span class="brand-sub">ward 4</span></span>
+    <button class="min-btn" data-act="min" aria-label="Collapse navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+  </div>
+  <div class="nav-scroll">
+        <div class="nav-grp">Ward</div>
+        <a class="nav-item" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg><span>Ward overview</span></a>
+        <a class="nav-item" href="patients.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M22 20v-2a4 4 0 0 0-3-3.9"/></svg><span>Patients</span><span class="nav-tag">38</span></a>
+        <a class="nav-item" href="beds.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19V7M3 12h10a4 4 0 0 1 4 4v3M3 19h18v-3"/><circle cx="7.5" cy="9.5" r="1.8"/></svg><span>Beds</span><span class="nav-tag">12/16</span></a>
+        <a class="nav-item is-on" href="monitoring.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg><span>Monitoring</span><span class="nav-tag is-crit">3</span></a>
+        <a class="nav-item" href="admissions.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h12M11 8l4 4-4 4"/><path d="M15 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/></svg><span>Admissions</span></a>
+        <a class="nav-item" href="discharges.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12h12M17 8l4 4-4 4"/><path d="M13 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8"/></svg><span>Discharges</span><span class="nav-tag">5</span></a>
+        <div class="nav-grp">Clinic</div>
+        <a class="nav-item" href="appointments.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Appointments</span><span class="nav-tag">96</span></a>
+        <a class="nav-item" href="schedule.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Clinic schedule</span></a>
+        <a class="nav-item" href="telehealth.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="m15 11 6-4v10l-6-4z"/></svg><span>Telehealth</span><span class="nav-tag">1</span></a>
+        <a class="nav-item" href="referrals.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-2a4 4 0 0 1 4-4h3"/><circle cx="9.5" cy="7" r="3.5"/><path d="M15 12h6m-3-3 3 3-3 3"/></svg><span>Referrals</span></a>
+        <div class="nav-grp">Care</div>
+        <a class="nav-item" href="vitals.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.6-7 9-7 9z"/></svg><span>Vitals</span></a>
+        <a class="nav-item" href="medications.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="m9 9 6 6"/></svg><span>Medication round</span><span class="nav-tag">3</span></a>
+        <a class="nav-item" href="prescriptions.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20V9h4a3 3 0 0 1 0 6H7"/><path d="m12 15 6 6M18 15l-6 6"/><path d="M7 9V4h6"/></svg><span>Prescriptions</span></a>
+        <a class="nav-item" href="lab-results.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v7L4 19a2 2 0 0 0 1.7 3h12.6A2 2 0 0 0 20 19l-5-9V3"/><path d="M8 3h8M7.5 14h9"/></svg><span>Lab results</span><span class="nav-tag is-crit">3</span></a>
+        <a class="nav-item" href="imaging.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/><circle cx="12" cy="12" r="3.5"/></svg><span>Imaging</span></a>
+        <a class="nav-item" href="care-plans.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>Care plans</span></a>
+        <a class="nav-item" href="records.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v5h5"/><path d="M19 8v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7z"/></svg><span>Records</span><span class="nav-tag">2</span></a>
+        <div class="nav-grp">Wellness</div>
+        <a class="nav-item" href="activity.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4c2 0 3 1.6 3 4s-1 4-3 4-3-1.6-3-4 1-4 3-4zM17 9c2 0 3 1.6 3 4s-1 4-3 4-3-1.6-3-4 1-4 3-4z"/><path d="M5 12v5a2 2 0 0 0 4 0M15 17v3a2 2 0 0 0 4 0"/></svg><span>Patient activity</span></a>
+        <a class="nav-item" href="rehab.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12h12M4 9v6M20 9v6M8 8v8M16 8v8"/></svg><span>Rehab programmes</span></a>
+        <div class="nav-grp">Team</div>
+        <a class="nav-item" href="staff.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="2.6"/><path d="M8 17c1-1.8 2.4-2.6 4-2.6s3 .8 4 2.6"/></svg><span>Clinicians</span></a>
+        <a class="nav-item" href="rota.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 14h3M13 14h3M8 17h3"/></svg><span>Shift rota</span></a>
+        <a class="nav-item" href="tasks.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Tasks</span><span class="nav-tag">4</span></a>
+        <a class="nav-item" href="messages.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>Messages</span><span class="nav-tag is-crit">3</span></a>
+        <div class="nav-grp">Admin</div>
+        <a class="nav-item" href="reports.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V9M9 20V4M15 20v-7M21 20v-11"/></svg><span>Reports</span></a>
+        <a class="nav-item" href="department-report.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l6-4 6 4v13"/><path d="M15 12h6v9M7 12h2M7 16h2"/></svg><span>Departments</span></a>
+        <a class="nav-item" href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span>Billing</span></a>
+        <a class="nav-item" href="claims.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v5h5"/><path d="M19 8v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7z"/><path d="m9 14 2 2 4-4"/></svg><span>Claims</span></a>
+        <a class="nav-item" href="supplies.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg><span>Supplies</span><span class="nav-tag is-crit">1</span></a>
+        <a class="nav-item" href="equipment.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0 5 5L16 14l-6 6-4-4 6-6z"/><path d="m4 20 3-3"/></svg><span>Equipment</span></a>
+        <a class="nav-item" href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6 7.7 7.7M16.3 16.3l2.1 2.1M18.4 5.6 16.3 7.7M7.7 16.3l-2.1 2.1"/></svg><span>Settings</span></a>
+        <a class="nav-item" href="ui-components.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M3 9h18M9 21V9"/></svg><span>Components</span></a>
+  </div>
+  <div class="nav-foot">
+    <button class="unitsel" data-pop-start aria-expanded="false" aria-controls="pop-unit">
+      <span class="unit-dot"></span><span class="unit-name">Ward 4, Level 2</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+    <div class="pop" id="pop-unit">
+      <div class="pop-head">Unit</div>
+      <button class="pop-item is-on" data-act="toast" data-val="Already viewing Ward 4">Ward 4, Level 2</button>
+      <button class="pop-item" data-act="toast" data-val="Switched to Ward 2, Level 1">Ward 2, Level 1</button>
+      <button class="pop-item" data-act="toast" data-val="Switched to the day unit">Day unit, Level 3</button>
+      <button class="pop-item" data-act="toast" data-val="Switched to outpatients">Outpatients</button>
+      <div class="pop-sep"></div>
+      <a class="pop-item" href="settings.html">Unit settings</a>
+    </div>
+  </div>
+</aside>
+
+<div class="main">
+  <header class="top">
+    <button class="icon-btn" id="mob-menu" data-act="mobnav" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <h1>Monitoring</h1><span class="unit">Ward 4 &middot; 12 of 16 beds</span>
+    <div class="search" data-act="palette" role="button" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span><kbd>&#8984;K</kbd></div>
+    <button class="icon-btn" data-act="theme" aria-label="Switch colour theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg></button>
+    <div class="has-pop">
+      <button class="icon-btn" aria-expanded="false" aria-controls="pop-notif" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-2 8-2 8h16s-2-1-2-8"/><path d="M10.5 21a2 2 0 0 0 3 0"/></svg><span class="dot"></span></button>
+      <div class="pop pop--wide" id="pop-notif" data-notifications></div>
+    </div>
+    <div class="has-pop">
+      <button class="who" aria-expanded="false" aria-controls="pop-me" aria-label="Account menu">ER</button>
+      <div class="pop" id="pop-me">
+        <div class="pop-head">Dr. Elena Reyes<br><span class="mono" style="text-transform:none;letter-spacing:0">e.reyes@meridian.health</span></div>
+        <a class="pop-item" href="settings.html">Preferences</a>
+        <a class="pop-item" href="staff.html">Clinicians and roles</a>
+        <button class="pop-item" data-act="theme">Switch theme</button>
+        <div class="pop-sep"></div>
+        <a class="pop-item" href="login.html">Sign out</a>
+      </div>
+    </div>
+  </header>
+  <div class="bar">
+        <div class="has-pop">
+          <button class="btn btn--ghost" data-pop-start aria-expanded="false" aria-controls="pop-range">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-range-label>Today</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="pop" id="pop-range"><div class="pop-head">Date range</div><button class="pop-item" data-act="range" data-val="Today">Today</button><button class="pop-item" data-act="range" data-val="This shift">This shift</button><button class="pop-item" data-act="range" data-val="Yesterday">Yesterday</button><button class="pop-item" data-act="range" data-val="Last 7 days">Last 7 days</button><button class="pop-item" data-act="range" data-val="Last 30 days">Last 30 days</button><button class="pop-item" data-act="range" data-val="This month">This month</button><button class="pop-item" data-act="range" data-val="Last month">Last month</button><button class="pop-item" data-act="range" data-val="Custom range">Custom range</button></div>
+        </div>
+        <div class="has-pop">
+          <button class="btn btn--quiet" data-pop-start aria-expanded="false" aria-controls="pop-compare">
+            vs <span data-compare-label>Previous period</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="pop" id="pop-compare"><div class="pop-head">Compare to</div><button class="pop-item" data-act="compare" data-val="Off">Off</button><button class="pop-item" data-act="compare" data-val="Previous period">Previous period</button><button class="pop-item" data-act="compare" data-val="Same period last year">Same period last year</button></div>
+        </div>
+        <div class="has-pop">
+          <button class="btn btn--ghost" data-pop-start aria-expanded="false" aria-controls="pop-ward">
+            <span data-ward-label>All wards</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="pop" id="pop-ward"><div class="pop-head">Ward</div><button class="pop-item" data-act="ward" data-val="All wards">All wards</button><button class="pop-item" data-act="ward" data-val="Cardiology">Cardiology</button><button class="pop-item" data-act="ward" data-val="Respiratory">Respiratory</button><button class="pop-item" data-act="ward" data-val="General medicine">General medicine</button><button class="pop-item" data-act="ward" data-val="Orthopaedics">Orthopaedics</button><button class="pop-item" data-act="ward" data-val="Physiotherapy">Physiotherapy</button></div>
+        </div>
+        <div class="right">
+          <span class="stamp" data-stamp>Updated 2 min ago</span>
+          <button class="btn btn--quiet btn--icon" data-act="refresh" aria-label="Refresh data"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2 6"/><path d="M20 5v6h-6"/></svg></button>
+          <button class="btn btn--ghost" data-act="modal" data-val="m-export"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12m0 0 4-4m-4 4-4-4M4 20h16"/></svg>Export</button>
+        </div>
+      </div>
+  <main class="page" id="main">
+    <div class="note note--crit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 3 19h18z"/><path d="M12 10v4m0 3h.01"/></svg><span><b>Ruben Sosa</b>, bed 12, MRN 40817: oxygen saturation <b>91%</b> for <b>18</b> minutes, below the escalation threshold of 92. Respiratory registrar paged at 09:44, not yet acknowledged.</span></div><div class="vitals" data-vitals="6"></div><div class="grid g-2"><section class="card" data-refresh><div class="card-head"><span class="card-title">Oxygen saturation</span><span class="card-sub">Bed 12, Ruben Sosa</span></div><div class="card-body"><div class="chart chart--sm"><canvas data-chart="line|trace:spo2" data-label="SpO2" data-band="95,100" data-threshold="92" data-min="86" data-max="100" aria-label="Oxygen saturation trace for bed 12"></canvas></div></div></section><section class="card" data-refresh><div class="card-head"><span class="card-title">Heart rate</span><span class="card-sub">Bed 12, Ruben Sosa</span></div><div class="card-body"><div class="chart chart--sm"><canvas data-chart="line|trace:hr" data-label="Heart rate" data-band="60,100" data-min="50" data-max="120" aria-label="Heart rate trace for bed 12"></canvas></div></div></section></div><div class="grid "><section class="card" data-refresh><div class="card-head"><span class="card-title">Patients on continuous monitoring</span><span class="card-tools"><button class="chip" data-filter="all" aria-pressed="true">All</button><button class="chip" data-filter="Critical" aria-pressed="false">Critical</button><button class="chip" data-filter="Monitor" aria-pressed="false">Monitor</button><button class="chip" data-filter="Stable" aria-pressed="false">Stable</button></span></div><div class="tbl-wrap"><table class="tbl" data-table="patients" data-filter-key="status" data-cols='[{&quot;t&quot;: &quot;Patient&quot;, &quot;k&quot;: &quot;name&quot;, &quot;f&quot;: &quot;patient&quot;}, {&quot;t&quot;: &quot;Location&quot;, &quot;k&quot;: &quot;location&quot;, &quot;n&quot;: 1}, {&quot;t&quot;: &quot;Acuity&quot;, &quot;k&quot;: &quot;acuity&quot;, &quot;n&quot;: 1}, {&quot;t&quot;: &quot;Presenting&quot;, &quot;k&quot;: &quot;presenting&quot;}, {&quot;t&quot;: &quot;Consultant&quot;, &quot;k&quot;: &quot;consultant&quot;}, {&quot;t&quot;: &quot;Status&quot;, &quot;k&quot;: &quot;status&quot;, &quot;f&quot;: &quot;pill&quot;, &quot;tone&quot;: &quot;tone&quot;}]'></table></div><div class="card-foot"><span>Showing <b class="mono" data-count></b> patients</span><button class="btn btn--quiet btn--sm" data-act="modal" data-val="m-export">Export</button></div></section></div>
+  </main>
+</div>
+
+<nav class="mobnav" aria-label="Primary">
+  <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>Ward</a>
+  <a href="patients.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M22 20v-2a4 4 0 0 0-3-3.9"/></svg>Patients</a>
+  <a href="appointments.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Clinic</a>
+  <a href="tasks.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tasks</a>
+  <a href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>More</a>
+</nav>
+
+<div class="backdrop" id="backdrop"></div>
+<div id="tip" role="tooltip"></div>
+<div id="toasts" aria-live="polite"></div>
+
+<div class="palette" id="palette" role="dialog" aria-label="Search pages">
+  <div class="pal-panel">
+    <input class="pal-input" type="text" placeholder="Jump to a page" aria-label="Search pages">
+    <div class="pal-list"></div>
+  </div>
+</div>
+
+<div class="modal" id="m-export" role="dialog" aria-modal="true" aria-labelledby="m-export-t">
+  <div class="modal-panel">
+    <div class="modal-head"><h2 id="m-export-t">Export</h2>
+      <button class="icon-btn" style="margin-inline-start:auto" data-act="close-modal" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="modal-body">
+      <div class="field"><label class="field-label" for="ex-f">File format</label>
+        <select class="select" id="ex-f"><option>CSV</option><option>XLSX</option><option>PDF summary</option></select>
+        <span class="field-hint">Rows follow the date range and ward currently applied.</span></div>
+      <div class="field"><label class="field-label" for="ex-e">Email a copy to</label>
+        <input class="input" id="ex-e" type="email" value="e.reyes@meridian.health"></div>
+    </div>
+    <div class="modal-foot"><button class="btn btn--ghost" data-act="close-modal">Cancel</button>
+      <button class="btn btn--primary" data-act="export">Export</button></div>
+  </div>
+</div>
+
+
+<script src="assets/vendor/chart.umd.min.js"></script>
+<script src="assets/js/scrub-data.js"></script>
+<script src="assets/js/scrub.js"></script>
+</body>
+</html>

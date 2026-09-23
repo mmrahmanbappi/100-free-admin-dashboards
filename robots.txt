@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mmrahmanbappi.github.io/100-free-admin-dashboards/sitemap.xml

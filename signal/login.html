@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Signal: Sign in | Analytics Dashboard</title>
+<meta name="description" content="Sign in to the Signal analytics console.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/signal.css">
+<script>try{var t=localStorage.getItem('signal.theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<div class="auth">
+  <div class="auth-form">
+    <div class="auth-inner">
+      <div style="display:flex;align-items:center;gap:10px;margin-block-end:28px">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>
+        <span style="font-size:15px;font-weight:600">Signal</span>
+      </div>
+      <h1 style="margin-block-end:6px">Sign in</h1>
+      <p style="font-size:13px;color:var(--text-3);margin-block-end:24px">Use your work account for larkfield.io.</p>
+      <div class="field"><label class="field-label" for="em">Email</label>
+        <input class="input" id="em" type="email" value="amara@larkfield.io" autocomplete="username"></div>
+      <div class="field"><label class="field-label" for="pw">Password</label>
+        <input class="input" id="pw" type="password" value="password" autocomplete="current-password"></div>
+      <label style="display:flex;align-items:center;gap:9px;font-size:13px;color:var(--text-2);margin-block-end:20px">
+        <input class="cbx" type="checkbox" checked> Remember this device</label>
+      <button class="btn btn--primary" style="width:100%;height:38px" onclick="location.href='index.html'">Sign in</button>
+      <button class="btn btn--ghost" style="width:100%;height:38px;margin-block-start:10px"
+        onclick="location.href='index.html'">Continue with single sign-on</button>
+      <p style="font-size:12.5px;color:var(--text-3);margin-block-start:20px;text-align:center">
+        <a href="forgot-password.html" style="color:var(--accent)">Forgot your password</a>
+      </p>
+    </div>
+  </div>
+  <div class="auth-side">
+    <p style="font-size:13px;color:var(--text-3);max-width:34ch;line-height:1.6">
+      Larkfield Group, last 30 days.</p>
+    <div class="auth-stat"><div class="stat-label">Sessions</div><div class="stat-value">412,780</div></div>
+    <div class="auth-stat"><div class="stat-label">Conversions</div><div class="stat-value">8,940</div></div>
+    <div class="auth-stat"><div class="stat-label">Active right now</div><div class="stat-value">1,247</div></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lex: Invoices | Hartwell &amp; Mercer LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/lex.css">
+
+</head>
+<body>
+<aside class="sidebar" id="sb"><div class="sidebar-logo"><div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 7l9 5 9-5-9-5zM3 17l9 5 9-5M3 12l9 5 9-5"/></svg></div><div class="logo-text"><div class="logo-name">Le<em>x</em></div><div class="logo-firm">Hartwell &amp; Mercer LLP</div></div></div><button class="collapse-btn" onclick="LEX.toggleSidebar()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg></button><nav class="sidebar-nav"><div class="nav-group"><span class="nav-label">Overview</span><a href="index.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zm11 0h7v7h-7zM3 14h7v7H3zm11 0h7v7h-7z"/></svg><span class="nav-text">Dashboard</span></a></div><div class="nav-group"><span class="nav-label">Practice</span><a href="cases.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2zM16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><span class="nav-text">Cases</span><span class="nav-badge">5</span></a><a href="clients.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span class="nav-text">Clients</span></a><a href="calendar.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18a2 2 0 012 2v14a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2zM16 2v4M8 2v4M2 10h20"/></svg><span class="nav-text">Calendar</span></a><a href="tasks.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span class="nav-text">Tasks</span><span class="nav-badge">3</span></a><a href="time-tracking.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4 2"/></svg><span class="nav-text">Time Tracking</span></a></div><div class="nav-group"><span class="nav-label">Finance</span><a href="invoices.html" class="nav-item active"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg><span class="nav-text">Invoices</span></a><a href="payments.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18a2 2 0 012 2v8a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2zM2 10h20"/></svg><span class="nav-text">Payments</span></a><a href="expenses.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 3h6v4H9zM9 14h6M9 18h4"/></svg><span class="nav-text">Expenses</span></a></div><div class="nav-group"><span class="nav-label">Documents</span><a href="documents.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg><span class="nav-text">Documents</span></a><a href="document-templates.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M8 13h8M8 17h5"/></svg><span class="nav-text">Templates</span></a><a href="media.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16zM3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg><span class="nav-text">Media Library</span></a></div><div class="nav-group"><span class="nav-label">Team</span><a href="team.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span class="nav-text">Attorneys &amp; Staff</span></a><a href="departments.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2zM9 22V12h6v10"/></svg><span class="nav-text">Departments</span></a></div><div class="nav-group"><span class="nav-label">Content</span><a href="articles.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg><span class="nav-text">Articles</span></a><a href="categories.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82zM7 7h.01"/></svg><span class="nav-text">Categories</span></a></div><div class="nav-group"><span class="nav-label">Insights</span><a href="analytics.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg><span class="nav-text">Analytics</span></a><a href="firm-insights.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span class="nav-text">Firm Insights</span><span class="nav-pro">PRO</span></a></div><div class="nav-group"><span class="nav-label">Admin</span><a href="settings.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg><span class="nav-text">Settings</span></a></div></nav><div class="sidebar-footer"><div class="user-block"><div class="av av-eh" style="width:32px;height:32px;font-size:11px">EH</div><div class="user-info"><div class="user-name">Eleanor Hartwell</div><div class="user-role">Managing Partner</div></div></div></div></aside>
+<div class="main-wrapper" id="mw">
+<header class="page-header"><button class="icon-btn" id="mob-menu" onclick="LEX.toggleMobile()" style="display:none"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><nav class="breadcrumb"><a href="index.html" style="color:var(--t3)">Dashboard</a><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--t3);stroke-width:2;fill:none"><polyline points="9 18 15 12 9 6"/></svg><span class="bc-current">Invoices</span></nav><div class="search-bar"><svg class="search-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input class="search-input" readonly placeholder="Search..." onclick="LEX.openPalette()"><span class="kbd">⌘K</span></div><div class="header-actions"><button class="icon-btn" onclick="LEX.toggleTheme()"><svg id="themeIcon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><div style="position:relative"><button class="icon-btn" id="notif-btn" onclick="LEX.toggleNotif()"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><span class="notif-dot"></span></button><div class="notif-panel" id="notif-panel" style="display:none"><div class="notif-head"><span class="notif-title">Notifications</span><button class="notif-clear" onclick="LEX.clearNotif()">Mark all read</button></div><div class="notif-foot"><a href="#">View all</a></div></div></div><div class="h-divider"></div><div class="profile-wrap"><button class="profile-btn av av-eh" id="profile-btn" onclick="LEX.toggleProfile()" style="font-size:11px;font-weight:700;color:#fff" aria-label="Profile menu">EH</button><div class="profile-panel" id="profile-panel"><div class="profile-panel-head"><div class="av av-eh" style="width:38px;height:38px;font-size:13px;flex-shrink:0">EH</div><div><div class="profile-panel-name">Eleanor Hartwell</div><div class="profile-panel-role">Managing Partner</div><div class="profile-panel-email">ehartwell@hartwell-mercer.com</div></div></div><div class="profile-menu"><a href="attorney-profile.html" class="profile-menu-item"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile</a><a href="settings.html" class="profile-menu-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>Settings</a><button class="profile-menu-item" onclick="LEX.toggleTheme()"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>Toggle Theme</button><div class="profile-menu-divider"></div><a href="login.html" class="profile-menu-item danger"><svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Log Out</a></div></div></div></div></header>
+<main class="page-body">
+<div class="page-top">
+  <div class="page-top-left"><h1 class="page-title">Invoices</h1><p class="page-sub">Q1 2026 · $487,200 billed · $95,800 outstanding · 3 overdue</p></div>
+  <button class="btn btn-primary" onclick="document.getElementById('newInvModal').style.display='flex'"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>New Invoice</button>
+</div>
+<div class="stat-grid-4" style="">
+  <div class="stat-card"><div style="font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Total Billed Q1</div><div class="stat-val" style="font-size:26px">$487<span style="font-size:16px;color:var(--t3)">.2K</span></div></div>
+  <div class="stat-card"><div style="font-size:11px;color:var(--ok);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Collected</div><div class="stat-val" style="font-size:26px;color:var(--ok)">$391<span style="font-size:16px;color:var(--ok)">.4K</span></div></div>
+  <div class="stat-card"><div style="font-size:11px;color:var(--warn);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Outstanding</div><div class="stat-val" style="font-size:26px;color:var(--warn)">$95<span style="font-size:16px;color:var(--warn)">.8K</span></div></div>
+  <div class="stat-card"><div style="font-size:11px;color:var(--err);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Overdue 30+ days</div><div class="stat-val" style="font-size:26px;color:var(--err)">$38<span style="font-size:16px;color:var(--err)">.2K</span></div></div>
+</div>
+
+<div id="bulkBar" style="display:none;align-items:center;gap:12px;padding:10px 20px;background:var(--brand);border-radius:10px;margin-bottom:16px">
+  <span style="font-size:13px;font-weight:700;color:#fff" id="bulkCount">0 selected</span>
+  <button onclick="bulkAction('delete')" style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:6px;font-size:12.5px;font-weight:600;background:rgba(220,38,38,.4);color:#fff;border:none;cursor:pointer;font-family:inherit"><svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>Delete Selected</button>
+  <button onclick="clearBulk()" style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:6px;font-size:12.5px;font-weight:600;background:rgba(255,255,255,.15);color:#fff;border:none;cursor:pointer;font-family:inherit"><svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Deselect</button>
+</div>
+<div class="card">
+  <div class="toolbar"><div class="toolbar-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input placeholder="Search invoices..." /></div><button class="filter-btn">All Clients</button><button class="filter-btn">Q1 2026</button><div class="toolbar-right"><button class="btn btn-ghost btn-sm">Export PDF</button></div></div>
+  <div style="display:flex;gap:0;border-bottom:1px solid var(--surface-3);padding:0 20px">
+    <button class="tab active">All <span class="tab-badge">18</span></button>
+    <button class="tab">Draft <span class="tab-badge">2</span></button>
+    <button class="tab">Sent <span class="tab-badge">4</span></button>
+    <button class="tab">Paid <span class="tab-badge">9</span></button>
+    <button class="tab" style="color:var(--err)">Overdue <span class="tab-badge" style="background:var(--err-lt);color:var(--err)">3</span></button>
+  </div>
+  <div class="tbl-wrap"><table class="tbl"><thead><tr>
+    <th class="tbl-check"><input type="checkbox" id="sa" onchange="toggleAll(this)" style="width:14px;height:14px;cursor:pointer;accent-color:var(--brand)"></th><th>Invoice #</th><th>Client</th><th>Case</th><th>Attorney</th><th>Issue Date</th><th>Due Date</th><th>Amount</th><th>Status</th><th class="tbl-action"></th>
+  </tr></thead><tbody>
+    <tr onclick="location.href='invoice-detail.html'" style="cursor:pointer" data-id="inv-087"><td class="tbl-check" onclick="event.stopPropagation()"><input type="checkbox" class="row-cb" data-id="inv-087" onchange="toggleCheck(this,'inv-087')" style="width:14px;height:14px;cursor:pointer;accent-color:var(--brand)"></td><td><span class="cid">INV-2026-0087</span></td><td>Vantage Capital Group</td><td><span class="cid">CSE-2026-0041</span></td><td><div style="display:flex;align-items:center;gap:7px"><div class="av av-jm" style="width:20px;height:20px;font-size:9px">JM</div><span>J. Mercer</span></div></td><td><span class="mono" style="font-size:12px">Feb 28</span></td><td><span class="mono" style="font-size:12px;color:var(--err)">Mar 14 ⚠</span></td><td><span class="mono" style="font-weight:700;color:var(--err)">$38,200</span></td><td><span class="badge b-overdue">Overdue</span></td><td class="tbl-action"><a href="invoice-detail.html" onclick="event.stopPropagation()" class="btn-icon btn"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></a></td></tr>
+    <tr onclick="location.href='invoice-detail.html'" style="cursor:pointer" data-id="inv-088"><td class="tbl-check" onclick="event.stopPropagation()"><input type="checkbox" class="row-cb" data-id="inv-088" onchange="toggleCheck(this,'inv-088')" style="width:14px;height:14px;cursor:pointer;accent-color:var(--brand)"></td><td><span class="cid">INV-2026-0088</span></td><td>Thomas J. Callahan</td><td><span class="cid">CSE-2026-0022</span></td><td><div style="display:flex;align-items:center;gap:7px"><div class="av av-eh" style="width:20px;height:20px;font-size:9px">EH</div><span>E. Hartwell</span></div></td><td><span class="mono" style="font-size:12px">Mar 1</span></td><td><span class="mono" style="font-size:12px;color:var(--err)">Mar 15 ⚠</span></td><td><span class="mono" style="font-weight:700;color:var(--warn)">$24,700</span></td><td><span class="badge b-partial">Partial</span></td><td class="tbl-action"><a href="invoice-detail.html" onclick="event.stopPropagation()" class="btn-icon btn"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></a></td></tr>
+    <tr onclick="location.href='invoice-detail.html'" style="cursor:pointer" data-id="inv-089"><td class="tbl-check" onclick="event.stopPropagation()"><input type="checkbox" class="row-cb" data-id="inv-089" onchange="toggleCheck(this,'inv-089')" style="width:14px;height:14px;cursor:pointer;accent-color:var(--brand)"></td><td><span class="cid">INV-2026-0089</span></td><td>Northgate Properties LLC</td><td><span class="cid">CSE-2026-0035</span></td><td><div style="display:flex;align-items:center;gap:7px"><div class="av av-do" style="width:20px;height:20px;font-size:9px">DO</div><span>D. Okafor</span></div></td><td><span class="mono" style="font-size:12px">Mar 10</span></td><td><span class="mono" style="font-size:12px">Apr 9</span></td><td><span class="mono" style="font-weight:700">$18,600</span></td><td><span class="badge b-sent">Sent</span></td><td class="tbl-action"><a href="invoice-detail.html" onclick="event.stopPropagation()" class="btn-icon btn"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></a></td></tr>
+    <tr onclick="location.href='invoice-detail.html'" style="cursor:pointer" data-id="inv-086"><td class="tbl-check" onclick="event.stopPropagation()"><input type="checkbox" class="row-cb" data-id="inv-086" onchange="toggleCheck(this,'inv-086')" style="width:14px;height:14px;cursor:pointer;accent-color:var(--brand)"></td><td><span class="cid">INV-2026-0086</span></td><td>Northgate Properties LLC</td><td><span class="cid">CSE-2026-0035</span></td><td><div style="display:flex;align-items:center;gap:7px"><div class="av av-do" style="width:20px;height:20px;font-size:9px">DO</div><span>D. Okafor</span></div></td><td><span class="mono" style="font-size:12px">Mar 1</span></td><td><span class="mono" style="font-size:12px">Mar 31</span></td><td><span class="mono" style="font-weight:700">$22,000</span></td><td><span class="badge b-paid">Paid</span></td><td class="tbl-action"><a href="invoice-detail.html" onclick="event.stopPropagation()" class="btn-icon btn"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></a></td></tr>
+    <tr onclick="location.href='invoice-detail.html'" style="cursor:pointer" data-id="inv-085"><td class="tbl-check" onclick="event.stopPropagation()"><input type="checkbox" class="row-cb" data-id="inv-085" onchange="toggleCheck(this,'inv-085')" style="width:14px;height:14px;cursor:pointer;accent-color:var(--brand)"></td><td><span class="cid">INV-2026-0085</span></td><td>Meridian Health Systems</td><td><span class="cid">CSE-2026-0029</span></td><td><div style="display:flex;align-items:center;gap:7px"><div class="av av-sn" style="width:20px;height:20px;font-size:9px">SN</div><span>S. Nakamura</span></div></td><td><span class="mono" style="font-size:12px">Feb 14</span></td><td><span class="mono" style="font-size:12px">Mar 16</span></td><td><span class="mono" style="font-weight:700">$12,400</span></td><td><span class="badge b-paid">Paid</span></td><td class="tbl-action"><a href="invoice-detail.html" onclick="event.stopPropagation()" class="btn-icon btn"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></a></td></tr>
+  </tbody></table></div>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-top:1px solid var(--surface-3)"><span style="font-size:12.5px;color:var(--t3)">Showing 5 of 18 invoices</span><div class="pagination"><button class="page-item active">1</button><button class="page-item">2</button><button class="page-item">3</button></div></div>
+</div>
+</main>
+</div>
+<div class="overlay" id="pal" style="display:none" onclick="if(event.target===this)LEX.closePalette()"><div class="cmdpal"><div class="cmd-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input class="cmd-input" id="cmd-inp" placeholder="Search…"><span class="cmd-key">ESC</span></div><div class="cmd-results"><div class="cmd-grp">Actions</div><div class="cmd-item sel"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="cmd-item-txt">New Case</span></div></div><div class="cmd-foot"><span><span class="cmd-key">ESC</span> close</span></div></div></div><div id="mob-bd" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:39" onclick="LEX.toggleMobile()"></div>
+<script src="assets/js/lex.js"></script>
+
+
+<script>
+// Tab switching
+(function(){
+  document.querySelectorAll('.tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var tabs = this.parentElement.querySelectorAll('.tab');
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+})();
+</script>
+
+<div id="newInvModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:70;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(2px)" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:var(--surface);border:1px solid var(--surface-3);border-radius:16px;width:100%;max-width:520px;box-shadow:var(--modal-shadow)">
+    <div style="display:flex;align-items:center;gap:12px;padding:20px 22px;border-bottom:1px solid var(--surface-3)">
+      <div style="width:36px;height:36px;border-radius:10px;background:var(--brand-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--brand);stroke-width:1.8;fill:none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6"/></svg></div>
+      <span style="font-size:15px;font-weight:700;color:var(--t1)">New Invoice</span>
+      <button onclick="document.getElementById('newInvModal').style.display='none'" style="margin-left:auto;width:28px;height:28px;border-radius:6px;border:none;background:none;cursor:pointer;color:var(--t2);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;stroke-width:2;fill:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div style="padding:22px"><div class="form-row"><div class="form-group"><label class="form-label">Client *</label><select class="form-select"><option>Vantage Capital Group</option><option>Thomas J. Callahan</option><option>Northgate Properties LLC</option><option>Meridian Health Systems</option><option>Raymond &amp; Claire Osei</option></select></div><div class="form-group"><label class="form-label">Case</label><select class="form-select"><option>CSE-2026-0041 - Vantage v. Meridian</option><option>CSE-2026-0022 - Callahan v. Donovan</option><option>CSE-2026-0035 - Northgate Phase II</option></select></div></div>
+  <div class="form-row"><div class="form-group"><label class="form-label">Issue Date *</label><input class="form-input" type="date" value="2026-03-27"></div><div class="form-group"><label class="form-label">Due Date *</label><input class="form-input" type="date" value="2026-04-26"></div></div>
+  <div class="form-group"><label class="form-label">Payment Terms</label><select class="form-select"><option>Net 30</option><option>Net 15</option><option>Due on receipt</option></select></div>
+  <div class="form-group"><label class="form-label">Notes</label><textarea class="form-textarea" rows="2" placeholder="Invoice notes or payment instructions..."></textarea></div></div>
+    <div style="padding:16px 22px;border-top:1px solid var(--surface-3);display:flex;justify-content:flex-end;gap:10px"><button class="btn btn-ghost" onclick="document.getElementById('newInvModal').style.display='none'">Cancel</button><button class="btn btn-primary">Create Invoice</button></div>
+  </div>
+</div>
+<script>
+var sel=new Set();
+function toggleCheck(cb,id){
+  if(cb.checked){sel.add(id);}else{sel.delete(id);}
+  document.querySelectorAll('tr[data-id]').forEach(function(r){
+    r.style.background=sel.has(r.dataset.id)?'var(--brand-lt)':'';
+  });
+  var bar=document.getElementById('bulkBar');
+  var cnt=document.getElementById('bulkCount');
+  if(bar){bar.style.display=sel.size?'flex':'none';}
+  if(cnt){cnt.textContent=sel.size+' selected';}
+  var sa=document.getElementById('sa');
+  if(sa){sa.indeterminate=sel.size>0&&sel.size<document.querySelectorAll('.row-cb').length;}
+}
+function toggleAll(cb){
+  document.querySelectorAll('.row-cb').forEach(function(c){
+    c.checked=cb.checked;
+    var id=c.dataset.id;
+    if(cb.checked){sel.add(id);}else{sel.delete(id);}
+    var row=c.closest('tr');
+    if(row){row.style.background=cb.checked?'var(--brand-lt)':'';}
+  });
+  var bar=document.getElementById('bulkBar');
+  var cnt=document.getElementById('bulkCount');
+  if(bar){bar.style.display=sel.size?'flex':'none';}
+  if(cnt){cnt.textContent=sel.size+' selected';}
+}
+function clearBulk(){
+  sel.clear();
+  document.querySelectorAll('.row-cb').forEach(function(c){c.checked=false;});
+  document.querySelectorAll('tr[data-id]').forEach(function(r){r.style.background='';});
+  var bar=document.getElementById('bulkBar');
+  if(bar){bar.style.display='none';}
+  var sa=document.getElementById('sa');if(sa){sa.checked=false;}
+}
+function bulkAction(action){
+  if(action==='delete' && sel.size>0){
+    if(confirm('Delete '+sel.size+' selected items? This cannot be undone.')){
+      sel.forEach(function(id){
+        var row=document.querySelector('tr[data-id="'+id+'"]');
+        if(row){row.remove();}
+      });
+      clearBulk();
+    }
+  }
+}
+</script>
+
+<!-- Mobile bottom navigation -->
+<nav class="mobile-nav">
+  <a href="index.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dash
+  </a>
+  <a href="cases.html" class="mob-nav-item" data-badge>
+    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><div class="mob-nav-dot"></div>Cases
+  </a>
+  <a href="calendar.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Calendar
+  </a>
+  <a href="tasks.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Tasks
+  </a>
+  <a href="invoices.html" class="mob-nav-item active">
+    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>Finance
+  </a>
+</nav>
+<!-- Mobile sidebar backdrop -->
+<div id="mob-bd" onclick="LEX.toggleMobile()"></div>
+
+</body>
+</html>

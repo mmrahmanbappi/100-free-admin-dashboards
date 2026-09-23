@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Signal: Funnels | Analytics Dashboard</title>
+<meta name="description" content="Step conversion and drop-off on the paths that matter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/signal.css">
+<script>try{var t=localStorage.getItem('signal.theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<aside class="sidebar">
+  <div class="brand">
+    <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>
+    <span class="brand-txt"><span class="brand-name">Signal</span><span class="brand-sub">analytics</span></span>
+    <button class="collapse" data-act="collapse" aria-label="Collapse sidebar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+  </div>
+  <nav class="nav" aria-label="Reports">
+        <div class="nav-section">OVERVIEW</div>
+        <a class="nav-item" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span>Dashboard</span></a>
+        <a class="nav-item" href="realtime.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><span>Real time</span><span class="nav-dot" aria-hidden="true"></span></a>
+        <div class="nav-section">AUDIENCE</div>
+        <a class="nav-item" href="audience.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M22 20v-2a4 4 0 0 0-3-3.9"/></svg><span>Audience</span></a>
+        <a class="nav-item" href="geography.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18"/></svg><span>Geography</span></a>
+        <a class="nav-item" href="devices.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 18h2"/></svg><span>Devices and tech</span></a>
+        <a class="nav-item" href="visitor-detail.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>Visitor profile</span></a>
+        <div class="nav-section">ACQUISITION</div>
+        <a class="nav-item" href="acquisition.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V9M9 20V4M15 20v-7M21 20v-11"/></svg><span>Channels</span></a>
+        <a class="nav-item" href="organic-search.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Organic search</span></a>
+        <a class="nav-item" href="ai-referrals.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 14h.01M15 14h.01M2 13v3M22 13v3"/></svg><span>AI assistants</span><span class="nav-badge is-new">New</span></a>
+        <a class="nav-item" href="referrals.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 6 .5l2-2a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-6-.5l-2 2A4 4 0 0 0 11.7 17l1-1"/></svg><span>Referrers</span></a>
+        <a class="nav-item" href="campaigns.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v4h4l6 4V6l-6 4z"/><path d="M18 9a4 4 0 0 1 0 6"/></svg><span>Campaigns</span></a>
+        <div class="nav-section">CONTENT</div>
+        <a class="nav-item" href="pages.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v5h5"/><path d="M19 8v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7z"/></svg><span>Pages</span></a>
+        <a class="nav-item" href="landing-pages.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><span>Landing and exit</span></a>
+        <a class="nav-item" href="site-search.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Site search</span><span class="nav-badge is-warn">5</span></a>
+        <div class="nav-section">BEHAVIOUR</div>
+        <a class="nav-item" href="events.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.9 5.6L20 10l-5.4 2.1L12 18l-2.6-5.9L4 10l6.1-1.4z"/></svg><span>Events</span></a>
+        <a class="nav-item" href="flows.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="6" height="5" rx="1"/><rect x="15" y="4" width="6" height="5" rx="1"/><rect x="9" y="15" width="6" height="5" rx="1"/><path d="M6 9v3h12V9M12 12v3"/></svg><span>User flows</span></a>
+        <a class="nav-item is-active" href="funnels.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8v7l-4 2v-9z"/></svg><span>Funnels</span></a>
+        <a class="nav-item" href="cohorts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg><span>Cohorts</span></a>
+        <a class="nav-item" href="segments.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg><span>Segments</span></a>
+        <div class="nav-section">CONVERSION</div>
+        <a class="nav-item" href="conversions.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Conversions</span><span class="nav-badge">24</span></a>
+        <a class="nav-item" href="attribution.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M6 8 3 11l3 3M18 8l3 3-3 3"/></svg><span>Attribution</span></a>
+        <a class="nav-item" href="revenue.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span>Revenue</span></a>
+        <div class="nav-section">HEALTH</div>
+        <a class="nav-item" href="performance.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18a9 9 0 1 1 16 0"/><path d="m12 14 4-4"/></svg><span>Web vitals</span></a>
+        <a class="nav-item" href="seo-health.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18"/></svg><span>SEO and indexing</span></a>
+        <a class="nav-item" href="data-health.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6a4 4 0 0 1 8 0"/><rect x="6" y="6" width="12" height="12" rx="6"/><path d="M3 12h3M18 12h3M5 7l2 2M19 7l-2 2M5 17l2-2M19 17l-2-2"/></svg><span>Data health</span><span class="nav-badge is-warn">3</span></a>
+        <div class="nav-section">OPERATIONS</div>
+        <a class="nav-item" href="alerts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-2 8-2 8h16s-2-1-2-8"/><path d="M10.5 21a2 2 0 0 0 3 0"/></svg><span>Alerts</span><span class="nav-badge is-warn">2</span></a>
+        <a class="nav-item" href="reports.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v5h5"/><path d="M19 8v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7z"/></svg><span>Reports</span></a>
+        <a class="nav-item" href="tracking-setup.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></svg><span>Tracking setup</span></a>
+        <a class="nav-item" href="team.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6z"/></svg><span>Team and access</span></a>
+        <a class="nav-item" href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg><span>Settings</span></a>
+        <a class="nav-item" href="ui-components.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg><span>Components</span></a>
+  </nav>
+  <div class="side-foot">
+    <button class="prop" data-pop-start aria-expanded="false" aria-controls="pop-prop">
+      <span class="prop-dot"></span><span class="prop-name">larkfield.io</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+    <div class="popover" id="pop-prop">
+      <div class="pop-head">Properties</div>
+      <button class="pop-item is-on" data-act="toast" data-val="Already viewing larkfield.io">larkfield.io</button>
+      <button class="pop-item" data-act="toast" data-val="Switched to staging.larkfield.io">staging.larkfield.io</button>
+      <button class="pop-item" data-act="toast" data-val="Switched to docs.larkfield.io">docs.larkfield.io</button>
+      <div class="pop-sep"></div>
+      <a class="pop-item" href="tracking-setup.html">Add a property</a>
+    </div>
+    <div class="who"><span class="av av--accent">AR</span>
+      <span class="who-txt"><span class="who-name">Amara Reyes</span><span class="who-role">Owner</span></span>
+    </div>
+  </div>
+</aside>
+
+<div class="main">
+  <header class="page-header">
+    <button class="icon-btn" id="mob-menu" data-act="mobnav" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <h1>Funnels</h1>
+    <div class="hdr-search" data-act="palette" role="button" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search reports</span><kbd>&#8984;K</kbd></div>
+    <a class="live-pill" href="realtime.html"><span class="pulse"></span><span class="num" data-live-pill>1,247</span> online</a>
+    <button class="icon-btn" data-act="theme" aria-label="Switch theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg></button>
+    <div class="has-pop">
+      <button class="icon-btn" aria-expanded="false" aria-controls="pop-notif" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-2 8-2 8h16s-2-1-2-8"/><path d="M10.5 21a2 2 0 0 0 3 0"/></svg><span class="dot" data-unread></span></button>
+      <div class="popover popover--wide" id="pop-notif" data-notifications></div>
+    </div>
+    <div class="has-pop">
+      <button class="av" aria-expanded="false" aria-controls="pop-profile" aria-label="Account menu">AR</button>
+      <div class="popover profile-pop" id="pop-profile">
+        <div class="pop-head">Amara Reyes<br><span class="mono" style="text-transform:none;letter-spacing:0">amara@larkfield.io</span></div>
+        <a class="pop-item" href="settings.html">Account settings</a>
+        <a class="pop-item" href="settings.html">Metric definitions</a>
+        <button class="pop-item" data-act="theme">Switch theme</button>
+        <div class="pop-sep"></div>
+        <a class="pop-item" href="login.html">Sign out</a>
+      </div>
+    </div>
+  </header>
+  <div class="subbar">
+        <div class="has-pop">
+          <button class="ctl" data-pop-start aria-expanded="false" aria-controls="pop-range"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            <span data-range-label>Last 30 days</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="popover" id="pop-range"><div class="pop-head">Date range</div><button class="pop-item" data-act="range" data-val="Today">Today</button><button class="pop-item" data-act="range" data-val="Yesterday">Yesterday</button><button class="pop-item" data-act="range" data-val="Last 7 days">Last 7 days</button><button class="pop-item" data-act="range" data-val="Last 28 days">Last 28 days</button><button class="pop-item" data-act="range" data-val="Last 30 days">Last 30 days</button><button class="pop-item" data-act="range" data-val="Last 90 days">Last 90 days</button><button class="pop-item" data-act="range" data-val="This month">This month</button><button class="pop-item" data-act="range" data-val="Last month">Last month</button><button class="pop-item" data-act="range" data-val="Year to date">Year to date</button><button class="pop-item" data-act="range" data-val="Custom range">Custom range</button></div>
+        </div>
+        <div class="has-pop">
+          <button class="ctl ctl--quiet" data-pop-start aria-expanded="false" aria-controls="pop-compare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M6 8 3 11l3 3M18 8l3 3-3 3"/></svg>
+            <span>vs</span> <span data-compare-label>Previous period</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="popover" id="pop-compare"><div class="pop-head">Compare to</div><button class="pop-item" data-act="compare" data-val="Off">Off</button><button class="pop-item" data-act="compare" data-val="Previous period">Previous period</button><button class="pop-item" data-act="compare" data-val="Same period last year">Same period last year</button><button class="pop-item" data-act="compare" data-val="Custom">Custom</button></div>
+        </div>
+        <span class="chips" data-segments></span>
+        <div class="has-pop">
+          <button class="ctl ctl--quiet" data-pop-start aria-expanded="false" aria-controls="pop-seg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Segment</button>
+          <div class="popover" id="pop-seg"><div class="pop-head">Add segment</div><button class="pop-item" data-act="segment" data-val="Mobile only">Mobile only</button><button class="pop-item" data-act="segment" data-val="New visitors">New visitors</button><button class="pop-item" data-act="segment" data-val="Returning visitors">Returning visitors</button><button class="pop-item" data-act="segment" data-val="Paid traffic">Paid traffic</button><button class="pop-item" data-act="segment" data-val="AI referrals">AI referrals</button><button class="pop-item" data-act="segment" data-val="Converters">Converters</button><button class="pop-item" data-act="segment" data-val="North America">North America</button></div>
+        </div>
+        <div class="seg" role="group" aria-label="Granularity"><button data-act="gran" data-val="Hour" disabled title="Available for ranges up to 7 days">Hour</button><button data-act="gran" data-val="Day" aria-pressed="true">Day</button><button data-act="gran" data-val="Week">Week</button><button data-act="gran" data-val="Month">Month</button></div>
+        <div class="right">
+          <span class="stamp" data-stamp>Updated 2 min ago</span>
+          <button class="btn btn--quiet btn--sm" data-act="refresh" aria-label="Refresh data"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2 6"/><path d="M20 5v6h-6"/></svg></button>
+          <button class="btn btn--ghost btn--sm" data-act="modal" data-val="m-export"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12m0 0 4-4m-4 4-4-4M4 20h16"/></svg>Export</button>
+        </div>
+      </div>
+  <main class="page-body" id="main">
+    <div class="rail" data-metrics="sessions,conversions,cvr,revenue"></div><div class="grid grid-sidebar"><section class="card" data-live-refresh><div class="card-head"><span class="card-title">Signup to purchase</span><span class="card-tools"><button class="btn btn--ghost btn--sm" data-act="modal" data-val="m-funnel">Edit steps</button></span></div><div class="card-body"><div class="mini-funnel" data-funnel></div></div></section><section class="card" data-live-refresh><div class="card-head"><span class="card-title">Saved funnels</span></div><div class="card-body"><div class="bar-list"><div class="bar-row"><span class="lab">Signup to purchase</span><span class="val">2.17%</span></div><div class="bar-row"><span class="lab">Docs to trial</span><span class="val">3.02%</span></div><div class="bar-row"><span class="lab">Compare to purchase</span><span class="val">11.24%</span></div><div class="bar-row"><span class="lab">Blog to newsletter</span><span class="val">0.66%</span></div></div></div></section></div><div class="grid "><section class="card" data-live-refresh><div class="card-head"><span class="card-title">Step detail</span></div><div class="card-body card-body--flush"><div class="tbl-wrap"><table class="tbl" data-table="funnel" data-cols='[{&quot;t&quot;: &quot;Step&quot;, &quot;k&quot;: &quot;label&quot;, &quot;f&quot;: &quot;strong&quot;}, {&quot;t&quot;: &quot;Sessions&quot;, &quot;k&quot;: &quot;value&quot;, &quot;n&quot;: 1, &quot;f&quot;: &quot;num&quot;}, {&quot;t&quot;: &quot;Of all sessions&quot;, &quot;k&quot;: &quot;pct&quot;, &quot;n&quot;: 1, &quot;f&quot;: &quot;pct&quot;}, {&quot;t&quot;: &quot;Drop from previous&quot;, &quot;k&quot;: &quot;drop&quot;, &quot;n&quot;: 1, &quot;f&quot;: &quot;pct1&quot;}]'></table></div></div></section></div>
+  </main>
+</div>
+
+<nav class="mobnav" aria-label="Primary">
+  <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>Overview</a>
+  <a href="realtime.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Live</a>
+  <a href="acquisition.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V9M9 20V4M15 20v-7M21 20v-11"/></svg>Sources</a>
+  <a href="conversions.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Goals</a>
+  <a href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>More</a>
+</nav>
+
+<div class="backdrop" id="backdrop"></div>
+<div id="tip" role="tooltip"></div>
+<div id="toasts" aria-live="polite"></div>
+
+<div class="palette" id="palette" role="dialog" aria-label="Command palette">
+  <div class="pal-panel">
+    <input class="pal-input" type="text" placeholder="Jump to a report" aria-label="Search reports">
+    <div class="pal-list"></div>
+  </div>
+</div>
+
+<div class="modal" id="m-export" role="dialog" aria-modal="true" aria-labelledby="m-export-t">
+  <div class="modal-panel">
+    <div class="modal-head"><h2 id="m-export-t">Export this report</h2>
+      <button class="icon-btn" style="margin-inline-start:auto" data-act="close-modal" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="modal-body">
+      <div class="field"><label class="field-label" for="ex-f">File format</label>
+        <select class="select" id="ex-f"><option>CSV</option><option>XLSX</option><option>JSON</option><option>PNG of charts</option></select>
+        <span class="field-hint">Rows follow the date range and segments currently applied.</span></div>
+      <div class="field"><label class="field-label" for="ex-e">Email a copy to</label>
+        <input class="input" id="ex-e" type="email" value="amara@larkfield.io"></div>
+    </div>
+    <div class="modal-foot"><button class="btn btn--ghost" data-act="close-modal">Cancel</button>
+      <button class="btn btn--primary" data-act="export">Export report</button></div>
+  </div>
+</div>
+<div class="modal" id="m-funnel" role="dialog" aria-modal="true" aria-labelledby="m-f-t">
+      <div class="modal-panel"><div class="modal-head"><h2 id="m-f-t">Edit funnel steps</h2>
+        <button class="icon-btn" style="margin-inline-start:auto" data-act="close-modal" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+      <div class="modal-body">
+        <div class="field"><label class="field-label" for="f-n">Funnel name</label>
+          <input class="input" id="f-n" value="Signup to purchase"></div>
+        <div class="field"><label class="field-label" for="f-w">Conversion window</label>
+          <select class="select" id="f-w" data-label="Conversion window"><option>1 day</option>
+          <option selected>7 days</option><option>30 days</option></select></div>
+        <div class="field"><label class="field-label">Steps</label>
+          <input class="input" value="Session started" style="margin-block-end:6px">
+          <input class="input" value="Viewed pricing" style="margin-block-end:6px">
+          <input class="input" value="Started signup" style="margin-block-end:6px">
+          <input class="input" value="Purchase"></div>
+      </div>
+      <div class="modal-foot"><button class="btn btn--ghost" data-act="close-modal">Cancel</button>
+        <button class="btn btn--primary" data-act="busy" data-done="Funnel saved">Save funnel</button></div>
+      </div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="assets/js/signal-data.js"></script>
+<script src="assets/js/signal.js"></script>
+
+</body>
+</html>

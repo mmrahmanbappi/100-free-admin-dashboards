@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shelf: Sign in | Commerce Dashboard</title>
+<meta name="description" content="Use your staff account for northbay.store.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F6B4F'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='16' font-weight='700' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/shelf.css">
+<script>try{var t=localStorage.getItem('shelf.theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<div class="auth">
+  <div class="auth-form">
+    <div class="auth-inner">
+      <div style="display:flex;align-items:center;gap:11px;margin-block-end:30px">
+        <span class="brand-mark">N</span><span class="brand-name">Northbay</span>
+      </div>
+      <h1 style="margin-block-end:8px">Sign in</h1>
+      <p style="font-size:13.5px;color:var(--ink-3);margin-block-end:26px">Use your staff account for northbay.store.</p>
+      <div class="field"><label class="field-label" for="em">Email</label>
+        <input class="input" id="em" type="email" value="amara@northbay.store" autocomplete="username"></div>
+      <div class="field"><label class="field-label" for="pw">Password</label>
+        <input class="input" id="pw" type="password" value="password" autocomplete="current-password"></div>
+      <label style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink-2);margin-block-end:22px">
+        <input class="cbx" type="checkbox" checked> Keep me signed in</label>
+      <button class="btn btn--primary" style="width:100%;height:44px" onclick="location.href='index.html'">Sign in</button>
+      <button class="btn btn--ghost" style="width:100%;height:44px;margin-block-start:10px"
+        onclick="location.href='index.html'">Continue with single sign-on</button>
+      <p style="font-size:13px;margin-block-start:22px;text-align:center">
+        <a href="forgot-password.html" style="color:var(--accent);font-weight:600">Forgot your password</a></p>
+    </div>
+  </div>
+  <div class="auth-side">
+    <p style="font-size:13.5px;color:var(--ink-3);max-width:32ch;line-height:1.6">Northbay Supply Co., last 30 days.</p>
+    <div class="auth-stat"><div class="kpi-lab">Revenue</div><div class="kpi-val">$184,290</div></div>
+    <div class="auth-stat"><div class="kpi-lab">Orders</div><div class="kpi-val">3,412</div></div>
+    <div class="auth-stat"><div class="kpi-lab">Repeat rate</div><div class="kpi-val">31.4%</div></div>
+  </div>
+</div>
+</body>
+</html>

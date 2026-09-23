@@ -1,0 +1,18 @@
+SHELF - Commerce & Sales Dashboard Template
+Changelog
+
+Version 1.0.0
+-------------
+Initial release.
+
+- 32 dashboard pages plus 4 authentication pages
+- Light and dark themes, both complete, switchable and persisted
+- Self-hosted webfonts and a local copy of Chart.js, works with no internet
+- All demo data in a single object, assets/js/shelf-data.js
+- Declarative rendering: KPI rows, charts, tables, bar lists, funnels,
+  cohort grid and activity feeds are built from data attributes
+- Working filter chips, table search, column sorting, bulk select,
+  tabs, modals, drawers, popovers, toasts and a command palette
+- Responsive from 1720px down to 390px, with a mobile bottom navigation
+- RTL ready through CSS logical properties
+- Accessible focus handling, focus traps, aria-sort, reduced motion support

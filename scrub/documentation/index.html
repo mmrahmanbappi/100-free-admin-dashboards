@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scrub documentation</title>
+<meta name="description" content="Setup, re-skinning and reference for the Scrub clinical dashboard template.">
+<link rel="stylesheet" href="../assets/css/fonts.css">
+<link rel="stylesheet" href="../assets/css/scrub.css">
+<style>
+  body{background:var(--canvas)}
+  .doc{max-width:900px;margin:0 auto;padding:48px 26px 90px}
+  .doc h1{font-size:30px;margin-block-end:8px}
+  .doc h2{margin-block:44px 14px;padding-block-end:10px;border-block-end:1px solid var(--line)}
+  .doc h3{margin-block:26px 8px}
+  .doc p,.doc li{font-size:14px;color:var(--ink-2);line-height:1.7}
+  .doc ul,.doc ol{padding-inline-start:20px}
+  .doc li{margin-block-end:6px}
+  .doc code{font-family:var(--mono);font-size:12.5px;background:var(--surface-2);
+    padding:2px 6px;border-radius:6px;color:var(--ink)}
+  .doc pre{margin-block:12px}
+  .doc table{margin-block:14px}
+  .doc td,.doc th{padding:10px 0}
+  .doc th{padding-inline-end:20px}
+  .doc td:first-child{padding-inline-end:20px;white-space:nowrap}
+  .lead{font-size:16px;color:var(--ink-2)}
+  .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-block:14px}
+</style>
+</head>
+<body>
+<main class="doc">
+
+<h1>Scrub</h1>
+<p class="lead">A healthcare and clinical dashboard template. 36 pages, light and dark, no build step,
+no framework, no internet connection required.</p>
+
+<div class="pillrow">
+  <span class="pill pill--ok"><i></i>HTML, CSS and vanilla JavaScript</span>
+  <span class="pill pill--ok"><i></i>Light and dark themes</span>
+  <span class="pill pill--ok"><i></i>Works offline</span>
+  <span class="pill pill--ok"><i></i>Responsive to 390px</span>
+</div>
+
+<h2>1. Getting started</h2>
+<p>Unzip the folder and open <code>index.html</code> in a browser. That is the whole setup. There is
+no npm install, no bundler and no server requirement, and every asset is local so the template
+works with no internet connection.</p>
+<p>To publish, upload the folder to any static host. To use it inside an application, copy
+<code>assets/</code> and treat each HTML page as a layout reference.</p>
+
+<h2>2. What is in the folder</h2>
+<pre class="code">scrub/
+├── assets/
+│   ├── css/
+│   │   ├── scrub.css          the whole design system, one file
+│   │   └── fonts.css          self-hosted webfont declarations
+│   ├── fonts/                 Source Sans 3 and Roboto Mono, woff2
+│   ├── js/
+│   │   ├── scrub-data.js      every demo figure, one object
+│   │   └── scrub.js           every behaviour, one namespace
+│   └── vendor/
+│       └── chart.umd.min.js   Chart.js 4.4.1
+├── documentation/index.html   this file
+├── index.html … 31 more pages
+└── login.html  signup.html  forgot-password.html  404.html</pre>
+
+<h2>3. Re-skinning</h2>
+<p>Every colour, radius, shadow and font in the template resolves through a custom property.
+Open <code>assets/css/scrub.css</code> and edit the two blocks at the top: <code>:root</code> for
+light and <code>[data-theme="dark"]</code> for dark. Nothing below those blocks contains a colour
+literal, so one edit re-skins all 36 pages including the charts, which read their colours from the
+computed styles at runtime.</p>
+
+<h3>Three alternate schemes</h3>
+<p>Paste any of these over the accent and series values in <code>:root</code>.</p>
+<pre class="code">/* Clinical cobalt */
+--accent:#0B57C7; --accent-hover:#0A47A3; --accent-soft:#E4EDFC;
+--canvas:#F2F5FA; --series-1:#0B57C7; --series-2:#1C5E7E; --series-3:#8C5A00;
+
+/* Teal */
+--accent:#0E7A86; --accent-hover:#0B616B; --accent-soft:#DDF0F2;
+--canvas:#EFF7F8; --series-1:#0E7A86; --series-2:#1A6E52; --series-3:#8C5A00;
+
+/* Slate, accent used sparingly */
+--accent:#2E4057; --accent-hover:#223146; --accent-soft:#E6EBF1;
+--canvas:#F2F4F7; --series-1:#2E4057; --series-2:#16715C; --series-3:#8C5A00;</pre>
+
+<h3>The one rule you should not change</h3>
+<p>Status colour is reserved. <code>--ok</code> means stable, <code>--warn</code> means monitor and
+<code>--crit</code> means critical. Red is never used for a button, an accent or decoration anywhere in
+this template, so that a clinician seeing red on any screen knows it concerns a patient. If you re-skin,
+keep that rule. Acuity has its own five-step scale, <code>--acu-1</code> through <code>--acu-5</code>,
+where 1 is most urgent.</p>
+
+<h3>Fonts</h3>
+<p>Change <code>--font</code> and <code>--mono</code> in <code>:root</code>. If you swap to a font
+you host yourself, add the <code>@font-face</code> rules to <code>assets/css/fonts.css</code> and
+drop the files into <code>assets/fonts/</code>. If you prefer Google Fonts over self-hosting,
+replace the <code>fonts.css</code> link in each page head with the Google stylesheet link.</p>
+
+<h3>Theme behaviour</h3>
+<p>The theme is set with a <code>data-theme</code> attribute on <code>&lt;html&gt;</code> and stored in
+<code>localStorage</code> under <code>scrub.theme</code>. A small inline script in every page head
+applies the stored value before first paint so there is no flash. To ship dark as the default,
+change <code>data-theme="light"</code> to <code>data-theme="dark"</code> in the page templates.</p>
+
+<h2>4. Replacing the demo data</h2>
+<p>Every figure on every page comes from <code>assets/js/scrub-data.js</code>. Nothing is hard coded
+into the HTML. Replace the contents of that file, keep the key names, and all 36 pages follow.</p>
+<pre class="code">window.SCRUB_DATA = {
+  settings:  { org, unit, currency, timezone, user },
+  labels30:  [ "21 Aug", … ],          // x axis labels
+  metrics:   { occupancy:{ label, value, delta, unit, dunit, series, invert? }, … },
+  vitals:    [ { key, value, unit, ref, state, flag }, … ],
+  spo2: [...], hr: [...],               // observation traces
+  definitions:{ revenue:"…", … },       // tooltip text on metric labels
+  patients:[], beds:[], appointments:[], medications:[], labs:[], staff:[], …
+};</pre>
+<p>Metric <code>unit</code> is one of <code>count</code>, <code>rate</code>, <code>pp</code>,
+<code>min</code>, <code>days</code> or <code>money</code>. <code>dunit</code> says how the delta reads:
+<code>abs</code> for "+4 patients", <code>pp</code> for percentage points, or omit it for a percentage.
+Set <code>invert:true</code> on any metric where a fall is good, such as median wait or readmission
+rate, and the delta colours itself correctly without you changing the sign.</p>
+<p>A vitals entry carries its own <code>state</code>: <code>ok</code>, <code>warn</code> or
+<code>crit</code>. The reference range is shown to the clinician rather than being applied as a rule,
+because the template does not calculate anything clinical.</p>
+<p>To wire it to a real backend, fetch your data, shape it into the same object, assign it to
+<code>window.SCRUB_DATA</code> before <code>scrub.js</code> loads, and delete the demo file.</p>
+
+<h2>5. Building a page</h2>
+<p>Pages are declarative. You write markup with data attributes and the script fills it in.</p>
+<table class="tbl" style="font-size:13.5px">
+<thead><tr><th>Attribute</th><th>What it renders</th></tr></thead>
+<tbody>
+<tr><td><code>data-kpis="inClinic,waiting"</code></td><td>A row of KPI cards with deltas and sparklines</td></tr><tr><td><code>data-vitals="6"</code></td><td>The vitals strip, with reference ranges and automatic states</td></tr><tr><td><code>data-beds</code></td><td>The bed board</td></tr>
+<tr><td><code>data-chart="line|metric:occupancy"</code></td><td>A chart. Kinds: line, area, bar, hbar, donut</td></tr><tr><td><code>data-chart="line|trace:spo2"</code></td><td>An observation trace, labelled by time of day</td></tr><tr><td><code>data-band="95,100" data-threshold="92"</code></td><td>Target band and dashed escalation threshold</td></tr>
+<tr><td><code>data-chart="bar|list:departments:name:seen:6"</code></td><td>A chart from any collection</td></tr>
+<tr><td><code>data-compare</code></td><td>Adds a dashed previous-period series</td></tr>
+<tr><td><code>data-table="patients" data-cols='[…]'</code></td><td>A full table from a collection</td></tr>
+<tr><td><code>data-pick</code></td><td>Adds row checkboxes and the floating bulk bar</td></tr>
+<tr><td><code>data-filter-key="status"</code></td><td>Lets filter chips filter rows by that field</td></tr>
+<tr><td><code>data-bars="channels:name:revenue:4"</code></td><td>A ranked bar list</td></tr>
+<tr><td><code>data-feed</code>, <code>data-live-feed</code></td><td>Activity feed, optionally live</td></tr>
+<tr><td><code>data-funnel</code>, <code>data-cohort</code></td><td>Referral pathway, cohort grid</td></tr>
+<tr><td><code>data-act="modal" data-val="m-id"</code></td><td>Opens that modal. Also drawer, toast, copy, print, busy</td></tr>
+</tbody></table>
+
+<h3>Table columns</h3>
+<pre class="code">data-cols='[
+  {"t":"Patient","k":"name","f":"patient"},
+  {"t":"Location","k":"location","n":1},
+  {"t":"Acuity","k":"acuity","n":1},
+  {"t":"Status","k":"status","f":"pill","tone":"tone"}
+]'</pre>
+<p><code>t</code> is the heading, <code>k</code> the key in the data row, <code>n</code> right-aligns
+and uses the mono face, and <code>f</code> picks a formatter: <code>patient</code>,
+<code>person</code>, <code>link</code>, <code>num</code>, <code>money</code>, <code>pct</code>,
+<code>pill</code>, <code>meter</code>, <code>stars</code>, <code>delta</code>, <code>strong</code>,
+<code>sku</code>, <code>score</code>.</p>
+
+<h2>6. The script</h2>
+<p>Everything lives under <code>window.SHELF</code>. Call anything from your own code.</p>
+<pre class="code">SCRUB.toast(message, "ok" | "err" | "info")
+SCRUB.openModal(id) / closeModal() / openDrawer(id) / closeDrawer()
+SCRUB.toggleTheme() / toggleNav() / toggleMobileNav()
+SCRUB.openPalette()                 // also Ctrl or Cmd + K
+SCRUB.setRange(label) / setCompare(label) / setChannel(label)
+SCRUB.refresh()                     // skeleton state, then repaint
+SCRUB.startLive() / stopLive() / toggleLive()
+SCRUB.registerChart(id, factory) / rebuildCharts() / resizeCharts()
+SCRUB.money(v) / int(v) / compact(v) / delta(v, invert, dunit)</pre>
+
+<h2>7. Accessibility</h2>
+<ul>
+<li>Every interactive element is a real button or link, never a clickable div.</li>
+<li>Visible focus rings on everything, and they are never removed.</li>
+<li>Modals and drawers trap focus and return it to the trigger on close.</li>
+<li>Escape closes, in order: command palette, modal or drawer, popover, mobile navigation.</li>
+<li>Tables carry <code>aria-sort</code>, the live region is <code>aria-live="polite"</code>.</li>
+<li>Colour never carries meaning alone: deltas have arrows, statuses have text labels.</li>
+<li><code>prefers-reduced-motion</code> is honoured.</li>
+</ul>
+
+<h2>8. Browser support</h2>
+<p>Current versions of Chrome, Edge, Firefox and Safari, desktop and mobile. The layout uses CSS
+logical properties throughout, so setting <code>dir="rtl"</code> on <code>&lt;html&gt;</code> mirrors
+the whole interface with no second stylesheet.</p>
+
+<h2>9. Credits</h2>
+<ul>
+<li>Chart.js 4.4.1, MIT licence. <code>assets/vendor/chart.umd.min.js</code></li>
+<li>Source Sans 3, SIL Open Font License 1.1</li>
+<li>Roboto Mono, SIL Open Font License 1.1</li>
+<li>Icons are hand-drawn inline SVG included in the pages. No icon font, no third party icon set.</li>
+<li>No photography is used. Product and customer tiles are generated from initials.</li>
+<li>All patient, clinician, MRN, diagnosis and result values in the demo data are invented.</li>
+</ul>
+
+<h2>10. Clinical safety</h2>
+<p>This is a user interface template. It is not a medical device, it performs no clinical calculation,
+and it must not be used to make clinical decisions. The reference ranges and escalation thresholds in
+the demo data are illustrative only.</p>
+<p>If you deploy this interface in a clinical setting, the clinical safety case, the validation, and
+compliance with the medical device and data protection rules of your jurisdiction are your
+responsibility. Patient identifiers in the demo data are invented and no real record is included.</p>
+
+<p style="margin-block-start:40px"><a class="btn btn--primary" href="../index.html">Open the dashboard</a></p>
+
+</main>
+</body>
+</html>

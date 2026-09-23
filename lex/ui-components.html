@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lex: UI Components | Hartwell &amp; Mercer LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/lex.css">
+
+</head>
+<body>
+<aside class="sidebar" id="sb"><div class="sidebar-logo"><div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 7l9 5 9-5-9-5zM3 17l9 5 9-5M3 12l9 5 9-5"/></svg></div><div class="logo-text"><div class="logo-name">Le<em>x</em></div><div class="logo-firm">Hartwell &amp; Mercer LLP</div></div></div><button class="collapse-btn" onclick="LEX.toggleSidebar()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg></button><nav class="sidebar-nav"><div class="nav-group"><span class="nav-label">Overview</span><a href="index.html" class="nav-item active"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zm11 0h7v7h-7zM3 14h7v7H3zm11 0h7v7h-7z"/></svg><span class="nav-text">Dashboard</span></a></div><div class="nav-group"><span class="nav-label">Practice</span><a href="cases.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2zM16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><span class="nav-text">Cases</span><span class="nav-badge">5</span></a><a href="clients.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span class="nav-text">Clients</span></a><a href="calendar.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18a2 2 0 012 2v14a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2zM16 2v4M8 2v4M2 10h20"/></svg><span class="nav-text">Calendar</span></a><a href="tasks.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span class="nav-text">Tasks</span><span class="nav-badge">3</span></a><a href="time-tracking.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4 2"/></svg><span class="nav-text">Time Tracking</span></a></div><div class="nav-group"><span class="nav-label">Finance</span><a href="invoices.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg><span class="nav-text">Invoices</span></a><a href="payments.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18a2 2 0 012 2v8a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2zM2 10h20"/></svg><span class="nav-text">Payments</span></a><a href="expenses.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 3h6v4H9zM9 14h6M9 18h4"/></svg><span class="nav-text">Expenses</span></a></div><div class="nav-group"><span class="nav-label">Documents</span><a href="documents.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg><span class="nav-text">Documents</span></a><a href="document-templates.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M8 13h8M8 17h5"/></svg><span class="nav-text">Templates</span></a><a href="media.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16zM3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg><span class="nav-text">Media Library</span></a></div><div class="nav-group"><span class="nav-label">Team</span><a href="team.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span class="nav-text">Attorneys &amp; Staff</span></a><a href="departments.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2zM9 22V12h6v10"/></svg><span class="nav-text">Departments</span></a></div><div class="nav-group"><span class="nav-label">Content</span><a href="articles.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg><span class="nav-text">Articles</span></a><a href="categories.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82zM7 7h.01"/></svg><span class="nav-text">Categories</span></a></div><div class="nav-group"><span class="nav-label">Insights</span><a href="analytics.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg><span class="nav-text">Analytics</span></a><a href="firm-insights.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span class="nav-text">Firm Insights</span><span class="nav-pro">PRO</span></a></div><div class="nav-group"><span class="nav-label">Admin</span><a href="settings.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg><span class="nav-text">Settings</span></a></div></nav><div class="sidebar-footer"><div class="user-block"><div class="av av-eh" style="width:32px;height:32px;font-size:11px">EH</div><div class="user-info"><div class="user-name">Eleanor Hartwell</div><div class="user-role">Managing Partner</div></div></div></div></aside>
+<div class="main-wrapper" id="mw">
+<header class="page-header"><button class="icon-btn" id="mob-menu" onclick="LEX.toggleMobile()" style="display:none"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><nav class="breadcrumb"><span style="color:var(--t3)">Lex</span><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--t3);stroke-width:2;fill:none"><polyline points="9 18 15 12 9 6"/></svg><span class="bc-current">UI Components</span></nav><div class="search-bar"><svg class="search-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input class="search-input" readonly placeholder="Search..." onclick="LEX.openPalette()"><span class="kbd">⌘K</span></div><div class="header-actions"><button class="icon-btn" onclick="LEX.toggleTheme()"><svg id="themeIcon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><div style="position:relative"><button class="icon-btn" id="notif-btn" onclick="LEX.toggleNotif()"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><span class="notif-dot"></span></button><div class="notif-panel" id="notif-panel" style="display:none"><div class="notif-head"><span class="notif-title">Notifications</span><button class="notif-clear" onclick="LEX.clearNotif()">Mark all read</button></div><div class="notif-foot"><a href="#">View all</a></div></div></div><div class="h-divider"></div><div class="profile-wrap"><button class="profile-btn av av-eh" id="profile-btn" onclick="LEX.toggleProfile()" style="font-size:11px;font-weight:700;color:#fff" aria-label="Profile menu">EH</button><div class="profile-panel" id="profile-panel"><div class="profile-panel-head"><div class="av av-eh" style="width:38px;height:38px;font-size:13px;flex-shrink:0">EH</div><div><div class="profile-panel-name">Eleanor Hartwell</div><div class="profile-panel-role">Managing Partner</div><div class="profile-panel-email">ehartwell@hartwell-mercer.com</div></div></div><div class="profile-menu"><a href="attorney-profile.html" class="profile-menu-item"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile</a><a href="settings.html" class="profile-menu-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>Settings</a><button class="profile-menu-item" onclick="LEX.toggleTheme()"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>Toggle Theme</button><div class="profile-menu-divider"></div><a href="login.html" class="profile-menu-item danger"><svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Log Out</a></div></div></div></div></header>
+<main class="page-body">
+<div class="page-top"><div class="page-top-left"><h1 class="page-title">UI Component Library</h1><p class="page-sub">All reusable components for Lex, dark &amp; light mode compatible</p></div><button class="btn btn-ghost btn-sm" onclick="LEX.toggleTheme()">Toggle Theme</button></div>
+
+<!-- BADGES -->
+<div class="card" style="margin-bottom:16px"><div class="card-header"><span class="card-title">Badges &amp; Status Pills</span></div><div class="card-body">
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px">
+  <span class="badge b-intake">Intake</span>
+  <span class="badge b-active">Active</span>
+  <span class="badge b-discovery">Discovery</span>
+  <span class="badge b-pretrial">Pre-Trial</span>
+  <span class="badge b-settled">Settled</span>
+  <span class="badge b-closed">Closed</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px">
+  <span class="badge b-high">High Priority</span>
+  <span class="badge b-medium">Medium Priority</span>
+  <span class="badge b-low">Low Priority</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+  <span class="badge b-paid">Paid</span>
+  <span class="badge b-sent">Sent</span>
+  <span class="badge b-overdue">Overdue</span>
+  <span class="badge b-partial">Partial</span>
+  <span class="badge b-draft">Draft</span>
+  <span class="badge b-billable">Billable</span>
+  <span class="badge b-nonbillable">Non-Billable</span>
+  <span class="badge b-corporate">Corporate</span>
+  <span class="badge b-individual">Individual</span>
+</div>
+</div></div>
+
+<!-- BUTTONS -->
+<div class="card" style="margin-bottom:16px"><div class="card-header"><span class="card-title">Buttons</span></div><div class="card-body">
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px">
+  <button class="btn btn-primary"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Primary</button>
+  <button class="btn btn-secondary">Secondary</button>
+  <button class="btn btn-ghost">Ghost</button>
+  <button class="btn btn-danger">Delete</button>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+  <button class="btn btn-primary btn-sm">Small Primary</button>
+  <button class="btn btn-secondary btn-sm">Small Secondary</button>
+  <button class="btn btn-ghost btn-sm">Small Ghost</button>
+  <button class="btn-icon btn"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>
+</div>
+</div></div>
+
+<!-- AVATARS -->
+<div class="card" style="margin-bottom:16px"><div class="card-header"><span class="card-title">Avatars</span></div><div class="card-body">
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+  <div class="av av-eh">EH</div>
+  <div class="av av-jm">JM</div>
+  <div class="av av-sn">SN</div>
+  <div class="av av-do">DO</div>
+  <div class="av av-ps">PS</div>
+  <div class="av av-mt">MT</div>
+</div>
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+  <div class="av av-lg av-eh">EH</div>
+  <div class="av av-lg av-jm">JM</div>
+  <div class="av av-xl av-sn">SN</div>
+</div>
+<div class="av-group"><div class="av av-eh">EH</div><div class="av av-jm">JM</div><div class="av av-sn">SN</div><div class="av av-do">DO</div><div class="av av-ps">PS</div></div>
+</div></div>
+
+<!-- CASE ID TAGS -->
+<div class="card" style="margin-bottom:16px"><div class="card-header"><span class="card-title">Case ID Tags</span></div><div class="card-body">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+  <span class="cid">CSE-2026-0041</span>
+  <span class="cid">CSE-2026-0022</span>
+  <span class="cid">INV-2026-0087</span>
+  <span class="cid">DOC-0412</span>
+  <span class="cid">ATT-001</span>
+</div>
+</div></div>
+
+<!-- ALERTS -->
+<div class="card" style="margin-bottom:16px"><div class="card-header"><span class="card-title">Alert Banners</span></div><div class="card-body">
+  <div class="alert alert-ok"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Payment of $22,000 received from Northgate Properties LLC.</div>
+  <div class="alert alert-info"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Expert disclosure filing deadline: April 5, 2026. 9 days remaining.</div>
+  <div class="alert alert-warn"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Invoice INV-2026-0087 is 12 days overdue. Send a payment reminder?</div>
+  <div class="alert alert-err" style="margin-bottom:0"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>Conflict detected: Donovan Partners LLC appears in an existing adverse matter.</div>
+</div></div>
+
+<!-- FORMS -->
+<div class="card" style="margin-bottom:16px"><div class="card-header"><span class="card-title">Form Controls</span></div><div class="card-body">
+<div class="form-row">
+  <div class="form-group"><label class="form-label">Text Input</label><input class="form-input" value="Callahan v. Donovan Partners" /><span class="form-hint">Case name as it appears on court filings</span></div>
+  <div class="form-group"><label class="form-label">Select</label><select class="form-select"><option>Corporate Litigation</option><option>Employment Law</option><option>M&amp;A</option><option>Real Estate</option></select></div>
+</div>
+<div class="form-group"><label class="form-label">Textarea</label><textarea class="form-textarea" placeholder="Case description or notes..."></textarea></div>
+<div style="display:flex;flex-wrap:wrap;gap:20px;margin-top:4px">
+  <div class="toggle"><div class="toggle-track on"><div class="toggle-thumb"></div></div><span class="toggle-label">Email notifications</span></div>
+  <div class="toggle"><div class="toggle-track"><div class="toggle-thumb"></div></div><span class="toggle-label">SMS alerts</span></div>
+</div>
+</div></div>
+
+<!-- PROGRESS BARS -->
+<div class="card" style="margin-bottom:16px"><div class="card-header"><span class="card-title">Progress Bars</span></div><div class="card-body">
+<div style="display:flex;flex-direction:column;gap:14px">
+  <div><div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:12.5px"><span style="color:var(--t2)">Collection Rate</span><span style="font-weight:700">80.3%</span></div><div class="progress-bar" style="height:8px"><div class="progress-fill" style="width:80%;background:var(--ok)"></div></div></div>
+  <div><div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:12.5px"><span style="color:var(--t2)">Eleanor Hartwell: Utilization</span><span style="font-weight:700">87%</span></div><div class="progress-bar" style="height:8px"><div class="progress-fill" style="width:87%;background:var(--brand)"></div></div></div>
+  <div><div style="display:flex;justify-content:space-between;margin-bottom:5px;font-size:12.5px"><span style="color:var(--t2)">Outstanding Invoices</span><span style="font-weight:700;color:var(--err)">$38.2K overdue</span></div><div class="progress-bar" style="height:8px"><div class="progress-fill" style="width:40%;background:var(--err)"></div></div></div>
+</div>
+</div></div>
+
+<!-- CARDS GRID -->
+<div class="card" style="margin-bottom:16px"><div class="card-header"><span class="card-title">Stat Cards</span></div><div style="padding:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+  <div class="stat-card"><div class="stat-icon" style="background:var(--brand-lt);margin-bottom:12px"><svg viewBox="0 0 24 24" style="stroke:var(--brand);stroke-width:1.8;fill:none;width:18px;height:18px"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div class="stat-val">5</div><div class="stat-label">Active Cases</div></div>
+  <div class="stat-card"><div class="stat-icon" style="background:var(--ok-lt);margin-bottom:12px"><svg viewBox="0 0 24 24" style="stroke:var(--ok);stroke-width:1.8;fill:none;width:18px;height:18px"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div class="stat-val" style="font-size:24px">$487K</div><div class="stat-label">Revenue Q1</div></div>
+  <div class="stat-card"><div class="stat-icon" style="background:var(--info-lt);margin-bottom:12px"><svg viewBox="0 0 24 24" style="stroke:var(--info);stroke-width:1.8;fill:none;width:18px;height:18px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="stat-val">1,247<span style="font-size:14px;color:var(--t3)">h</span></div><div class="stat-label">Hours Billed</div></div>
+  <div class="stat-card"><div class="stat-icon" style="background:var(--err-lt);margin-bottom:12px"><svg viewBox="0 0 24 24" style="stroke:var(--err);stroke-width:1.8;fill:none;width:18px;height:18px"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg></div><div class="stat-val" style="color:var(--err);font-size:24px">$38K</div><div class="stat-label">Overdue</div></div>
+</div></div>
+
+<!-- PAGINATION -->
+<div class="card"><div class="card-header"><span class="card-title">Pagination</span></div><div class="card-body" style="display:flex;gap:24px;flex-wrap:wrap;align-items:center">
+  <div class="pagination"><button class="page-item disabled"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><polyline points="15 18 9 12 15 6"/></svg></button><button class="page-item active">1</button><button class="page-item">2</button><button class="page-item">3</button><button class="page-item">...</button><button class="page-item">8</button><button class="page-item"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><polyline points="9 18 15 12 9 6"/></svg></button></div>
+  <span style="font-size:12.5px;color:var(--t3)">Showing 1–10 of 84 results</span>
+</div></div>
+</main>
+</div>
+<div class="overlay" id="pal" style="display:none" onclick="if(event.target===this)LEX.closePalette()"><div class="cmdpal"><div class="cmd-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input class="cmd-input" id="cmd-inp" placeholder="Search…"><span class="cmd-key">ESC</span></div><div class="cmd-results"><div class="cmd-grp">Actions</div><div class="cmd-item sel"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="cmd-item-txt">New Case</span></div></div><div class="cmd-foot"><span><span class="cmd-key">ESC</span> close</span></div></div></div><div id="mob-bd" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:39" onclick="LEX.toggleMobile()"></div>
+<script src="assets/js/lex.js"></script>
+
+
+<!-- Mobile bottom navigation -->
+<nav class="mobile-nav">
+  <a href="index.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dash
+  </a>
+  <a href="cases.html" class="mob-nav-item" data-badge>
+    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><div class="mob-nav-dot"></div>Cases
+  </a>
+  <a href="calendar.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Calendar
+  </a>
+  <a href="tasks.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Tasks
+  </a>
+  <a href="invoices.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>Finance
+  </a>
+</nav>
+<!-- Mobile sidebar backdrop -->
+<div id="mob-bd" onclick="LEX.toggleMobile()"></div>
+
+</body>
+</html>

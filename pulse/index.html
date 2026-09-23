@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse: Dashboard | NovaBuild Inc.</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/pulse.css">
+
+</head>
+<body>
+<aside class="sidebar" id="sb">
+  <div class="sidebar-logo">
+    <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-width="2"/></svg></div>
+    <div class="logo-text"><div class="logo-name">Pulse</div><div class="logo-plan">Growth Plan</div></div>
+  </div>
+  <nav class="sidebar-nav"><div class="nav-group"><span class="nav-label">OVERVIEW</span><a href="index.html" class="nav-item active"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span class="nav-text">Dashboard</span></a></div><div class="nav-group"><span class="nav-label">REVENUE</span><a href="revenue.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg><span class="nav-text">Revenue Analytics</span></a><a href="mrr-breakdown.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg><span class="nav-text">MRR Breakdown</span></a><a href="churn.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/></svg><span class="nav-text">Churn Analysis</span></a><a href="cohort.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg><span class="nav-text">Cohort Retention</span></a></div><div class="nav-group"><span class="nav-label">SUBSCRIBERS</span><a href="subscribers.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span class="nav-text">All Subscribers</span><span class="nav-badge violet">1847</span></a><a href="trials.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span class="nav-text">Trials</span><span class="nav-badge amber">24</span></a><a href="customers.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg><span class="nav-text">Customers</span></a></div><div class="nav-group"><span class="nav-label">PRODUCTS</span><a href="plans.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg><span class="nav-text">Plans</span></a><a href="coupons.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg><span class="nav-text">Coupons & Discounts</span></a></div><div class="nav-group"><span class="nav-label">BILLING</span><a href="billing.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg><span class="nav-text">Billing Overview</span></a><a href="invoices.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span class="nav-text">Invoices</span></a><a href="dunning.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg><span class="nav-text">Failed Payments</span><span class="nav-badge">3</span></a></div><div class="nav-group"><span class="nav-label">DEVELOPER</span><a href="api-keys.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg><span class="nav-text">API Keys</span></a><a href="webhooks.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg><span class="nav-text">Webhooks</span></a><a href="integrations.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg><span class="nav-text">Integrations</span></a></div><div class="nav-group"><span class="nav-label">TEAM & ADMIN</span><a href="team.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="nav-text">Team</span></a><a href="activity.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg><span class="nav-text">Activity Log</span></a><a href="notifications.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg><span class="nav-text">Notifications</span><span class="nav-badge violet">1847</span></a><a href="reports.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg><span class="nav-text">Reports</span></a><a href="settings.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span class="nav-text">Settings</span></a></div></nav>
+  <a href="profile.html" class="sidebar-user" style="text-decoration:none;cursor:pointer;transition:background .12s" onmouseover="this.style.background='rgba(255,255,255,.05)'" onmouseout="this.style.background='none'">
+    <div class="av av-am av-sm">AM</div>
+    <div class="sidebar-user-info"><div class="sidebar-user-name">Alex Morgan</div><div class="sidebar-user-role">Owner</div></div>
+  </a>
+</aside>
+<div class='main-wrapper' id='mw'>
+<header class="page-header">
+  <button id="mob-menu" onclick="PULSE.toggleMobile()"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <nav class="breadcrumb"><a class="bc-link" href="index.html">Pulse</a><svg class="bc-sep" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg><span class="bc-current">Dashboard</span></nav>
+  <div class="search-wrap">
+    <svg class="search-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input class="search-input" placeholder="Search..." onclick="PULSE.openPalette()">
+    <span class="search-kbd">⌘K</span>
+  </div>
+  <div class="header-actions">
+    
+    <button class="icon-btn" onclick="PULSE.toggleTheme()" title="Toggle theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+    <div class="notif-wrap">
+      <button class="icon-btn notif-btn" id="notif-btn" onclick="PULSE.toggleNotif()" title="Notifications" style="position:relative">
+        <svg viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+        <span class="notif-dot"></span>
+      </button>
+      <div class="notif-panel" id="notif-panel">
+        <div class="notif-panel-head">
+          <div>
+            <div class="notif-panel-title">Notifications</div>
+            <div class="notif-panel-meta">3 unread</div>
+          </div>
+          <button class="btn btn-ghost btn-xs" onclick="PULSE.markAllRead()">Mark all read</button>
+        </div>
+        <div class="notif-panel-body">
+          <!-- Unread: Payment failed -->
+          <div class="notif-row unread">
+            <div class="notif-unread-dot"></div>
+            <div class="notif-row-ico" style="background:var(--err-lt);color:var(--err)">
+              <svg viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            </div>
+            <div class="notif-row-body">
+              <div class="notif-row-title">Payment failed: Figma Design</div>
+              <div class="notif-row-sub">$499 charge declined. Dunning started.</div>
+              <div class="notif-row-time">2 min ago</div>
+            </div>
+          </div>
+          <!-- Unread: New subscriber -->
+          <div class="notif-row unread">
+            <div class="notif-unread-dot"></div>
+            <div class="notif-row-ico" style="background:var(--ok-lt);color:var(--ok)">
+              <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+            </div>
+            <div class="notif-row-body">
+              <div class="notif-row-title">New subscriber: Notion HQ</div>
+              <div class="notif-row-sub">Signed up for Scale &middot; $199/mo</div>
+              <div class="notif-row-time">14 min ago</div>
+            </div>
+          </div>
+          <!-- Unread: Trial ending -->
+          <div class="notif-row unread">
+            <div class="notif-unread-dot"></div>
+            <div class="notif-row-ico" style="background:var(--warn-lt);color:var(--warn)">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="notif-row-body">
+              <div class="notif-row-title">Trial ending: Raycast App</div>
+              <div class="notif-row-sub">Trial ends in 2 days. Consider nudging.</div>
+              <div class="notif-row-time">1 hr ago</div>
+            </div>
+          </div>
+          <!-- Read: Invoice paid -->
+          <div class="notif-row">
+            <div style="width:7px;flex-shrink:0"></div>
+            <div class="notif-row-ico" style="background:var(--ok-lt);color:var(--ok)">
+              <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/></svg>
+            </div>
+            <div class="notif-row-body">
+              <div class="notif-row-title">Invoice paid: Acme Corp</div>
+              <div class="notif-row-sub">$499 received &middot; INV-2026-0091</div>
+              <div class="notif-row-time">2 hr ago</div>
+            </div>
+          </div>
+          <!-- Read: Webhook -->
+          <div class="notif-row">
+            <div style="width:7px;flex-shrink:0"></div>
+            <div class="notif-row-ico" style="background:var(--info-lt);color:var(--info)">
+              <svg viewBox="0 0 24 24"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101"/></svg>
+            </div>
+            <div class="notif-row-body">
+              <div class="notif-row-title">Webhook delivered</div>
+              <div class="notif-row-sub">invoice.paid sent to 3 endpoints</div>
+              <div class="notif-row-time">3 hr ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="notif-panel-footer">
+          <a href="notifications.html">View all notifications &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile-wrap">
+      <button class="profile-btn av av-am" id="profile-btn" onclick="PULSE.toggleProfile()">AM</button>
+      <div class="profile-panel" id="profile-panel">
+        <div class="profile-panel-head"><div class="profile-panel-name">Alex Morgan</div><div class="profile-panel-email">alex@novabuild.io</div></div>
+        <div class="profile-menu">
+          <a href="profile.html" class="profile-menu-item"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile</a>
+          <a href="settings.html" class="profile-menu-item"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>Account Settings</a>
+          <button class="profile-menu-item" onclick="PULSE.toggleTheme()"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>Toggle Theme</button>
+          <div class="profile-menu-divider"></div>
+          <a href="login.html" class="profile-menu-item danger"><svg viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>Log Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="page-body">
+<div class="page-top">
+  <div class="page-top-left">
+    <h1 class="page-title">Good morning, Alex</h1>
+    <p class="page-sub">Monday, 27 March 2026 &middot; NovaBuild Inc. &middot; DevFlow Pro</p>
+  </div>
+  <div style="display:flex;gap:8px">
+    <select class="form-select" style="width:auto;padding:7px 28px 7px 10px;font-size:13px;background:var(--surface)"><option>Last 30 days</option><option>Last 90 days</option><option>This year</option></select>
+    <button class="btn btn-primary btn-sm" onclick="PULSE.openExport('dashboard')"><svg viewBox="0 0 24 24"><polyline points="21 15 21 19 3 19 3 15"/><line x1="12" y1="3" x2="12" y2="15"/><polyline points="7 10 12 15 17 10"/></svg>Export</button>
+  </div>
+</div>
+<div class="stat-grid-4" style="margin-bottom:20px">
+  <div class="stat-card violet"><div class="stat-label">Monthly Recurring Revenue<span class="stat-delta up"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>8.4%</span></div><div class="stat-value">$48,290</div><div class="stat-meta">+$3,760 vs last month</div><div class="sparkline" id="sp1"></div></div>
+  <div class="stat-card green"><div class="stat-label">Annual Recurring Revenue<span class="stat-delta up"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>8.4%</span></div><div class="stat-value">$579.5K</div><div class="stat-meta">ARR on current trajectory</div><div class="sparkline" id="sp2"></div></div>
+  <div class="stat-card blue"><div class="stat-label">Active Subscribers<span class="stat-delta up"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>3.2%</span></div><div class="stat-value">1,847</div><div class="stat-meta">+57 this month</div><div class="sparkline" id="sp3"></div></div>
+  <div class="stat-card amber"><div class="stat-label">Churn Rate<span class="stat-delta down"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>0.4%</span></div><div class="stat-value">2.3%</div><div class="stat-meta">-0.4% vs last month</div><div class="sparkline" id="sp4"></div></div>
+</div>
+<div class="chart-row" style="margin-bottom:20px">
+  <div class="card">
+    <div class="card-header"><div><div class="card-title">MRR Trend</div><div class="card-sub">Monthly recurring revenue over 15 months</div></div><a href="revenue.html" class="card-action">Full Report</a></div>
+    <div class="card-body" style="padding:16px"><div class="chart-wrap"><canvas id="mrrChart"></canvas></div>
+  </div>
+  <div class="card">
+    <div class="card-header"><div class="card-title">Revenue by Plan</div><a href="plans.html" class="card-action">Plans</a></div>
+    <div class="card-body" style="display:flex;flex-direction:column;align-items:center;padding:16px">
+      <div style="width:160px;height:160px;position:relative;flex-shrink:0"><canvas id="planChart"></canvas></div>
+      <div style="display:flex;flex-direction:column;gap:7px;margin-top:16px;width:100%">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px"><div style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:#7C3AED;display:inline-block"></span>Enterprise</div><span style="font-family:'JetBrains Mono',monospace;color:var(--t1);font-weight:600">$19,960</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:12.5px"><div style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:#3B82F6;display:inline-block"></span>Scale</div><span style="font-family:'JetBrains Mono',monospace;color:var(--t1);font-weight:600">$15,522</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:12.5px"><div style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:#10B981;display:inline-block"></span>Growth</div><span style="font-family:'JetBrains Mono',monospace;color:var(--t1);font-weight:600">$9,009</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:12.5px"><div style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:#F59E0B;display:inline-block"></span>Starter</div><span style="font-family:'JetBrains Mono',monospace;color:var(--t1);font-weight:600">$3,799</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="chart-row-wide">
+  <div class="card">
+    <div class="card-header"><div class="card-title">New vs Churned Subscribers</div><a href="churn.html" class="card-action">Churn Analysis</a></div>
+    <div class="card-body" style="padding:16px"><div class="chart-wrap"><canvas id="churnChart"></canvas></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div class="card">
+      <div class="card-header"><div class="card-title">At-Risk Accounts</div><a href="subscribers.html" class="card-action">View All</a></div>
+      <div style="padding:4px 0">
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--surface-3)"><div class="av av-generic av-sm">FG</div><div style="flex:1;min-width:0"><div style="font-size:12.5px;font-weight:600;color:var(--t1)">Figma Design</div><div style="font-size:11px;color:var(--t3)">Enterprise - 87 days</div></div><span class="badge badge-past-due">At Risk</span></div>
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--surface-3)"><div class="av av-generic av-sm" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)">LP</div><div style="flex:1;min-width:0"><div style="font-size:12.5px;font-weight:600;color:var(--t1)">Linear App</div><div style="font-size:11px;color:var(--t3)">Starter - Trial ending</div></div><span class="badge badge-trial">Trial</span></div>
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 16px"><div class="av av-generic av-sm" style="background:linear-gradient(135deg,#8B5CF6,#7C3AED)">AC</div><div style="flex:1;min-width:0"><div style="font-size:12.5px;font-weight:600;color:var(--t1)">Acme Corp</div><div style="font-size:11px;color:var(--t3)">Scale - Payment failed</div></div><span class="badge badge-past-due">Dunning</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-title">Quick Stats</div></div>
+      <div class="card-body" style="padding:14px 16px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--t3)">Trial Conversion</span><span style="font-family:'JetBrains Mono',monospace;color:var(--ok);font-weight:600">34.2%</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--t3)">Avg LTV</span><span style="font-family:'JetBrains Mono',monospace;color:var(--t1);font-weight:600">$890</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--t3)">ARPU</span><span style="font-family:'JetBrains Mono',monospace;color:var(--t1);font-weight:600">$26.14</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--t3)">Net Revenue Retention</span><span style="font-family:'JetBrains Mono',monospace;color:var(--ok);font-weight:600">108%</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--t3)">Active Trials</span><span style="font-family:'JetBrains Mono',monospace;color:var(--info);font-weight:600">24</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--t3)">Failed Payments</span><span style="font-family:'JetBrains Mono',monospace;color:var(--err);font-weight:600">3</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+</div>
+<nav class="mobile-nav"><a href="index.html" class="mob-nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Dash</a><a href="subscribers.html" class="mob-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>Users</a><a href="revenue.html" class="mob-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>Revenue</a><a href="billing.html" class="mob-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>Billing</a><a href="settings.html" class="mob-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>Settings</a></nav>
+<div id='mob-bd' onclick='PULSE.toggleMobile()'></div>
+<div class="overlay" id="pal">
+  <div class="palette">
+    <div class="palette-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input placeholder="Search subscribers, pages, actions..." onkeydown="if(event.key==='Escape')PULSE.closePalette()">
+    </div>
+    <div class="palette-results">
+      <a class="palette-item" href="subscribers.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>All Subscribers</a>
+      <a class="palette-item" href="trials.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Active Trials</a>
+      <a class="palette-item" href="revenue.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10"/></svg>Revenue Analytics</a>
+      <a class="palette-item" href="dunning.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>Failed Payments</a>
+      <a class="palette-item" href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>Settings</a>
+    </div>
+  </div>
+</div>
+<div class='toast-container'></div>
+<script src="assets/js/pulse.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+window.addEventListener('load', function(){
+
+  var dk  = function(){ return document.documentElement.dataset.theme !== 'light'; };
+  var gC  = function(){ return dk() ? 'rgba(0,0,0,.06)' : 'rgba(0,0,0,.07)'; };
+  var gCd = function(){ return dk() ? 'rgba(255,255,255,.07)' : 'rgba(0,0,0,.07)'; };
+  var tC  = function(){ return dk() ? '#71717A' : '#9CA3AF'; };
+  function makeChart(id, cfg){
+    var el = document.getElementById(id);
+    if(!el) return null;
+    if(el._ch){ try{ el._ch.destroy(); }catch(e){} el._ch = null; }
+    el._ch = new Chart(el, cfg);
+    return el._ch;
+  }
+
+  // mrr trend line
+  var mrrFn = function(){
+    makeChart('mrrChart', {
+      type:'line',
+      data:{
+        labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan 26','Feb','Mar'],
+        datasets:[{ label:'MRR',
+          data:[28400,29100,30800,31200,33400,35100,37200,38900,39800,41200,43100,44500,45200,46800,48290],
+          borderColor:'#7C3AED', backgroundColor:'rgba(124,58,237,.1)',
+          fill:true, tension:.4, pointRadius:0, pointHoverRadius:5, borderWidth:2.5 }]
+      },
+      options:{
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: { duration: 0 },
+        plugins:{ legend:{ display:false } },
+        scales:{
+          x:{ grid:{ color:gCd() }, ticks:{ color:tC(), font:{ size:10 }, maxTicksLimit:8 } },
+          y:{ grid:{ color:gCd() }, ticks:{ color:tC(), font:{ size:10 }, callback:function(v){ return '$'+Math.round(v/1000)+'K'; } } }
+        }}
+    });
+  };
+  PULSE.registerChart(mrrFn); mrrFn();
+
+  // revenue by plan donut
+  var planFn = function(){
+    makeChart('planChart', {
+      type:'doughnut',
+      data:{
+        labels:['Enterprise','Scale','Growth','Starter'],
+        datasets:[{ data:[19960,15522,9009,3799],
+          backgroundColor:['#7C3AED','#3B82F6','#10B981','#F59E0B'], borderWidth:0, hoverOffset:6 }]
+      },
+      options: { responsive: true, maintainAspectRatio: true, animation: { duration:0 }, plugins: { legend: { display: false } }, cutout: '68%' }
+    });
+  };
+  PULSE.registerChart(planFn); planFn();
+
+  // new vs churned bars
+  var churnFn = function(){
+    makeChart('churnChart', {
+      type:'bar',
+      data:{
+        labels:['Oct','Nov','Dec','Jan','Feb','Mar'],
+        datasets:[
+          { label:'New',     data:[142,168,131,189,201,214], backgroundColor:'rgba(16,185,129,.85)', borderRadius:4 },
+          { label:'Churned', data:[-38,-42,-29,-55,-41,-39],  backgroundColor:'rgba(239,68,68,.75)',  borderRadius:4 }
+        ]
+      },
+      options:{
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: { duration: 0 },
+        plugins:{ legend:{ display:true, labels:{ color:tC(), font:{ size:11 }, boxWidth:10 } } },
+        scales:{
+          x:{ grid:{ display:false }, ticks:{ color:tC(), font:{ size:10 } } },
+          y:{ grid:{ color:gCd() }, ticks:{ color:tC(), font:{ size:10 } } }
+        }}
+    });
+  };
+  PULSE.registerChart(churnFn); churnFn();
+
+  // sparklines under each stat
+  var spData=[
+    [28400,29100,30800,33400,35100,37200,39800,41200,43100,44500,45200,48290],
+    [340,355,370,401,420,445,481,510,534,562,582,580],
+    [1620,1650,1680,1710,1740,1760,1780,1790,1800,1820,1840,1847],
+    [3.1,3.0,2.9,2.8,2.7,2.6,2.6,2.5,2.5,2.4,2.4,2.3]
+  ];
+  var spColors=['#7C3AED','#10B981','#3B82F6','#F59E0B'];
+  ['sp1','sp2','sp3','sp4'].forEach(function(id,i){
+    var el=document.getElementById(id); if(!el) return;
+    var d=spData[i], col=spColors[i];
+    var mn=Math.min.apply(null,d), mx=Math.max.apply(null,d), rng=mx-mn||1;
+    var pts=d.map(function(v,j){ return (j/(d.length-1)*100)+','+(38-((v-mn)/rng)*34); }).join(' ');
+    el.innerHTML='<svg viewBox="0 0 100 42" preserveAspectRatio="none" style="width:100%;height:44px;display:block">'
+      +'<defs><linearGradient id="sg'+i+'" x1="0" y1="0" x2="0" y2="1">'
+      +'<stop offset="0%" stop-color="'+col+'" stop-opacity=".2"/>'
+      +'<stop offset="100%" stop-color="'+col+'" stop-opacity="0"/>'
+      +'</linearGradient></defs>'
+      +'<polygon points="0,42 '+pts+' 100,42" fill="url(#sg'+i+')"/>'
+      +'<polyline points="'+pts+'" fill="none" stroke="'+col+'" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>'
+      +'</svg>';
+  });
+});
+</script>
+</body>
+</html>

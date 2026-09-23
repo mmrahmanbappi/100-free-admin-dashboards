@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lex: Article Editor | Hartwell &amp; Mercer LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/lex.css">
+
+</head>
+<body>
+<aside class="sidebar" id="sb"><div class="sidebar-logo"><div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 7l9 5 9-5-9-5zM3 17l9 5 9-5M3 12l9 5 9-5"/></svg></div><div class="logo-text"><div class="logo-name">Le<em>x</em></div><div class="logo-firm">Hartwell &amp; Mercer LLP</div></div></div><button class="collapse-btn" onclick="LEX.toggleSidebar()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg></button><nav class="sidebar-nav"><div class="nav-group"><span class="nav-label">Overview</span><a href="index.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zm11 0h7v7h-7zM3 14h7v7H3zm11 0h7v7h-7z"/></svg><span class="nav-text">Dashboard</span></a></div><div class="nav-group"><span class="nav-label">Practice</span><a href="cases.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2zM16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><span class="nav-text">Cases</span><span class="nav-badge">5</span></a><a href="clients.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span class="nav-text">Clients</span></a><a href="calendar.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18a2 2 0 012 2v14a2 2 0 01-2 2H3a2 2 0 01-2-2V6a2 2 0 012-2zM16 2v4M8 2v4M2 10h20"/></svg><span class="nav-text">Calendar</span></a><a href="tasks.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span class="nav-text">Tasks</span><span class="nav-badge">3</span></a><a href="time-tracking.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4 2"/></svg><span class="nav-text">Time Tracking</span></a></div><div class="nav-group"><span class="nav-label">Finance</span><a href="invoices.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg><span class="nav-text">Invoices</span></a><a href="payments.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18a2 2 0 012 2v8a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2zM2 10h20"/></svg><span class="nav-text">Payments</span></a><a href="expenses.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 3h6v4H9zM9 14h6M9 18h4"/></svg><span class="nav-text">Expenses</span></a></div><div class="nav-group"><span class="nav-label">Documents</span><a href="documents.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg><span class="nav-text">Documents</span></a><a href="document-templates.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6M8 13h8M8 17h5"/></svg><span class="nav-text">Templates</span></a><a href="media.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16zM3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg><span class="nav-text">Media Library</span></a></div><div class="nav-group"><span class="nav-label">Team</span><a href="team.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span class="nav-text">Attorneys &amp; Staff</span></a><a href="departments.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2zM9 22V12h6v10"/></svg><span class="nav-text">Departments</span></a></div><div class="nav-group"><span class="nav-label">Content</span><a href="articles.html" class="nav-item active"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg><span class="nav-text">Articles</span></a><a href="categories.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82zM7 7h.01"/></svg><span class="nav-text">Categories</span></a></div><div class="nav-group"><span class="nav-label">Insights</span><a href="analytics.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg><span class="nav-text">Analytics</span></a><a href="firm-insights.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span class="nav-text">Firm Insights</span><span class="nav-pro">PRO</span></a></div><div class="nav-group"><span class="nav-label">Admin</span><a href="settings.html" class="nav-item"><svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg><span class="nav-text">Settings</span></a></div></nav><div class="sidebar-footer"><div class="user-block"><div class="av av-eh" style="width:32px;height:32px;font-size:11px">EH</div><div class="user-info"><div class="user-name">Eleanor Hartwell</div><div class="user-role">Managing Partner</div></div></div></div></aside>
+<div class="main-wrapper" id="mw">
+<header class="page-header"><button class="icon-btn" id="mob-menu" onclick="LEX.toggleMobile()" style="display:none"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><nav class="breadcrumb"><a href="index.html" style="color:var(--t3)">Dashboard</a><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--t3);stroke-width:2;fill:none"><polyline points="9 18 15 12 9 6"/></svg><a href="articles.html" style="color:var(--t3)">Articles</a><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--t3);stroke-width:2;fill:none"><polyline points="9 18 15 12 9 6"/></svg><span class="bc-current">New Article</span></nav><div class="search-bar"><svg class="search-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input class="search-input" readonly placeholder="Search..." onclick="LEX.openPalette()"><span class="kbd">⌘K</span></div><div class="header-actions"><button class="icon-btn" onclick="LEX.toggleTheme()"><svg id="themeIcon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><div style="position:relative"><button class="icon-btn" id="notif-btn" onclick="LEX.toggleNotif()"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><span class="notif-dot"></span></button><div class="notif-panel" id="notif-panel" style="display:none"><div class="notif-head"><span class="notif-title">Notifications</span><button class="notif-clear" onclick="LEX.clearNotif()">Mark all read</button></div><div class="notif-foot"><a href="#">View all</a></div></div></div><div class="h-divider"></div><div class="profile-wrap"><button class="profile-btn av av-eh" id="profile-btn" onclick="LEX.toggleProfile()" style="font-size:11px;font-weight:700;color:#fff" aria-label="Profile menu">EH</button><div class="profile-panel" id="profile-panel"><div class="profile-panel-head"><div class="av av-eh" style="width:38px;height:38px;font-size:13px;flex-shrink:0">EH</div><div><div class="profile-panel-name">Eleanor Hartwell</div><div class="profile-panel-role">Managing Partner</div><div class="profile-panel-email">ehartwell@hartwell-mercer.com</div></div></div><div class="profile-menu"><a href="attorney-profile.html" class="profile-menu-item"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile</a><a href="settings.html" class="profile-menu-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>Settings</a><button class="profile-menu-item" onclick="LEX.toggleTheme()"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>Toggle Theme</button><div class="profile-menu-divider"></div><a href="login.html" class="profile-menu-item danger"><svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Log Out</a></div></div></div></div></header>
+<main class="page-body">
+<div class="page-top"><div class="page-top-left"><h1 class="page-title">Article Editor</h1><p class="page-sub" style="color:var(--warn)">Draft · Auto-saved Mar 27 · 11:24 AM</p></div><div style="display:flex;gap:8px"><button class="btn btn-ghost btn-sm">Preview</button><button class="btn btn-ghost btn-sm">Save Draft</button><button class="btn btn-primary">Publish</button></div></div>
+<div style="display:grid;grid-template-columns:1fr 280px;gap:16px">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div class="card"><div class="card-body">
+      <input class="form-input" value="Understanding Employment Law in New York State" style="font-family:'Playfair Display',serif;font-size:22px;border:none;background:transparent;padding:4px 0;margin-bottom:12px;font-weight:400" />
+      <input class="form-input" placeholder="Meta description (for SEO)..." style="font-size:13px;border:none;border-top:1px solid var(--surface-3);border-radius:0;background:transparent;padding:10px 0;color:var(--t2)" />
+    </div></div>
+    <div class="card"><div style="padding:12px 20px;border-bottom:1px solid var(--surface-3);display:flex;gap:4px;flex-wrap:wrap">
+      <button class="btn-icon btn" title="Bold"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2.5;fill:none"><path d="M6 4h8a4 4 0 014 4 4 4 0 01-4 4H6z"/><path d="M6 12h9a4 4 0 014 4 4 4 0 01-4 4H6z"/></svg></button>
+      <button class="btn-icon btn" title="Italic"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><line x1="19" y1="4" x2="10" y2="4"/><line x1="14" y1="20" x2="5" y2="20"/><line x1="15" y1="4" x2="9" y2="20"/></svg></button>
+      <button class="btn-icon btn" title="Link"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></button>
+      <div style="width:1px;height:24px;background:var(--surface-3);align-self:center;margin:0 4px"></div>
+      <button class="btn-icon btn" title="H1"><span style="font-size:11px;font-weight:700">H1</span></button>
+      <button class="btn-icon btn" title="H2"><span style="font-size:11px;font-weight:700">H2</span></button>
+      <button class="btn-icon btn" title="Quote"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg></button>
+      <button class="btn-icon btn" title="Bullet list"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></button>
+    </div>
+    <div style="padding:24px;min-height:500px;font-size:15px;line-height:1.8;color:var(--t1)">
+      <h2 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;margin-bottom:16px">Introduction</h2>
+      <p style="margin-bottom:16px;color:var(--t2)">New York State maintains some of the most comprehensive employment laws in the United States, providing significant protections for both employees and employers. Understanding these laws is essential for any business operating within the state or any individual working in New York.</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;margin-bottom:16px">Key Protections</h2>
+      <p style="margin-bottom:16px;color:var(--t2)">The New York State Human Rights Law (NYSHRL) prohibits discrimination based on age, race, gender, sexual orientation, disability, and several other protected characteristics. The law applies to employers with four or more employees...</p>
+      <p style="color:var(--t3);font-style:italic">[ Continue writing... ]</p>
+    </div></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div class="card"><div class="card-header"><span class="card-title">Publish Settings</span></div><div class="card-body">
+      <div class="form-group"><label class="form-label">Status</label><select class="form-select"><option>Draft</option><option>Published</option></select></div>
+      <div class="form-group"><label class="form-label">Category</label><select class="form-select"><option>Employment Law</option><option>Corporate</option><option>M&amp;A</option><option>Real Estate</option><option>Estate Planning</option></select></div>
+      <div class="form-group"><label class="form-label">Author</label><select class="form-select"><option>Sophia Nakamura</option><option>Eleanor Hartwell</option><option>James Mercer</option></select></div>
+    </div></div>
+    <div class="card" id="featImgCard">
+      <div class="card-header"><span class="card-title">Feature Image</span><button class="card-action" onclick="removeFeatImg()">Remove</button></div>
+      <div id="featImgPreview" style="display:none;margin:0">
+        <div style="position:relative">
+          <img id="featImgEl" src="" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block">
+          <button onclick="removeFeatImg()" style="position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.6);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff"><svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:currentColor;stroke-width:2.5;fill:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <div style="padding:12px 16px;border-top:1px solid var(--surface-3)">
+          <label class="form-label" style="font-size:11px">Alt Text</label>
+          <input class="form-input" id="featImgAlt" placeholder="Describe the image..." style="font-size:12.5px;margin-top:4px">
+          <div style="font-size:11px;color:var(--t3);margin-top:6px" id="featImgMeta"></div>
+        </div>
+      </div>
+      <div id="featImgUpload">
+        <div style="padding:20px;text-align:center;cursor:pointer;border-radius:0 0 var(--r-lg) var(--r-lg)"
+          onclick="document.getElementById('featImgInput').click()"
+          ondragover="event.preventDefault();this.style.background='var(--brand-lt)'"
+          ondragleave="this.style.background=''"
+          ondrop="event.preventDefault();this.style.background='';handleFeatImg(event.dataTransfer.files[0])">
+          <svg viewBox="0 0 24 24" style="width:32px;height:32px;stroke:var(--t3);stroke-width:1.5;fill:none;margin-bottom:10px"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <div style="font-size:13px;font-weight:600;color:var(--t1);margin-bottom:4px">Drop image here</div>
+          <div style="font-size:12px;color:var(--t3);margin-bottom:12px">PNG, JPG, GIF up to 10MB</div>
+          <button class="btn btn-secondary btn-sm" onclick="event.stopPropagation();document.getElementById('featImgInput').click()"><svg viewBox="0 0 24 24"><polyline points="21 15 21 19 3 19 3 15"/><polyline points="17 9 12 4 7 9"/><line x1="12" y1="4" x2="12" y2="15"/></svg>Upload Image</button>
+          <button class="btn btn-ghost btn-sm" style="margin-left:6px" onclick="event.stopPropagation();openMediaPicker()"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Media Library</button>
+          <input type="file" id="featImgInput" accept="image/*" style="display:none" onchange="handleFeatImg(this.files[0])">
+        </div>
+      </div>
+    </div>
+
+    <div class="card"><div class="card-header"><span class="card-title">Publish Settings</span></div><div class="card-body">
+      <div class="form-group"><label class="form-label">Status</label><select class="form-select"><option>Draft</option><option>Published</option><option>Scheduled</option></select></div>
+      <div class="form-group" id="schedRow" style="display:none"><label class="form-label">Publish Date</label><input class="form-input" type="datetime-local"></div>
+      <div class="form-group"><label class="form-label">Visibility</label><select class="form-select"><option>Public</option><option>Private</option><option>Password Protected</option></select></div>
+      <div class="form-group"><label class="form-label">Category</label><select class="form-select"><option>Employment Law</option><option>M&amp;A / Corporate</option><option>Estate Planning</option><option>Litigation</option><option>Real Estate</option></select></div>
+      <div class="form-group"><label class="form-label">Author</label><select class="form-select"><option>Sophia Nakamura</option><option>Eleanor Hartwell</option><option>James Mercer</option></select></div>
+      <div class="form-group"><label class="form-label">Tags</label>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px" id="tagList">
+          <span style="background:var(--brand-lt);color:var(--brand);padding:3px 10px;border-radius:99px;font-size:12px;font-weight:500;display:flex;align-items:center;gap:5px">employment<button onclick="this.parentElement.remove()" style="background:none;border:none;cursor:pointer;color:inherit;padding:0;line-height:1;font-size:14px">&times;</button></span>
+          <span style="background:var(--brand-lt);color:var(--brand);padding:3px 10px;border-radius:99px;font-size:12px;font-weight:500;display:flex;align-items:center;gap:5px">new york<button onclick="this.parentElement.remove()" style="background:none;border:none;cursor:pointer;color:inherit;padding:0;line-height:1;font-size:14px">&times;</button></span>
+        </div>
+        <input class="form-input" placeholder="Add tag and press Enter" style="font-size:13px" onkeydown="if(event.key==='Enter'&&this.value.trim()){addTag(this.value.trim());this.value='';event.preventDefault()}">
+      </div>
+    </div></div>
+
+    <div class="card"><div class="card-header"><span class="card-title">SEO Preview</span></div><div class="card-body">
+      <div class="form-group"><label class="form-label">Focus Keyword</label><input class="form-input" value="employment law New York" oninput="updateSeoPreview()" style="font-size:13px"/></div>
+      <div style="background:var(--surface-2);border-radius:8px;padding:14px;margin-bottom:14px;border:1px solid var(--surface-3)">
+        <div style="font-size:11px;color:var(--t3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Google Preview</div>
+        <div style="font-size:15px;color:#1a0dab;font-weight:500;margin-bottom:2px">Understanding Employment Law in New York</div>
+        <div style="font-size:12px;color:#006621;margin-bottom:4px">hartwell-mercer.com &rsaquo; articles</div>
+        <div style="font-size:13px;color:#545454;line-height:1.5">Comprehensive guide to New York employment law, covering NYSHRL, at-will employment, and key worker protections for 2026.</div>
+      </div>
+      <div class="form-group"><label class="form-label">Meta Description <span style="float:right;font-size:11px;color:var(--t3)" id="metaCount">156/160</span></label><textarea class="form-textarea" rows="3" oninput="document.getElementById('metaCount').textContent=this.value.length+'/160'">Comprehensive guide to New York employment law, covering NYSHRL, at-will employment, and key worker protections.</textarea></div>
+    </div></div>
+
+<!-- MEDIA PICKER MODAL -->
+<div id="mediaPicker" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:70;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(2px)">
+  <div style="background:var(--surface);border:1px solid var(--surface-3);border-radius:var(--r-xl);width:100%;max-width:760px;max-height:80vh;display:flex;flex-direction:column;box-shadow:var(--modal-shadow)">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--surface-3)">
+      <span style="font-size:15px;font-weight:700">Select from Media Library</span>
+      <button onclick="document.getElementById('mediaPicker').style.display='none'" style="width:28px;height:28px;border-radius:6px;border:none;background:none;cursor:pointer;color:var(--t2);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div style="padding:16px 22px;border-bottom:1px solid var(--surface-3)">
+      <input class="form-input" placeholder="Search media..." style="font-size:13px;max-width:280px">
+    </div>
+    <div style="overflow-y:auto;padding:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;flex:1">
+      <div style="background:var(--surface-2);border-radius:8px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;border:2px solid transparent;transition:border .15s" onclick="selectFromLibrary('Merger Agreement Hero')" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='transparent'"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:#1B4ED8;stroke-width:1.5;fill:none"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><div style="font-size:10px;color:var(--t3);margin-top:6px;text-align:center;padding:0 4px">merger-hero.jpg</div></div>
+      <div style="background:var(--surface-2);border-radius:8px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;border:2px solid transparent;transition:border .15s" onclick="selectFromLibrary('Hartwell Office')" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='transparent'"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:#059669;stroke-width:1.5;fill:none"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><div style="font-size:10px;color:var(--t3);margin-top:6px;text-align:center;padding:0 4px">office-exterior.jpg</div></div>
+      <div style="background:var(--surface-2);border-radius:8px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;border:2px solid transparent;transition:border .15s" onclick="selectFromLibrary('Employment Law')" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='transparent'"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:#7C3AED;stroke-width:1.5;fill:none"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><div style="font-size:10px;color:var(--t3);margin-top:6px;text-align:center;padding:0 4px">employment-guide.jpg</div></div>
+      <div style="background:var(--surface-2);border-radius:8px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;border:2px solid transparent;transition:border .15s" onclick="selectFromLibrary('Estate Planning')" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='transparent'"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:#D97706;stroke-width:1.5;fill:none"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><div style="font-size:10px;color:var(--t3);margin-top:6px;text-align:center;padding:0 4px">estate-docs.jpg</div></div>
+      <div style="background:var(--surface-2);border-radius:8px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;border:2px solid transparent;transition:border .15s" onclick="selectFromLibrary('Court Hearing')" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='transparent'"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:#0EA5E9;stroke-width:1.5;fill:none"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><div style="font-size:10px;color:var(--t3);margin-top:6px;text-align:center;padding:0 4px">court-photo.jpg</div></div>
+      <div style="background:var(--surface-2);border-radius:8px;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;border:2px solid transparent;transition:border .15s" onclick="selectFromLibrary('Legal Books')" onmouseover="this.style.borderColor='var(--brand)'" onmouseout="this.style.borderColor='transparent'"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke:#A07830;stroke-width:1.5;fill:none"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><div style="font-size:10px;color:var(--t3);margin-top:6px;text-align:center;padding:0 4px">legal-books.jpg</div></div>
+    </div>
+    <div style="padding:14px 22px;border-top:1px solid var(--surface-3);display:flex;justify-content:space-between;align-items:center">
+      <a href="media.html" style="font-size:13px;color:var(--brand);font-weight:600">Open Media Library &rarr;</a>
+      <button class="btn btn-ghost btn-sm" onclick="document.getElementById('mediaPicker').style.display='none'">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function handleFeatImg(file){{
+  if(!file||!file.type.startsWith('image/'))return;
+  const reader=new FileReader();
+  reader.onload=function(e){{
+    document.getElementById('featImgEl').src=e.target.result;
+    document.getElementById('featImgPreview').style.display='block';
+    document.getElementById('featImgUpload').style.display='none';
+    document.getElementById('featImgMeta').textContent=file.name+' &middot; '+(file.size/1024/1024).toFixed(1)+'MB';
+  }};
+  reader.readAsDataURL(file);
+}}
+function removeFeatImg(){{
+  document.getElementById('featImgPreview').style.display='none';
+  document.getElementById('featImgUpload').style.display='block';
+  document.getElementById('featImgEl').src='';
+}}
+function openMediaPicker(){{
+  document.getElementById('mediaPicker').style.display='flex';
+}}
+function selectFromLibrary(name){{
+  document.getElementById('featImgPreview').style.display='block';
+  document.getElementById('featImgUpload').style.display='none';
+  document.getElementById('featImgMeta').textContent=name+' (from Media Library)';
+  document.getElementById('mediaPicker').style.display='none';
+}}
+function addTag(tag){{
+  const list=document.getElementById('tagList');
+  const span=document.createElement('span');
+  span.style.cssText='background:var(--brand-lt);color:var(--brand);padding:3px 10px;border-radius:99px;font-size:12px;font-weight:500;display:flex;align-items:center;gap:5px';
+  span.innerHTML=tag+'<button onclick="this.parentElement.remove()" style="background:none;border:none;cursor:pointer;color:inherit;padding:0;line-height:1;font-size:14px">&times;</button>';
+  list.appendChild(span);
+}}
+</script>
+  </div>
+</div>
+</main>
+</div>
+<div class="overlay" id="pal" style="display:none" onclick="if(event.target===this)LEX.closePalette()"><div class="cmdpal"><div class="cmd-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input class="cmd-input" id="cmd-inp" placeholder="Search…"><span class="cmd-key">ESC</span></div><div class="cmd-results"><div class="cmd-grp">Actions</div><div class="cmd-item sel"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="cmd-item-txt">New Case</span></div></div><div class="cmd-foot"><span><span class="cmd-key">ESC</span> close</span></div></div></div><div id="mob-bd" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:39" onclick="LEX.toggleMobile()"></div>
+<script src="assets/js/lex.js"></script>
+
+
+<!-- Mobile bottom navigation -->
+<nav class="mobile-nav">
+  <a href="index.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dash
+  </a>
+  <a href="cases.html" class="mob-nav-item" data-badge>
+    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><div class="mob-nav-dot"></div>Cases
+  </a>
+  <a href="calendar.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Calendar
+  </a>
+  <a href="tasks.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Tasks
+  </a>
+  <a href="invoices.html" class="mob-nav-item">
+    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>Finance
+  </a>
+</nav>
+<!-- Mobile sidebar backdrop -->
+<div id="mob-bd" onclick="LEX.toggleMobile()"></div>
+
+</body>
+</html>

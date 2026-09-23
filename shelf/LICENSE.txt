@@ -1,0 +1,51 @@
+SHELF - Commerce & Sales Dashboard Template
+===========================================
+
+The template itself (HTML, CSS and JavaScript authored for this product) is
+free to use under the MIT license. See the LICENSE file at the root of the
+100 Free Admin Dashboards repository.
+
+Third party components included in this package
+-----------------------------------------------
+
+1. Chart.js 4.4.1
+   File: assets/vendor/chart.umd.min.js
+   Licence: MIT
+   Copyright (c) 2014-2024 Chart.js Contributors
+   https://www.chartjs.org
+
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
+
+   The above copyright notice and this permission notice shall be included in
+   all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+
+2. Figtree
+   Files: assets/fonts/figtree-*.woff2
+   Licence: SIL Open Font License 1.1
+   Copyright (c) Erik Kennedy
+   https://fonts.google.com/specimen/Figtree
+
+3. DM Mono
+   Files: assets/fonts/dmmono-*.woff2
+   Licence: SIL Open Font License 1.1
+   Copyright (c) Colophon Foundry
+   https://fonts.google.com/specimen/DM+Mono
+
+Assets NOT included
+-------------------
+No photography, no icon font and no third party icon set is used. Every icon is
+inline SVG authored for this template. Product and customer images are generated
+from initials in CSS, so there is nothing to license and nothing to replace.
+
+Demo content
+------------
+Every store name, product, customer, staff member, order, email address and
+domain in the demo data is invented. Any resemblance to a real business is
+coincidental.

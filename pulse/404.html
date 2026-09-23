@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse: Page Not Found | NovaBuild Inc.</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/pulse.css">
+<style>
+.auth-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--canvas);padding:20px}
+.auth-card{background:var(--surface);border:1px solid var(--surface-3);border-radius:var(--r-2xl);width:100%;max-width:420px;padding:40px;box-shadow:var(--modal-shadow)}
+.auth-logo{display:flex;align-items:center;gap:10px;margin-bottom:28px;justify-content:center}
+.auth-title{font-size:22px;font-weight:800;color:var(--t1);text-align:center;margin-bottom:6px;letter-spacing:-.4px}
+.auth-sub{font-size:13.5px;color:var(--t3);text-align:center;margin-bottom:28px}
+.auth-divider{display:flex;align-items:center;gap:10px;margin:18px 0}
+.auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--surface-3)}
+.auth-divider span{font-size:12px;color:var(--t4)}
+.google-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:10px;border:1px solid var(--surface-3);border-radius:var(--r-md);background:var(--surface-2);font-size:13.5px;font-weight:600;color:var(--t1);cursor:pointer;transition:all .15s;font-family:inherit;margin-bottom:8px}
+.google-btn:hover{background:var(--surface-3)}
+.auth-footer{text-align:center;font-size:13px;color:var(--t3);margin-top:20px}
+.auth-footer a{color:var(--brand);font-weight:600}
+</style>
+</head>
+<body>
+<div class="auth-wrap" style="flex-direction:column;text-align:center">
+  <div style="font-size:80px;font-weight:900;font-family:'JetBrains Mono',monospace;color:var(--surface-3);line-height:1;margin-bottom:8px">404</div>
+  <div style="width:52px;height:4px;background:var(--brand);border-radius:var(--r-full);margin:0 auto 24px"></div>
+  <h1 style="font-size:24px;font-weight:800;color:var(--t1);margin-bottom:10px">Page not found</h1>
+  <p style="font-size:15px;color:var(--t3);margin-bottom:28px;max-width:360px">The page you're looking for doesn't exist or has been moved.</p>
+  <div style="display:flex;gap:12px;justify-content:center">
+    <a href="index.html" class="btn btn-primary">Go to Dashboard</a>
+    <button class="btn btn-ghost" onclick="history.back()">Go Back</button>
+  </div>
+</div>
+<div class="toast-container"></div>
+<script src="assets/js/pulse.js"></script>
+</body></html>
